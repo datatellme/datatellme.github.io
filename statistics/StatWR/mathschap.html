@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | R 통계분석</title>
-  <meta name="description" content="Page not found | R 통계분석" />
+  <title>12 Mathematical appendix | R 통계분석</title>
+  <meta name="description" content="12 Mathematical appendix | R 통계분석" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | R 통계분석" />
+  <meta property="og:title" content="12 Mathematical appendix | R 통계분석" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | R 통계분석" />
+  <meta name="twitter:title" content="12 Mathematical appendix | R 통계분석" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="errorchapter.html"/>
+<link rel="next" href="solutions.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -710,19 +710,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="mathschap" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> Mathematical appendix<a href="mathschap.html#mathschap" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter contains remarks regarding the mathematical background of certain methods and concepts encountered in Chapters <a href="modchapter.html#modchapter">7</a>-<a href="mlchapter.html#mlchapter">9</a>. Sections <a href="mathschap.html#confintequal">12.2</a> and <a href="mathschap.html#twotypesofpvalues">12.3</a> consist of reworked materials from Thulin (2014b). Most of this chapter assumes some familiarity with mathematical statistics, on the level of Casella &amp; Berger (2002) or Liero &amp; Zwanzig (2012).</p>
+<div id="bootstrapcimaths" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Bootstrap confidence intervals<a href="mathschap.html#bootstrapcimaths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We wish to construct a confidence interval for a parameter <span class="math inline">\(\theta\)</span> based on a statistic <span class="math inline">\(t\)</span>. Let <span class="math inline">\(t_{obs}\)</span> be the value of the statistic in the original sample, <span class="math inline">\(t_i^*\)</span> be a bootstrap replicate of the statistic, for <span class="math inline">\(i=1,2,\ldots,B\)</span>, and <span class="math inline">\(t^*\)</span> be the mean of the statistic among the bootstrap replicates. Let <span class="math inline">\(se^*\)</span> be the standard error of the bootstrap estimate and <span class="math inline">\(b^*=t^*-t_{obs}\)</span> be the bias of the bootstrap estimate. For a confidence level <span class="math inline">\(1-\alpha\)</span> (<span class="math inline">\(\alpha=0.05\)</span> being a common choice), let <span class="math inline">\(z_{\alpha/2}\)</span> be the <span class="math inline">\(1-\frac{\alpha}{2}\)</span> quantile of the standard normal distribution (with <span class="math inline">\(z_{0.025}=1.9599\ldots\)</span>). Moreover, let <span class="math inline">\(\theta_{\alpha/2}\)</span> be the <span class="math inline">\(1-\frac{\alpha}{2}\)</span>-quantile of the bootstrap distribution of the <span class="math inline">\(t_i^*\)</span>’s.</p>
+<p>The <em>bootstrap normal confidence interval</em> is <span class="math display">\[t_{obs}-b^*\pm z_{\alpha/2}\cdot se^*.\]</span></p>
+<p>The <em>bootstrap basic confidence interval</em> is <span class="math display">\[\Big(2t_{obs}-\theta_{\alpha/2}, 2t_{obs}-\theta_{1-\alpha/2}  \Big).\]</span></p>
+<p>The <em>bootstrap percentile confidence interval</em> is <span class="math display">\[\Big(\theta_{1-\alpha/2}, \theta_{\alpha/2} \Big).\]</span></p>
+<p>For the <em>bootstrap BCa confidence interval</em>, let <span class="math display">\[\hat{z}=\Theta^{-1}\Big(\frac{\#\{t_i^*&lt;t_{obs}\}}{B}\Big),\]</span> where <span class="math inline">\(\Theta\)</span> is the cumulative distribution function for the normal distribution. Let <span class="math inline">\(t_{(-i)}^*\)</span> be the mean of the bootstrap replicates after deleting the <span class="math inline">\(i\)</span>:th replicate, and define the acceleration term
+<span class="math display">\[\hat{a}=\frac{\sum_{i=1}^n(t^*-t_{(-i)}^*)}{6\Big(\sum_{i=1}^n(t^*-t_{(-i)}^*)^2\Big)^{3/2}}.\]</span> Finally, let <span class="math display">\[\alpha_1 = \Theta\Big(\hat{z}+\frac{\hat{z}+z_{1-\alpha/2}}{1-\hat{a}(\hat{z}+z_{1-\alpha/2})}\Big)\]</span> and <span class="math display">\[\alpha_2 = \Theta\Big(\hat{z}+\frac{\hat{z}+z_{\alpha/2}}{1-\hat{a}(\hat{z}+z_{\alpha/2})}\Big).\]</span> Then the confidence interval is <span class="math display">\[\Big(\theta_{\alpha_1}, \theta_{\alpha_2}\Big).\]</span>
+For the <em>studentised bootstrap confidence interval</em>, we additionally have an estimate <span class="math inline">\(se_t^*\)</span> for the standard error of the statistic. Moreover, we compute <span class="math inline">\(q_i=\frac{t_i^*-t_{obs}}{se_t^*}\)</span> for each bootstrap replicate, and define <span class="math inline">\(q_{\alpha/2}\)</span> as the <span class="math inline">\(1-\frac{\alpha}{2}\)</span>-quantile of the bootstrap distribution of <span class="math inline">\(q_i\)</span>’s. The confidence interval is then
+<span class="math display">\[\Big(t_{obs}-se_t^*\cdot q_\alpha/2, t_{obs}+se_t^*\cdot q_{1-\alpha/2}\Big).\]</span></p>
+</div>
+<div id="confintequal" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> The equivalence between confidence intervals and hypothesis tests<a href="mathschap.html#confintequal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(\theta\)</span> be an unknown parameter in the parameter space <span class="math inline">\(\Theta\subseteq\mathbb{R}\)</span>, and let the sample <span class="math inline">\(\mathbf{x}=(x_1,\ldots,x_n)\in\mathcal{X}^ n\subseteq\mathbb{R}^n\)</span> be a realisation of the random variable <span class="math inline">\(\mathbf{X}=(X_1,\ldots,X_n)\)</span>. In frequentist statistics there is a fundamental connection between interval estimation and point-null hypothesis testing of <span class="math inline">\(\theta\)</span> , which we describe next. We define a confidence interval <span class="math inline">\(I_\alpha(\mathbf{X})\)</span> as a random interval such that its <em>coverage probability</em>
+<span class="math display">\[\mbox{P}_\theta(\theta\in I_\alpha(\mathbf{X}))= 1-\alpha\qquad\mbox{for all }\alpha\in(0,1).\]</span>
+Consider a two-sided test of the point-null hypothesis <span class="math inline">\(H_0(\theta_0): \theta=\theta_0\)</span> against the alternative <span class="math inline">\(H_1(\theta_0): \theta\neq \theta_0\)</span>. Let <span class="math inline">\(\lambda(\theta_0,\mathbf{x})\)</span> denote the p-value of the test. For any <span class="math inline">\(\alpha\in(0,1)\)</span>, <span class="math inline">\(H_0(\theta_0)\)</span> is rejected at the level <span class="math inline">\(\alpha\)</span> if <span class="math inline">\(\lambda(\theta_0,x)\leq\alpha\)</span>. The level <span class="math inline">\(\alpha\)</span> <em>rejection region</em> is the set of <span class="math inline">\(\mathbf{x}\)</span> which lead to the rejection of <span class="math inline">\(H_0(\theta_0)\)</span>:
+<span class="math display">\[ R_\alpha(\theta_0)=\{\mathbf{x}\in\mathbb{R}^n: \lambda(\theta_0,\mathbf{x})\leq\alpha\}.\]</span></p>
+<p>Now, consider a family of two-sided tests with p-values <span class="math inline">\(\lambda(\theta,\mathbf{x})\)</span>, for <span class="math inline">\(\theta\in\Theta\)</span>. For such a family we can define an <em>inverted rejection region</em>
+<span class="math display">\[ Q_\alpha(\mathbf{x})=\{\theta\in\Theta: \lambda(\theta,\mathbf{x})\leq\alpha\}.\]</span></p>
+<p>For any fixed <span class="math inline">\(\theta_0\)</span>, <span class="math inline">\(H_0(\theta_0)\)</span> is rejected if <span class="math inline">\(\mathbf{x}\in R_\alpha(\theta_0)\)</span>, which happens if and only if <span class="math inline">\(\theta_0\in Q_\alpha(\mathbf{x})\)</span>, that is,
+<span class="math display">\[
+\mathbf{x}\in R_\alpha(\theta_0) \Leftrightarrow  \theta_0\in Q_\alpha(\mathbf{x}).
+\]</span>
+If the test is based on a test statistic with a completely specified absolutely continuous null distribution, then <span class="math inline">\(\lambda(\theta_0,\mathbf{X})\sim \mbox{U}(0,1)\)</span> under <span class="math inline">\(H_0(\theta_0)\)</span> (Liero &amp; Zwanzig, 2012). Then
+<span class="math display">\[
+\mbox{P}_{\theta_0}(\mathbf{X}\in R_\alpha(\theta_0))=\mbox{P}_{\theta_0}(\lambda(\theta_0,\mathbf{X})\leq\alpha)=\alpha.
+\]</span>
+Since this holds for any <span class="math inline">\(\theta_0\in\Theta\)</span> and since the equivalence relation <span class="math inline">\(\mathbf{x}\in R_\alpha(\theta_0) \Leftrightarrow \theta_0\in Q_\alpha(\mathbf{x})\)</span> implies that <span class="math display">\[\mbox{P}_{\theta_0}(\mathbf{X}\in R_\alpha(\theta_0))=\mbox{P}_{\theta_0}(\theta_0\in Q_\alpha(\mathbf{X})),\]</span> it follows that the random set <span class="math inline">\(Q_\alpha(\mathbf{x})\)</span> always covers the true parameter <span class="math inline">\(\theta_0\)</span> with probability <span class="math inline">\(\alpha\)</span>. Consequently, letting <span class="math inline">\(Q_\alpha^C(\mathbf{x})\)</span> denote the complement of <span class="math inline">\(Q_\alpha(\mathbf{x})\)</span>, for all <span class="math inline">\(\theta_0\in\Theta\)</span> we have
+<span class="math display">\[\mbox{P}_{\theta_0}(\theta_0\in Q_\alpha^C(\mathbf{X}))=1-\alpha,\]</span>
+meaning that the complement of the inverted rejection region is a <span class="math inline">\(1-\alpha\)</span> confidence interval for <span class="math inline">\(\theta\)</span>. This equivalence between a family of tests and a confidence interval <span class="math inline">\(I_\alpha(\mathbf{x})=Q_\alpha^C(\mathbf{x})\)</span>, illustrated in the figure below, provides a simple way of constructing confidence intervals through test inversion, and vice versa.</p>
+<p>The figure shows the rejection regions and confidence intervals corresponding to the the <span class="math inline">\(z\)</span>-test for a normal mean, for different null means <span class="math inline">\(\theta\)</span> and different sample means <span class="math inline">\(\bar{x}\)</span>, with <span class="math inline">\(\sigma=1\)</span>. <span class="math inline">\(H_0(\theta)\)</span> is rejected if <span class="math inline">\((\bar{x},\theta)\)</span> is in the shaded light grey region. Shown in dark grey is the rejection region <span class="math inline">\(R_{0.05}(-0.9)=(-\infty,-1.52)\cup(-0.281,\infty)\)</span> and the confidence interval <span class="math inline">\(I_{0.05}(1/2)=Q_{0.05}^C(1/2)=(-0.120,1.120)\)</span>.</p>
+<div class="figure">
+<img src="equivalence.png" alt="" />
+<p class="caption">The equivalence between confidence intervals and hypothesis tests.</p>
+</div>
+</div>
+<div id="twotypesofpvalues" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Two types of p-values<a href="mathschap.html#twotypesofpvalues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>symmetric</code> argument in <code>perm.t.test</code> and <code>boot.t.test</code> controls how the p-values of the test are computed. In most cases, the difference is not that large:</p>
+<div class="sourceCode" id="cb1153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1153-1"><a href="mathschap.html#cb1153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MKinfer)</span>
+<span id="cb1153-2"><a href="mathschap.html#cb1153-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1153-3"><a href="mathschap.html#cb1153-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boot.t.test</span>(sleep_total <span class="sc">~</span> vore, <span class="at">data =</span> </span>
+<span id="cb1153-4"><a href="mathschap.html#cb1153-4" aria-hidden="true" tabindex="-1"></a>              <span class="fu">subset</span>(msleep, vore <span class="sc">==</span> <span class="st">&quot;carni&quot;</span> <span class="sc">|</span> vore <span class="sc">==</span> <span class="st">&quot;herbi&quot;</span>),</span>
+<span id="cb1153-5"><a href="mathschap.html#cb1153-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">symmetric =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1153-6"><a href="mathschap.html#cb1153-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1153-7"><a href="mathschap.html#cb1153-7" aria-hidden="true" tabindex="-1"></a><span class="fu">boot.t.test</span>(sleep_total <span class="sc">~</span> vore, <span class="at">data =</span> </span>
+<span id="cb1153-8"><a href="mathschap.html#cb1153-8" aria-hidden="true" tabindex="-1"></a>              <span class="fu">subset</span>(msleep, vore <span class="sc">==</span> <span class="st">&quot;carni&quot;</span> <span class="sc">|</span> vore <span class="sc">==</span> <span class="st">&quot;herbi&quot;</span>),</span>
+<span id="cb1153-9"><a href="mathschap.html#cb1153-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">symmetric =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>In other cases, the choice matters more. Below, we will discuss the difference between the two approaches.</p>
+<p>Let <span class="math inline">\(T(\mathbf{X})\)</span> be a test statistic on which a two-sided test of the point-null hypothesis that <span class="math inline">\(\theta=\theta_0\)</span> is based, and let <span class="math inline">\(\lambda(\theta_0,\mathbf{x})\)</span> denote its p-value. Assume for simplicity that <span class="math inline">\(T(\mathbf{x})&lt;0\)</span> implies that <span class="math inline">\(\theta&lt;\theta_0\)</span> and that <span class="math inline">\(T(\mathbf{x})&gt;0\)</span> implies that <span class="math inline">\(\theta&gt;\theta_0\)</span>. We’ll call the <code>symmetric = FALSE</code> scenario the <em>twice-the-smaller-tail</em> approach to computing p-values. In it, the first step is to check whether <span class="math inline">\(T(\mathbf{x})&lt;0\)</span> or <span class="math inline">\(T(\mathbf{x})&gt;0\)</span>. “At least as extreme as the observed” is in a sense redefined as “at least as extreme as the observed, in the observed direction”. If the median of the null distribution of <span class="math inline">\(T(\mathbf{X})\)</span> is 0, then, for <span class="math inline">\(T(\mathbf{x})&gt;0\)</span>,
+<span class="math display">\[ \mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x})|T(\mathbf{x})&gt;0)=2\cdot\mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x})),\]</span>
+i.e. twice the unconditional probability that <span class="math inline">\(T(\mathbf{X})\geq T(\mathbf{x})\)</span>. Similarly, for <span class="math inline">\(T(\mathbf{x})&lt;0\)</span>,
+<span class="math display">\[ \mbox{P}_{\theta_0}(T(\mathbf{X})\leq T(\mathbf{x})|T(\mathbf{x})&lt;0)=~2\cdot\mbox{P}_{\theta_0}(T(\mathbf{X})\leq T(\mathbf{x})).\]</span>
+Moreover,
+<span class="math display">\[ \mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))&lt;\mbox{P}_{\theta_0}(T(\mathbf{X})\leq T(\mathbf{x}))\qquad\mbox{when}\qquad T(\mathbf{x})&gt;0\]</span>
+and
+<span class="math display">\[ \mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))&gt;\mbox{P}_{\theta_0}(T(\mathbf{X})\leq T(\mathbf{x}))\qquad\mbox{when}\qquad T(\mathbf{x})&lt;0.\]</span>
+Consequently, the p-value using this approach can in general be written as
+<span class="math display">\[ \lambda_{TST}(\theta_0,\mathbf{x}):=\min\Big(1,~~2\cdot\mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x})),~~2\cdot\mbox{P}_{\theta_0}(T(\mathbf{X})\leq T(\mathbf{x}))\Big).\]</span>
+This definition of the p-value is frequently used also in situations where the median of the null distribution of <span class="math inline">\(T(\mathbf{X})\)</span> is not 0, despite the fact that the interpretation of the p-value as being conditioned on whether <span class="math inline">\(T(\mathbf{x})&lt;0\)</span> or <span class="math inline">\(T(\mathbf{x})&gt;0\)</span> is lost.</p>
+<p>At the level <span class="math inline">\(\alpha\)</span>, if <span class="math inline">\(T(\mathbf{x})&gt;0\)</span> the test rejects the hypothesis <span class="math inline">\(\theta=\theta_0\)</span> if
+<span class="math display">\[ \lambda_{TST}(\theta_0,\mathbf{x})=\min\Big(1,2\cdot\mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))\Big)\leq\alpha.\]</span>
+This happens if and only if the one-sided test of <span class="math inline">\(\theta\leq \theta_0\)</span>, also based on <span class="math inline">\(T(\mathbf{X})\)</span>, rejects its null hypothesis at the <span class="math inline">\(\alpha/2\)</span> level. By the same reasoning, it is seen that the rejection region of a level <span class="math inline">\(\alpha\)</span> twice-the-smaller-tail test always is the union of the rejection regions of two level <span class="math inline">\(\alpha/2\)</span> one-sided tests of <span class="math inline">\(\theta\leq \theta_0\)</span> and <span class="math inline">\(\theta\geq \theta_0\)</span>, respectively. The test puts equal weight to the two types of type I errors: false rejection in the two different directions. The corresponding confidence interval is therefore also equal-tailed, in the sense that the non-coverage probability is <span class="math inline">\(\alpha/2\)</span> on both sides of the interval.</p>
+<p>Twice-the-smaller-tail p-values are in a sense computed by looking only at one tail of the null distribution. In the alternative approach, <code>symmetric = TRUE</code>, we use <em>strictly two-sided</em> p-values. Such a p-value is computed using both tails, as follows:
+<span class="math inline">\(\lambda_{STT}(\theta_0,\mathbf{x})=\mbox{P}_{\theta_0}\Big(|T(\mathbf{X})|\geq |T(\mathbf{x})|\Big)=\mbox{P}_{\theta_0}\Big(\{\mathbf{X}: T(\mathbf{X})\leq -|T(\mathbf{x})|\}\cup\{\mathbf{X}: T(\mathbf{X})\geq |T(\mathbf{x})|\}\Big).\)</span></p>
+<p>Under this approach, the directional type I error rates will in general not be equal to <span class="math inline">\(\alpha/2\)</span>, so that the test might be more prone to falsely reject <span class="math inline">\(H_0(\theta_0)\)</span> in one direction than in another. On the other hand, the rejection region of a strictly-two sided test is typically smaller than its twice-the-smaller-tail counterpart. The coverage probabilities of the corresponding confidence interval <span class="math inline">\(I_\alpha(\mathbf{X})=(L_\alpha(\mathbf{X}),U_\alpha(\mathbf{X}))\)</span> therefore satisfies the condition that
+<span class="math display">\[\mbox{P}_\theta(\theta\in I_\alpha(\mathbf{X}))= 1-\alpha\qquad\mbox{for all }\alpha\in(0,1),\]</span> but not the stronger condition
+<span class="math display">\[
+\mbox{P}_\theta(\theta&lt;L_\alpha(\mathbf{X}))=\mbox{P}_\theta(\theta&gt;U_\alpha(\mathbf{X}))=\alpha/2\qquad\mbox{for all }
+\alpha\in(0,1).\]</span></p>
+<p>For parameters of discrete distributions, strictly two-sided hypothesis tests and confidence intervals can behave very erratically (Thulin &amp; Zwanzig, 2017). Twice-the-smaller tail methods are therefore always preferable when working with count data.</p>
+<p>It is also worth noting that if the null distribution of <span class="math inline">\(T(\mathbf{X})\)</span> is symmetric about 0,
+<span class="math display">\[\mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))=\mbox{P}_{\theta_0}(T(\mathbf{X})\leq -T(\mathbf{x})).\]</span>
+For <span class="math inline">\(T(\mathbf{x})&gt;0\)</span>, unless <span class="math inline">\(T(\mathbf{X})\)</span> has a discrete distribution,
+<span class="math display">\[\begin{split}
+\lambda_{TST}(\theta_0,\mathbf{x})&amp;=2\cdot \mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))\\&amp;=\mbox{P}_{\theta_0}(T(\mathbf{X})\geq T(\mathbf{x}))+\mbox{P}_{\theta_0}(T(\mathbf{X})\leq -T(\mathbf{x}))=\lambda_{STT}(\theta_0,\mathbf{x}),
+\end{split}\]</span>
+meaning that the twice-the-smaller-tail and strictly-two-sided approaches coincide in this case. The ambiguity related to the definition of two-sided p-values therefore only arises under asymmetric null distributions.</p>
+</div>
+<div id="deviance" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> Deviance tests<a href="mathschap.html#deviance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider a model with <span class="math inline">\(p=n\)</span>, having a separate parameter for each observation. This model will have a perfect fit, and among all models, it attains the maximum achievable likelihood. It is known as the <em>saturated model</em>. Despite having a perfect fit, it is useless for prediction, interpretation and causality, as it is severely overfitted. It is however useful as a baseline for comparison with other models, i.e. for checking goodness-of-fit: our goal is to find a <em>reasonable and useful</em> model with almost as good a fit.</p>
+<p>Let <span class="math inline">\(L(\hat{\mu},y)\)</span> denote the log-likelihood corresponding to the ML-estimate for a model, with estimates <span class="math inline">\(\hat{\theta}_i\)</span>. Let <span class="math inline">\(L(y,y)\)</span> denote the log-likelihood for the saturated model, with estimates <span class="math inline">\(\tilde{\theta}_i\)</span>. For an exponential dispersion family, i.e. a distribution of the form
+<span class="math display">\[f(y_i; \theta_i,\phi)=\exp\Big(\lbrack y_i\theta_i-b(\theta_i)\rbrack/a(\phi)+c(y_i,\phi)\Big),\]</span>
+(the binomial and Poisson distributions being examples of this), we have
+<span class="math display">\[L(y,y)-L(\hat{\mu},y)=\sum_{i=1}^n(y_i\tilde{\theta}_i-b(\tilde{\theta}_i))/a(\phi)-\sum_{i=1}^n(y_i\hat{\theta}_i-b(\hat{\theta}_i))/a(\phi).\]</span>
+Typically, <span class="math inline">\(a(\phi)=\phi/\omega_i\)</span>, in which case this becomes
+<span class="math display">\[\sum_{i=1}^n\omega_i\Big(y_i(\tilde{\theta}_i-\hat{\theta}_i)-b(\tilde{\theta}_i)+b(\hat{\theta}_i)\Big)/\phi=:\frac{D(y,\hat{\mu})}{2\phi},\]</span>
+where the statistic <span class="math inline">\(D(y,\hat{\mu})\)</span> is called the <em>deviance</em>.</p>
+<p>The deviance is essentially the difference between the log-likelihoods of a model and of the saturated model. The greater the deviance, the poorer the fit. It holds that <span class="math inline">\(D(y,\hat{\mu})\geq 0\)</span>, with <span class="math inline">\(D(y,\hat{\mu})=0\)</span> corresponding to a perfect fit.</p>
+<p>Deviance is used to test whether two models are equal. Assume that we have two models:</p>
+<ul>
+<li><span class="math inline">\(M_0\)</span>, which has <span class="math inline">\(p_0\)</span> parameters, with fitted values <span class="math inline">\(\hat{\mu}_0\)</span>,</li>
+<li><span class="math inline">\(M_1\)</span>, which has <span class="math inline">\(p_1&gt;p_0\)</span> parameters, with fitted values <span class="math inline">\(\hat{\mu}_1\)</span>.</li>
+</ul>
+<p>We say that the models are <em>nested</em>, because <span class="math inline">\(M_0\)</span> is a special case of <span class="math inline">\(M_1\)</span>, corresponding to some of the <span class="math inline">\(p_1\)</span> parameters of <span class="math inline">\(M_1\)</span> being 0. If both models give a good fit, we prefer <span class="math inline">\(M_0\)</span> because of its (relative) simplicity. We have <span class="math inline">\(D(y,\hat{\mu}_1)\leq D(y,\hat{\mu}_0)\)</span>, since simpler models have larger deviances. Assuming that <span class="math inline">\(M_1\)</span> holds, we can test whether <span class="math inline">\(M_0\)</span> holds by using the likelihood ratio-test statistic <span class="math inline">\(D(y,\hat{\mu}_0)-D(y,\hat{\mu}_1).\)</span>
+If we reject the null hypothesis, <span class="math inline">\(M_0\)</span> fits the data poorly compared to <span class="math inline">\(M_1\)</span>. Otherwise, the fit of <span class="math inline">\(M_1\)</span> is not significantly better and we prefer <span class="math inline">\(M_0\)</span> because of its simplicity.</p>
+</div>
+<div id="regreg" class="section level2 hasAnchor" number="12.5">
+<h2><span class="header-section-number">12.5</span> Regularised regression<a href="mathschap.html#regreg" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Linear regression is a special case of generalised linear regression. Under the assumption of normality, the least squares estimator is the maximum likelihood estimator in this setting. In what follows, we will therefore discuss how the maximum likelihood estimator is modified when using regularisation, bearing in mind that this also includes the ordinary least squares estimator for linear models.</p>
+<p>In a regularised GLM, it is not the likelihood <span class="math inline">\(L(\beta)\)</span> that is maximised, but a regularised function <span class="math inline">\(L(\beta)\cdot p(\lambda,\beta)\)</span>, where <span class="math inline">\(p\)</span> is a penalty function that typically forces the resulting estimates to be closer to 0, which leads to a stable solution. The shrinkage parameter <span class="math inline">\(\lambda\)</span> controls the size of the penalty, and therefore how much the estimates are shrunk toward 0. When <span class="math inline">\(\lambda=0\)</span>, we are back at the standard maximum likelihood estimate.</p>
+<p>The most popular penalty terms correspond to common <span class="math inline">\(L_q\)</span>-norms. On a log-scale, the function to be maximised is then
+<span class="math display">\[\ell(\beta)+\lambda\sum_{i=1}^p|\beta_i|^q,\]</span>
+where <span class="math inline">\(\ell(\beta)\)</span> is the loglikelihood of <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\sum_{i=1}^p|\beta_i|^q\)</span> is the <span class="math inline">\(L_q\)</span>-norm, with <span class="math inline">\(q\geq 0\)</span>.
+This is equivalent to maximising <span class="math inline">\(\ell(\beta)\)</span> under the constraint that <span class="math inline">\(\sum_{i=1}^p|\beta_i|^q\leq\frac{1}{h(\lambda)}\)</span>, for some increasing positive function <span class="math inline">\(h\)</span>.</p>
+<p>In Bayesian estimation, a <em>prior distribution</em> <span class="math inline">\(p(\beta)\)</span> for the parameters <span class="math inline">\(\beta_i\)</span> is used The estimates are then computed from the conditional distribution of the <span class="math inline">\(\beta_i\)</span> given the data, called the <em>posterior distribution</em>. Using Bayes’ theorem, we find that
+<span class="math display">\[P(\beta|\mathbf{x})\propto L(\beta)\cdot p(\beta),\]</span>
+i.e. that the posterior distribution is proportional to the likelihood times the prior. The Bayesian <em>maximum a posteriori estimator</em> (MAP) is found by maximising the above expression (i.e. finding the mode of the posterior). This is equivalent to the estimates from a regularised frequentist model with penalty function <span class="math inline">\(p(\beta)\)</span>, meaning that regularised regression can be motivated both from a frequentist and a Bayesian perspective.</p>
+<p>When the <span class="math inline">\(L_2\)</span> penalty is used, the regularised model is called <em>ridge regression</em>, for which we maximise
+<span class="math display">\[\ell(\beta)+\lambda\sum_{i=1}^p\beta_i^2.\]</span>
+In a Bayesian context, this corresponds to putting a standard normal prior on the <span class="math inline">\(\beta_i\)</span>. This method has been invented and reinvented by several authors, from the 1940’s onwards, among them Hoerl &amp; Kennard (1970). The <span class="math inline">\(\beta_i\)</span> can become very small, but are never pushed all the way down to 0. The name comes from the fact that in a linear model, the OLS estimate is <span class="math inline">\(\hat{\beta}=(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}\)</span>, whereas the ridge estimate is <span class="math inline">\(\hat{\beta}=(\mathbf{X}^T\mathbf{X}+\lambda \mathbf{I})^{-1}\mathbf{X}^T\mathbf{y}\)</span>. The <span class="math inline">\(\lambda \mathbf{I}\)</span> is the “ridge”.</p>
+<p>When the <span class="math inline">\(L_1\)</span> penalty is used, the regularised model is called the <em>lasso</em> (Least Absolute Shrinkage and Selection Operator), for which we maximise
+<span class="math display">\[\ell(\beta)+\lambda\sum_{i=1}^p|\beta_i|.\]</span>
+In a Bayesian context, this corresponds to putting a standard Laplace prior on the <span class="math inline">\(\beta_i\)</span>. For this penalty, as <span class="math inline">\(\lambda\)</span> increases, more and more <span class="math inline">\(\beta_i\)</span> become 0, meaning that we can simultaneously perform estimation and variable selection!</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="errorchapter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | R 통계분석</title>
-  <meta name="description" content="Page not found | R 통계분석" />
+  <title>10 Advanced topics | R 통계분석</title>
+  <meta name="description" content="10 Advanced topics | R 통계분석" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | R 통계분석" />
+  <meta property="og:title" content="10 Advanced topics | R 통계분석" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | R 통계분석" />
+  <meta name="twitter:title" content="10 Advanced topics | R 통계분석" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="mlchapter.html"/>
+<link rel="next" href="errorchapter.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -710,19 +710,389 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="advancedchapter" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Advanced topics<a href="advancedchapter.html#advancedchapter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter contains brief descriptions of more advanced uses of R. First, we cover more details surrounding packages. We then deal with two topics that are important for computational speed: parallelisation and matrix operations. Finally, there are some tips for how to play well with others (which in this case means using R in combination with programming languages like Python and C++).</p>
+<p>After reading this chapter, you will know how to:</p>
+<ul>
+<li>Update and remove R packages,</li>
+<li>Install R packages from other repositories than CRAN,</li>
+<li>Run computations in parallel,</li>
+<li>Perform matrix computations using R,</li>
+<li>Integrate R with other programming languages.</li>
+</ul>
+<div id="moreonpackages" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> More on packages<a href="advancedchapter.html#moreonpackages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loading-and-auto-installing-packages" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Loading and auto-installing packages<a href="advancedchapter.html#loading-and-auto-installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The best way to load R packages is usually to use <code>library</code>, as we’ve done in the examples in this book. If the package that you’re trying to load isn’t installed, this will return an error message:</p>
+<div class="sourceCode" id="cb1055"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1055-1"><a href="advancedchapter.html#cb1055-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;theWrongPackageName&quot;</span>)</span></code></pre></div>
+<p>Alternatively, you can use <code>require</code> to load packages. This will only display a warning, but won’t cause your code to stop executing, which usually would be a problem if the rest of the code depends on the package<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>!</p>
+<p>However, <code>require</code> also returns a <code>logical</code>: <code>TRUE</code> if the package is installed, and <code>FALSE</code> otherwise. This is useful if you want to load a package, and automatically install it if it doesn’t exist.</p>
+<p>To load the <code>beepr</code> package, and install it if it doesn’t already exist, we can use <code>require</code> inside an <code>if</code> condition, as in the code chunk below. If the package exists, the package will be loaded (by <code>require</code>) and <code>TRUE</code> will be returned, and otherwise <code>FALSE</code> will be returned. By using <code>!</code> to turn <code>FALSE</code> into <code>TRUE</code> and vice versa, we can make R install the package if it is missing:</p>
+<div class="sourceCode" id="cb1056"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1056-1"><a href="advancedchapter.html#cb1056-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;beepr&quot;</span>)) { <span class="fu">install.packages</span>(<span class="st">&quot;beepr&quot;</span>); <span class="fu">library</span>(beepr) }</span>
+<span id="cb1056-2"><a href="advancedchapter.html#cb1056-2" aria-hidden="true" tabindex="-1"></a><span class="fu">beep</span>(<span class="dv">4</span>)</span></code></pre></div>
+</div>
+<div id="updating-r-and-your-packages" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Updating R and your packages<a href="advancedchapter.html#updating-r-and-your-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can download new versions of R and RStudio following the same steps as in Section <a href="#installation"><strong>??</strong></a>. On Windows, you can have multiple versions of R installed simultaneously.</p>
+<p>To update a specific R package, you can use <code>install.packages</code>. For instance, to update the <code>beepr</code> package, you’d run:</p>
+<div class="sourceCode" id="cb1057"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1057-1"><a href="advancedchapter.html#cb1057-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;beepr&quot;</span>)</span></code></pre></div>
+<p>If you make a major update of R, you may have to update most or all of your packages. To update all your packages, you simply run <code>update.packages()</code>. If this fails, you can try the following instead:</p>
+<div class="sourceCode" id="cb1058"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1058-1"><a href="advancedchapter.html#cb1058-1" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> <span class="fu">installed.packages</span>()</span>
+<span id="cb1058-2"><a href="advancedchapter.html#cb1058-2" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">&lt;-</span> pkgs[<span class="fu">is.na</span>(pkgs[, <span class="st">&quot;Priority&quot;</span>]), <span class="dv">1</span>]</span>
+<span id="cb1058-3"><a href="advancedchapter.html#cb1058-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code></pre></div>
+</div>
+<div id="alternative-repositories" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Alternative repositories<a href="advancedchapter.html#alternative-repositories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In addition to CRAN, two important sources for R packages are Bioconductor, which contains a large number of packages for bioinformatics, and GitHub, where many developers post development versions of their R packages (which often contain functions and features not yet included in the version of the package that has been posted on CRAN).</p>
+<p>To install packages from GitHub, you need the <code>devtools</code> package. You can install it using:</p>
+<div class="sourceCode" id="cb1059"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1059-1"><a href="advancedchapter.html#cb1059-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span></code></pre></div>
+<p>If you for instance want to install the development version of <code>dplyr</code> (which you can find at <a href="https://github.com/tidyverse/dplyr">https://github.com/tidyverse/dplyr</a>), you can then run the following:</p>
+<div class="sourceCode" id="cb1060"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1060-1"><a href="advancedchapter.html#cb1060-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1060-2"><a href="advancedchapter.html#cb1060-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;tidyverse/dplyr&quot;</span>)</span></code></pre></div>
+<p>Using development versions of packages can be great, because it gives you the most up-to-date version of packages. Bear in mind that they are development versions though, which means that they can be less stable and have more bugs.</p>
+<p>To install packages from Bioconductor, you can start by running this code chunk, which installs the <code>BiocManager</code> package that is used to install Bioconductor packages:</p>
+<div class="sourceCode" id="cb1061"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1061-1"><a href="advancedchapter.html#cb1061-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>)</span>
+<span id="cb1061-2"><a href="advancedchapter.html#cb1061-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Install core packages:</span></span>
+<span id="cb1061-3"><a href="advancedchapter.html#cb1061-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BiocManager)</span>
+<span id="cb1061-4"><a href="advancedchapter.html#cb1061-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install</span>()</span></code></pre></div>
+<p>You can have a look at the list of packages at</p>
+<p><a href="https://www.bioconductor.org/packages/release/BiocViews.html#___Software">https://www.bioconductor.org/packages/release/BiocViews.html#___Software</a></p>
+<p>If you for instance find the <code>affyio</code> package interesting, you can then install it using:</p>
+<div class="sourceCode" id="cb1062"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1062-1"><a href="advancedchapter.html#cb1062-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BiocManager)</span>
+<span id="cb1062-2"><a href="advancedchapter.html#cb1062-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install</span>(<span class="st">&quot;affyio&quot;</span>)</span></code></pre></div>
+</div>
+<div id="removing-packages" class="section level3 hasAnchor" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> Removing packages<a href="advancedchapter.html#removing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is probably not something that you’ll find yourself doing often, but if you need to uninstall a package, you can do so using <code>remove.packages</code>. Perhaps you’ve installed the development version of a package and want to remove it, so that you can install the stable version again? If you for instance want to uninstall the <code>beepr</code> package<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>, you’d run the following:</p>
+<div class="sourceCode" id="cb1063"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1063-1"><a href="advancedchapter.html#cb1063-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>(<span class="st">&quot;beepr&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="parallel" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Speeding up computations with parallelisation<a href="advancedchapter.html#parallel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Modern computers have CPU’s with multiple cores and threads, which allows us to speed up computations by performing them in parallel. Some functions in R do this by default, but far from all do. In this section, we’ll have a look at how to run parallel versions of <code>for</code> loops and functionals.</p>
+<div id="parallelising-for-loops" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Parallelising <code>for</code> loops<a href="advancedchapter.html#parallelising-for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, we’ll have a look at how to parallelise a <code>for</code> loop. We’ll use the <code>foreach</code>, <code>parallel</code>, and <code>doParallel</code> packages, so let’s install them if you haven’t already:</p>
+<div class="sourceCode" id="cb1064"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1064-1"><a href="advancedchapter.html#cb1064-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;foreach&quot;</span>, <span class="st">&quot;parallel&quot;</span>, <span class="st">&quot;doParallel&quot;</span>))</span></code></pre></div>
+<p>To see how many cores that are available on your machine, you can use <code>detectCores</code>:</p>
+<div class="sourceCode" id="cb1065"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1065-1"><a href="advancedchapter.html#cb1065-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb1065-2"><a href="advancedchapter.html#cb1065-2" aria-hidden="true" tabindex="-1"></a><span class="fu">detectCores</span>()</span></code></pre></div>
+<p>It is unwise to use all available cores for your parallel computation - you’ll always need to reserve at least one for running RStudio and other applications.</p>
+<p>To run the steps of a <code>for</code> loop in parallel, we must first use <code>registerDoParallel</code> to <em>register</em> the parallel backend to be used. Here is an example where we create 3 workers (and so use 3 cores in parallel<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>) using <code>registerDoParallel</code>. When we then use <code>foreach</code> to create a <code>for</code> loop, these three workers will execute different steps of the loop in parallel. Note that this wouldn’t work if each step of the loop depended on output from the previous step. <code>foreach</code> returns the output created at the end of each step of the loop in a <code>list</code> (Section <a href="messychapter.html#lists2">5.2</a>):</p>
+<div class="sourceCode" id="cb1066"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1066-1"><a href="advancedchapter.html#cb1066-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb1066-2"><a href="advancedchapter.html#cb1066-2" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(<span class="dv">3</span>)</span>
+<span id="cb1066-3"><a href="advancedchapter.html#cb1066-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1066-4"><a href="advancedchapter.html#cb1066-4" aria-hidden="true" tabindex="-1"></a>loop_output <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%dopar%</span></span>
+<span id="cb1066-5"><a href="advancedchapter.html#cb1066-5" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1066-6"><a href="advancedchapter.html#cb1066-6" aria-hidden="true" tabindex="-1"></a>      i<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1066-7"><a href="advancedchapter.html#cb1066-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1066-8"><a href="advancedchapter.html#cb1066-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1066-9"><a href="advancedchapter.html#cb1066-9" aria-hidden="true" tabindex="-1"></a>loop_output</span>
+<span id="cb1066-10"><a href="advancedchapter.html#cb1066-10" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(loop_output) <span class="co"># Convert the list to a vector</span></span></code></pre></div>
+<p>If the output created at the end of each iteration is a vector, we can collect the output in a <code>matrix</code> object as follows:</p>
+<div class="sourceCode" id="cb1067"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1067-1"><a href="advancedchapter.html#cb1067-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb1067-2"><a href="advancedchapter.html#cb1067-2" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(<span class="dv">3</span>)</span>
+<span id="cb1067-3"><a href="advancedchapter.html#cb1067-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1067-4"><a href="advancedchapter.html#cb1067-4" aria-hidden="true" tabindex="-1"></a>loop_output <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%dopar%</span></span>
+<span id="cb1067-5"><a href="advancedchapter.html#cb1067-5" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1067-6"><a href="advancedchapter.html#cb1067-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(i, i<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb1067-7"><a href="advancedchapter.html#cb1067-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1067-8"><a href="advancedchapter.html#cb1067-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1067-9"><a href="advancedchapter.html#cb1067-9" aria-hidden="true" tabindex="-1"></a>loop_output</span>
+<span id="cb1067-10"><a href="advancedchapter.html#cb1067-10" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">unlist</span>(loop_output), <span class="dv">9</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>If you have nested loops, you should run the outer loop in parallel, but not the inner loops. The reason for this is that parallelisation only really helps if each step of the loop takes a comparatively long time to run. In fact, there is a small overhead cost associated with assigning different iterations to different cores, meaning that parallel loops can be slower than regular loops if each iteration runs quickly.</p>
+<p>An example where each step often takes a while to run is simulation studies. Let’s rewrite the simulation we used to compute the type I error rates of different versions of the t-test in Section <a href="modchapter.html#simtypeI">7.5.2</a> using a parallel <code>for</code> loop instead. First, we define the function as in Section <a href="modchapter.html#simtypeI">7.5.2</a> (minus the progress bar):</p>
+<div class="sourceCode" id="cb1068"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1068-1"><a href="advancedchapter.html#cb1068-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load package used for permutation t-test:</span></span>
+<span id="cb1068-2"><a href="advancedchapter.html#cb1068-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MKinfer)</span>
+<span id="cb1068-3"><a href="advancedchapter.html#cb1068-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1068-4"><a href="advancedchapter.html#cb1068-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function for running the simulation:</span></span>
+<span id="cb1068-5"><a href="advancedchapter.html#cb1068-5" aria-hidden="true" tabindex="-1"></a>simulate_type_I <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, distr, <span class="at">level =</span> <span class="fl">0.05</span>, <span class="at">B =</span> <span class="dv">999</span>,</span>
+<span id="cb1068-6"><a href="advancedchapter.html#cb1068-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, ...)</span>
+<span id="cb1068-7"><a href="advancedchapter.html#cb1068-7" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1068-8"><a href="advancedchapter.html#cb1068-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Create a data frame to store the results in:</span></span>
+<span id="cb1068-9"><a href="advancedchapter.html#cb1068-9" aria-hidden="true" tabindex="-1"></a>      p_values <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">p_t_test =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, B),</span>
+<span id="cb1068-10"><a href="advancedchapter.html#cb1068-10" aria-hidden="true" tabindex="-1"></a>                             <span class="at">p_perm_t_test =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, B),</span>
+<span id="cb1068-11"><a href="advancedchapter.html#cb1068-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">p_wilcoxon =</span> <span class="fu">rep</span>(<span class="cn">NA</span>, B))</span>
+<span id="cb1068-12"><a href="advancedchapter.html#cb1068-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1068-13"><a href="advancedchapter.html#cb1068-13" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb1068-14"><a href="advancedchapter.html#cb1068-14" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1068-15"><a href="advancedchapter.html#cb1068-15" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Generate data:</span></span>
+<span id="cb1068-16"><a href="advancedchapter.html#cb1068-16" aria-hidden="true" tabindex="-1"></a>            x <span class="ot">&lt;-</span> <span class="fu">distr</span>(n1, ...)</span>
+<span id="cb1068-17"><a href="advancedchapter.html#cb1068-17" aria-hidden="true" tabindex="-1"></a>            y <span class="ot">&lt;-</span> <span class="fu">distr</span>(n2, ...)</span>
+<span id="cb1068-18"><a href="advancedchapter.html#cb1068-18" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1068-19"><a href="advancedchapter.html#cb1068-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Compute p-values:</span></span>
+<span id="cb1068-20"><a href="advancedchapter.html#cb1068-20" aria-hidden="true" tabindex="-1"></a>            p_values[i, <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x, y,</span>
+<span id="cb1068-21"><a href="advancedchapter.html#cb1068-21" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative)<span class="sc">$</span>p.value</span>
+<span id="cb1068-22"><a href="advancedchapter.html#cb1068-22" aria-hidden="true" tabindex="-1"></a>            p_values[i, <span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">perm.t.test</span>(x, y,</span>
+<span id="cb1068-23"><a href="advancedchapter.html#cb1068-23" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative,</span>
+<span id="cb1068-24"><a href="advancedchapter.html#cb1068-24" aria-hidden="true" tabindex="-1"></a>                               <span class="at">R =</span> <span class="dv">999</span>)<span class="sc">$</span>perm.p.value</span>
+<span id="cb1068-25"><a href="advancedchapter.html#cb1068-25" aria-hidden="true" tabindex="-1"></a>            p_values[i, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(x, y,</span>
+<span id="cb1068-26"><a href="advancedchapter.html#cb1068-26" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative)<span class="sc">$</span>p.value</span>
+<span id="cb1068-27"><a href="advancedchapter.html#cb1068-27" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1068-28"><a href="advancedchapter.html#cb1068-28" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1068-29"><a href="advancedchapter.html#cb1068-29" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Return the type I error rates:</span></span>
+<span id="cb1068-30"><a href="advancedchapter.html#cb1068-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="fu">colMeans</span>(p_values <span class="sc">&lt;</span> level))</span>
+<span id="cb1068-31"><a href="advancedchapter.html#cb1068-31" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Next, we create a parallel version:</p>
+<div class="sourceCode" id="cb1069"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1069-1"><a href="advancedchapter.html#cb1069-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Register parallel backend:</span></span>
+<span id="cb1069-2"><a href="advancedchapter.html#cb1069-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(doParallel)</span>
+<span id="cb1069-3"><a href="advancedchapter.html#cb1069-3" aria-hidden="true" tabindex="-1"></a><span class="fu">registerDoParallel</span>(<span class="dv">3</span>)</span>
+<span id="cb1069-4"><a href="advancedchapter.html#cb1069-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1069-5"><a href="advancedchapter.html#cb1069-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a function for running the simulation in parallel:</span></span>
+<span id="cb1069-6"><a href="advancedchapter.html#cb1069-6" aria-hidden="true" tabindex="-1"></a>simulate_type_I_parallel <span class="ot">&lt;-</span> <span class="cf">function</span>(n1, n2, distr, <span class="at">level =</span> <span class="fl">0.05</span>,</span>
+<span id="cb1069-7"><a href="advancedchapter.html#cb1069-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">B =</span> <span class="dv">999</span>,</span>
+<span id="cb1069-8"><a href="advancedchapter.html#cb1069-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, ...)</span>
+<span id="cb1069-9"><a href="advancedchapter.html#cb1069-9" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1069-10"><a href="advancedchapter.html#cb1069-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1069-11"><a href="advancedchapter.html#cb1069-11" aria-hidden="true" tabindex="-1"></a>      results <span class="ot">&lt;-</span> <span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span>B)  <span class="sc">%dopar%</span> </span>
+<span id="cb1069-12"><a href="advancedchapter.html#cb1069-12" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb1069-13"><a href="advancedchapter.html#cb1069-13" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Generate data:</span></span>
+<span id="cb1069-14"><a href="advancedchapter.html#cb1069-14" aria-hidden="true" tabindex="-1"></a>            x <span class="ot">&lt;-</span> <span class="fu">distr</span>(n1, ...)</span>
+<span id="cb1069-15"><a href="advancedchapter.html#cb1069-15" aria-hidden="true" tabindex="-1"></a>            y <span class="ot">&lt;-</span> <span class="fu">distr</span>(n2, ...)</span>
+<span id="cb1069-16"><a href="advancedchapter.html#cb1069-16" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1069-17"><a href="advancedchapter.html#cb1069-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Compute p-values:</span></span>
+<span id="cb1069-18"><a href="advancedchapter.html#cb1069-18" aria-hidden="true" tabindex="-1"></a>            p_val1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x, y,</span>
+<span id="cb1069-19"><a href="advancedchapter.html#cb1069-19" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative)<span class="sc">$</span>p.value</span>
+<span id="cb1069-20"><a href="advancedchapter.html#cb1069-20" aria-hidden="true" tabindex="-1"></a>            p_val2 <span class="ot">&lt;-</span> <span class="fu">perm.t.test</span>(x, y,</span>
+<span id="cb1069-21"><a href="advancedchapter.html#cb1069-21" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative,</span>
+<span id="cb1069-22"><a href="advancedchapter.html#cb1069-22" aria-hidden="true" tabindex="-1"></a>                               <span class="at">R =</span> <span class="dv">999</span>)<span class="sc">$</span>perm.p.value</span>
+<span id="cb1069-23"><a href="advancedchapter.html#cb1069-23" aria-hidden="true" tabindex="-1"></a>            p_val3 <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(x, y,</span>
+<span id="cb1069-24"><a href="advancedchapter.html#cb1069-24" aria-hidden="true" tabindex="-1"></a>                               <span class="at">alternative =</span> alternative)<span class="sc">$</span>p.value</span>
+<span id="cb1069-25"><a href="advancedchapter.html#cb1069-25" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1069-26"><a href="advancedchapter.html#cb1069-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Return vector with p-values:</span></span>
+<span id="cb1069-27"><a href="advancedchapter.html#cb1069-27" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(p_val1, p_val2, p_val3)</span>
+<span id="cb1069-28"><a href="advancedchapter.html#cb1069-28" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1069-29"><a href="advancedchapter.html#cb1069-29" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1069-30"><a href="advancedchapter.html#cb1069-30" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Each element of the results list is now a vector</span></span>
+<span id="cb1069-31"><a href="advancedchapter.html#cb1069-31" aria-hidden="true" tabindex="-1"></a>      <span class="co"># with three elements.</span></span>
+<span id="cb1069-32"><a href="advancedchapter.html#cb1069-32" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Turn the list into a matrix:</span></span>
+<span id="cb1069-33"><a href="advancedchapter.html#cb1069-33" aria-hidden="true" tabindex="-1"></a>      p_values <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">unlist</span>(results), B, <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1069-34"><a href="advancedchapter.html#cb1069-34" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1069-35"><a href="advancedchapter.html#cb1069-35" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Return the type I error rates:</span></span>
+<span id="cb1069-36"><a href="advancedchapter.html#cb1069-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="fu">colMeans</span>(p_values <span class="sc">&lt;</span> level))</span>
+<span id="cb1069-37"><a href="advancedchapter.html#cb1069-37" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>We can now compare how long the two functions take to run using the tools from Section <a href="progchapter.html#measureperformance">6.6</a> (we’ll not use <code>mark</code> in this case, as it requires both functions to yield identical output, which won’t be the case for a simulation):</p>
+<div class="sourceCode" id="cb1070"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1070-1"><a href="advancedchapter.html#cb1070-1" aria-hidden="true" tabindex="-1"></a>time1 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(<span class="fu">simulate_type_I</span>(<span class="dv">20</span>, <span class="dv">20</span>, rlnorm,</span>
+<span id="cb1070-2"><a href="advancedchapter.html#cb1070-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">B =</span> <span class="dv">999</span>, <span class="at">sdlog =</span> <span class="dv">3</span>))</span>
+<span id="cb1070-3"><a href="advancedchapter.html#cb1070-3" aria-hidden="true" tabindex="-1"></a>time2 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(<span class="fu">simulate_type_I_parallel</span>(<span class="dv">20</span>, <span class="dv">20</span>, rlnorm,</span>
+<span id="cb1070-4"><a href="advancedchapter.html#cb1070-4" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">B =</span> <span class="dv">999</span>, <span class="at">sdlog =</span> <span class="dv">3</span>))</span>
+<span id="cb1070-5"><a href="advancedchapter.html#cb1070-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1070-6"><a href="advancedchapter.html#cb1070-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare results:</span></span>
+<span id="cb1070-7"><a href="advancedchapter.html#cb1070-7" aria-hidden="true" tabindex="-1"></a>time1; time2; time2<span class="sc">/</span>time1</span></code></pre></div>
+<p>As you can see, the parallel function is considerably faster. If you have more cores, you can try increasing the value in <code>registerDoParallel</code> and see how that affects the results.</p>
+</div>
+<div id="parallelising-functionals" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Parallelising functionals<a href="advancedchapter.html#parallelising-functionals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>parallel</code> package contains parallelised versions of the <code>apply</code> family of functions, with names like <code>parApply</code>, <code>parLapply</code>, and <code>mclapply</code>. Which of these that you should use depends in part on your operating system, as different operating systems handle multicore computations differently. Here is the first example from Section <a href="progchapter.html#purrr">6.5.3</a>, run in parallel with 3 workers:</p>
+<div class="sourceCode" id="cb1071"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1071-1"><a href="advancedchapter.html#cb1071-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Non-parallel version:</span></span>
+<span id="cb1071-2"><a href="advancedchapter.html#cb1071-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(airquality, <span class="cf">function</span>(x) { (x<span class="sc">-</span><span class="fu">mean</span>(x))<span class="sc">/</span><span class="fu">sd</span>(x) })</span>
+<span id="cb1071-3"><a href="advancedchapter.html#cb1071-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1071-4"><a href="advancedchapter.html#cb1071-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Parallel version for Linux/Mac:</span></span>
+<span id="cb1071-5"><a href="advancedchapter.html#cb1071-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb1071-6"><a href="advancedchapter.html#cb1071-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mclapply</span>(airquality, <span class="cf">function</span>(x) { (x<span class="sc">-</span><span class="fu">mean</span>(x))<span class="sc">/</span><span class="fu">sd</span>(x) },</span>
+<span id="cb1071-7"><a href="advancedchapter.html#cb1071-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">mc.cores =</span> <span class="dv">3</span>)</span>
+<span id="cb1071-8"><a href="advancedchapter.html#cb1071-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1071-9"><a href="advancedchapter.html#cb1071-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Parallel version for Windows (a little slower):</span></span>
+<span id="cb1071-10"><a href="advancedchapter.html#cb1071-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb1071-11"><a href="advancedchapter.html#cb1071-11" aria-hidden="true" tabindex="-1"></a>myCluster <span class="ot">&lt;-</span> <span class="fu">makeCluster</span>(<span class="dv">3</span>)</span>
+<span id="cb1071-12"><a href="advancedchapter.html#cb1071-12" aria-hidden="true" tabindex="-1"></a><span class="fu">parLapply</span>(myCluster, airquality, <span class="cf">function</span>(x) { (x<span class="sc">-</span><span class="fu">mean</span>(x))<span class="sc">/</span><span class="fu">sd</span>(x) })</span>
+<span id="cb1071-13"><a href="advancedchapter.html#cb1071-13" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(myCluster)</span></code></pre></div>
+<p>Similarly, the <code>furrr</code> package lets just run <code>purrr</code>-functionals in parallel. It relies on a package called <code>future</code>. Let’s install them both:</p>
+<div class="sourceCode" id="cb1072"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1072-1"><a href="advancedchapter.html#cb1072-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;future&quot;</span>, <span class="st">&quot;furrr&quot;</span>))</span></code></pre></div>
+<p>To run functionals in parallel, we load the <code>furrr</code> package and use <code>plan</code> to set the number of parallel workers:</p>
+<div class="sourceCode" id="cb1073"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1073-1"><a href="advancedchapter.html#cb1073-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(furrr)</span>
+<span id="cb1073-2"><a href="advancedchapter.html#cb1073-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Use 3 workers:</span></span>
+<span id="cb1073-3"><a href="advancedchapter.html#cb1073-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(multisession, <span class="at">workers =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p>We can then run parallel versions of functions like <code>map</code> and <code>imap</code>, by using functions from <code>furrr</code> with the same names, only with <code>future_</code> added at the beginning. Here is the first example from Section <a href="progchapter.html#purrr">6.5.3</a>, run in parallel:</p>
+<div class="sourceCode" id="cb1074"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1074-1"><a href="advancedchapter.html#cb1074-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb1074-2"><a href="advancedchapter.html#cb1074-2" aria-hidden="true" tabindex="-1"></a>airquality <span class="sc">%&gt;%</span> <span class="fu">future_map</span>(<span class="sc">~</span>(.<span class="sc">-</span><span class="fu">mean</span>(.))<span class="sc">/</span><span class="fu">sd</span>(.))</span></code></pre></div>
+<p>Just as for <code>for</code> loops, parallelisation of functionals only really helps if each iteration of the functional takes a comparatively long time to run (and so there is no benefit to using parallelisation in this particular example).</p>
+</div>
+</div>
+<div id="linearalgebra" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Linear algebra and matrices<a href="advancedchapter.html#linearalgebra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Linear algebra is the beating heart of many statistical methods. R has a wide range of functions for creating and manipulating matrices, and doing matrix algebra. In this section, we’ll have a look at some of them.</p>
+<div id="creating-matrices" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Creating matrices<a href="advancedchapter.html#creating-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To create a <code>matrix</code> object, we can use the <code>matrix</code> function. It always coerces all elements to be of the same type (Section <a href="messychapter.html#coercion">5.1</a>):</p>
+<div class="sourceCode" id="cb1075"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1075-1"><a href="advancedchapter.html#cb1075-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 3x2 matrix, one column at a time:</span></span>
+<span id="cb1075-2"><a href="advancedchapter.html#cb1075-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb1075-3"><a href="advancedchapter.html#cb1075-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1075-4"><a href="advancedchapter.html#cb1075-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 3x2 matrix, one row at a time:</span></span>
+<span id="cb1075-5"><a href="advancedchapter.html#cb1075-5" aria-hidden="true" tabindex="-1"></a><span class="co"># (No real need to include line breaks in the vector with</span></span>
+<span id="cb1075-6"><a href="advancedchapter.html#cb1075-6" aria-hidden="true" tabindex="-1"></a><span class="co"># the values, but I like to do so to see what the matrix</span></span>
+<span id="cb1075-7"><a href="advancedchapter.html#cb1075-7" aria-hidden="true" tabindex="-1"></a><span class="co"># will look like!)</span></span>
+<span id="cb1075-8"><a href="advancedchapter.html#cb1075-8" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb1075-9"><a href="advancedchapter.html#cb1075-9" aria-hidden="true" tabindex="-1"></a>         <span class="dv">3</span>, <span class="dv">1</span>,</span>
+<span id="cb1075-10"><a href="advancedchapter.html#cb1075-10" aria-hidden="true" tabindex="-1"></a>        <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Matrix operations require the dimension of the matrices involved to match. To check the dimension of a <code>matrix</code>, we can use <code>dim</code>:</p>
+<div class="sourceCode" id="cb1076"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1076-1"><a href="advancedchapter.html#cb1076-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">2</span>)</span>
+<span id="cb1076-2"><a href="advancedchapter.html#cb1076-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(A)</span></code></pre></div>
+<p>To create a unit matrix (all 1’s) or a zero matrix (all 0’s), we use <code>matrix</code> with a single value in the first argument:</p>
+<div class="sourceCode" id="cb1077"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1077-1"><a href="advancedchapter.html#cb1077-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 3x3 unit matrix:</span></span>
+<span id="cb1077-2"><a href="advancedchapter.html#cb1077-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb1077-3"><a href="advancedchapter.html#cb1077-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1077-4"><a href="advancedchapter.html#cb1077-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2x3 zero matrix:</span></span>
+<span id="cb1077-5"><a href="advancedchapter.html#cb1077-5" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<p>The <code>diag</code> function has three uses. First, it can be used to create a diagonal matrix (if we supply a vector as input). Second, it can be used to create an identity matrix (if we supply a single number as input). Third, it can be used to extract the diagonal from a square matrix (if we supply a matrix as input). Let’s give it a go:</p>
+<div class="sourceCode" id="cb1078"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1078-1"><a href="advancedchapter.html#cb1078-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a diagonal matrix with 2, 4, 6 along the diagonal:</span></span>
+<span id="cb1078-2"><a href="advancedchapter.html#cb1078-2" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</span>
+<span id="cb1078-3"><a href="advancedchapter.html#cb1078-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1078-4"><a href="advancedchapter.html#cb1078-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 9x9 identity matrix:</span></span>
+<span id="cb1078-5"><a href="advancedchapter.html#cb1078-5" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">9</span>)</span>
+<span id="cb1078-6"><a href="advancedchapter.html#cb1078-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1078-7"><a href="advancedchapter.html#cb1078-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a square matrix and then extract its diagonal:</span></span>
+<span id="cb1078-8"><a href="advancedchapter.html#cb1078-8" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb1078-9"><a href="advancedchapter.html#cb1078-9" aria-hidden="true" tabindex="-1"></a>A</span>
+<span id="cb1078-10"><a href="advancedchapter.html#cb1078-10" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(A)</span></code></pre></div>
+<p>Similarly, we can use <code>lower.tri</code> and <code>upper.tri</code> to extract a matrix of <code>logical</code> values, describing the location of the lower and upper triangular part of a matrix:</p>
+<div class="sourceCode" id="cb1079"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1079-1"><a href="advancedchapter.html#cb1079-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a matrix_</span></span>
+<span id="cb1079-2"><a href="advancedchapter.html#cb1079-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb1079-3"><a href="advancedchapter.html#cb1079-3" aria-hidden="true" tabindex="-1"></a>A</span>
+<span id="cb1079-4"><a href="advancedchapter.html#cb1079-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1079-5"><a href="advancedchapter.html#cb1079-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Which are the elements in the lower triangular part?</span></span>
+<span id="cb1079-6"><a href="advancedchapter.html#cb1079-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lower.tri</span>(A)</span>
+<span id="cb1079-7"><a href="advancedchapter.html#cb1079-7" aria-hidden="true" tabindex="-1"></a>A[<span class="fu">lower.tri</span>(A)]</span>
+<span id="cb1079-8"><a href="advancedchapter.html#cb1079-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1079-9"><a href="advancedchapter.html#cb1079-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the lower triangular part to 0:</span></span>
+<span id="cb1079-10"><a href="advancedchapter.html#cb1079-10" aria-hidden="true" tabindex="-1"></a>A[<span class="fu">lower.tri</span>(A)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1079-11"><a href="advancedchapter.html#cb1079-11" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
+<p>To transpose a matrix, use <code>t</code>:</p>
+<div class="sourceCode" id="cb1080"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1080-1"><a href="advancedchapter.html#cb1080-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(A)</span></code></pre></div>
+<p>Matrices can be combined using <code>cbind</code> and <code>rbind</code>:</p>
+<div class="sourceCode" id="cb1081"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1081-1"><a href="advancedchapter.html#cb1081-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>), <span class="dv">3</span>, <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)  <span class="co"># 3x3</span></span>
+<span id="cb1081-2"><a href="advancedchapter.html#cb1081-2" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">2</span>)               <span class="co"># 3x2</span></span>
+<span id="cb1081-3"><a href="advancedchapter.html#cb1081-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1081-4"><a href="advancedchapter.html#cb1081-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add B to the right of A:</span></span>
+<span id="cb1081-5"><a href="advancedchapter.html#cb1081-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(A, B)</span>
+<span id="cb1081-6"><a href="advancedchapter.html#cb1081-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1081-7"><a href="advancedchapter.html#cb1081-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the transpose of B below A:</span></span>
+<span id="cb1081-8"><a href="advancedchapter.html#cb1081-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(A, <span class="fu">t</span>(B))</span>
+<span id="cb1081-9"><a href="advancedchapter.html#cb1081-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1081-10"><a href="advancedchapter.html#cb1081-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding B below A doesn&#39;t work, because the dimensions</span></span>
+<span id="cb1081-11"><a href="advancedchapter.html#cb1081-11" aria-hidden="true" tabindex="-1"></a><span class="co"># don&#39;t match:</span></span>
+<span id="cb1081-12"><a href="advancedchapter.html#cb1081-12" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(A, B)</span></code></pre></div>
+</div>
+<div id="sparse-matrices" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Sparse matrices<a href="advancedchapter.html#sparse-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>Matrix</code> package contains functions for creating and speeding up computations with sparse matrices (i.e. matrices with lots of 0’s), as well as for creating matrices with particular structures. You likely already have it installed, as many other packages rely on it. <code>Matrix</code> distinguishes between sparse and dense matrices:</p>
+<div class="sourceCode" id="cb1082"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1082-1"><a href="advancedchapter.html#cb1082-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load or/and install Matrix:</span></span>
+<span id="cb1082-2"><a href="advancedchapter.html#cb1082-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;Matrix&quot;</span>)) { <span class="fu">install.packages</span>(<span class="st">&quot;Matrix&quot;</span>); <span class="fu">library</span>(Matrix) }</span>
+<span id="cb1082-3"><a href="advancedchapter.html#cb1082-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1082-4"><a href="advancedchapter.html#cb1082-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dense 8x8 matrix using the Matrix package:</span></span>
+<span id="cb1082-5"><a href="advancedchapter.html#cb1082-5" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">Matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">64</span>, <span class="dv">8</span>, <span class="dv">8</span>)</span>
+<span id="cb1082-6"><a href="advancedchapter.html#cb1082-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1082-7"><a href="advancedchapter.html#cb1082-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy and randomly replace 40 elements by 0:</span></span>
+<span id="cb1082-8"><a href="advancedchapter.html#cb1082-8" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> A</span>
+<span id="cb1082-9"><a href="advancedchapter.html#cb1082-9" aria-hidden="true" tabindex="-1"></a>B[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">64</span>, <span class="dv">40</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1082-10"><a href="advancedchapter.html#cb1082-10" aria-hidden="true" tabindex="-1"></a>B</span>
+<span id="cb1082-11"><a href="advancedchapter.html#cb1082-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1082-12"><a href="advancedchapter.html#cb1082-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Store B as a sparse matrix instead:</span></span>
+<span id="cb1082-13"><a href="advancedchapter.html#cb1082-13" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">as</span>(B, <span class="st">&quot;sparseMatrix&quot;</span>)</span>
+<span id="cb1082-14"><a href="advancedchapter.html#cb1082-14" aria-hidden="true" tabindex="-1"></a>B</span></code></pre></div>
+<p>To visualise the structure of a sparse matrix, we can use <code>image</code>:</p>
+<div class="sourceCode" id="cb1083"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1083-1"><a href="advancedchapter.html#cb1083-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(B)</span></code></pre></div>
+<p>An example of a slightly larger, <span class="math inline">\(72\times 72\)</span> sparse matrix is given by <code>CAex</code>:</p>
+<div class="sourceCode" id="cb1084"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1084-1"><a href="advancedchapter.html#cb1084-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(CAex)</span>
+<span id="cb1084-2"><a href="advancedchapter.html#cb1084-2" aria-hidden="true" tabindex="-1"></a>CAex</span>
+<span id="cb1084-3"><a href="advancedchapter.html#cb1084-3" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span>(CAex)</span></code></pre></div>
+<p><code>Matrix</code> contains additional classes for e.g. symmetric sparse matrices and triangular matrices. See <code>vignette("Introduction", "Matrix")</code> for further details.</p>
+</div>
+<div id="matrix-operations" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Matrix operations<a href="advancedchapter.html#matrix-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this section, we’ll use the following matrices and vectors to show how to perform various matrix operations:</p>
+<div class="sourceCode" id="cb1085"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1085-1"><a href="advancedchapter.html#cb1085-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices:</span></span>
+<span id="cb1085-2"><a href="advancedchapter.html#cb1085-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>), <span class="dv">3</span>, <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)  <span class="co"># 3x3</span></span>
+<span id="cb1085-3"><a href="advancedchapter.html#cb1085-3" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">3</span>, <span class="dv">2</span>)               <span class="co"># 3x2</span></span>
+<span id="cb1085-4"><a href="advancedchapter.html#cb1085-4" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">2</span>, <span class="dv">2</span>)             <span class="co"># Symmetric 2x2</span></span>
+<span id="cb1085-5"><a href="advancedchapter.html#cb1085-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1085-6"><a href="advancedchapter.html#cb1085-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectors:</span></span>
+<span id="cb1085-7"><a href="advancedchapter.html#cb1085-7" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>                   <span class="co"># Length 9</span></span>
+<span id="cb1085-8"><a href="advancedchapter.html#cb1085-8" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>) <span class="co"># Length 6</span></span>
+<span id="cb1085-9"><a href="advancedchapter.html#cb1085-9" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">1</span>                   <span class="co"># Length 9</span></span>
+<span id="cb1085-10"><a href="advancedchapter.html#cb1085-10" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>                   <span class="co"># Length 3</span></span></code></pre></div>
+<p>To perform element-wise addition and subtraction with matrices, use <code>+</code> and <code>-</code>:</p>
+<div class="sourceCode" id="cb1086"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1086-1"><a href="advancedchapter.html#cb1086-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">+</span> A</span>
+<span id="cb1086-2"><a href="advancedchapter.html#cb1086-2" aria-hidden="true" tabindex="-1"></a>A <span class="sc">-</span> <span class="fu">t</span>(A)</span></code></pre></div>
+<p>To perform element-wise multiplication, use <code>*</code>:</p>
+<div class="sourceCode" id="cb1087"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1087-1"><a href="advancedchapter.html#cb1087-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> A  <span class="co"># Multiply all elements by 2</span></span>
+<span id="cb1087-2"><a href="advancedchapter.html#cb1087-2" aria-hidden="true" tabindex="-1"></a>A <span class="sc">*</span> A  <span class="co"># Square all elements</span></span></code></pre></div>
+<p>To perform matrix multiplication, use <code>%*%</code>. Remember that matrix multiplication is non-commutative, and so the order of the matrices is important:</p>
+<div class="sourceCode" id="cb1088"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1088-1"><a href="advancedchapter.html#cb1088-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> B  <span class="co"># A is 3x3, B is 3x2</span></span>
+<span id="cb1088-2"><a href="advancedchapter.html#cb1088-2" aria-hidden="true" tabindex="-1"></a>B <span class="sc">%*%</span> C  <span class="co"># B is 3x2, C is 2x2</span></span>
+<span id="cb1088-3"><a href="advancedchapter.html#cb1088-3" aria-hidden="true" tabindex="-1"></a>B <span class="sc">%*%</span> A  <span class="co"># Won&#39;t work, because B is 3x2 and A 3x3!</span></span></code></pre></div>
+<p>Given the vectors <code>a</code>, <code>b</code>, and <code>d</code> defined above, we can compute the outer product <span class="math inline">\(a\otimes b\)</span> using <code>%o%</code> and the dot product <span class="math inline">\(a\cdot d\)</span> by using <code>%*%</code> and <code>t</code> in the right manner:</p>
+<div class="sourceCode" id="cb1089"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1089-1"><a href="advancedchapter.html#cb1089-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%o%</span> b  <span class="co"># Outer product</span></span>
+<span id="cb1089-2"><a href="advancedchapter.html#cb1089-2" aria-hidden="true" tabindex="-1"></a>a <span class="sc">%*%</span> <span class="fu">t</span>(b) <span class="co"># Alternative way of getting the outer product</span></span>
+<span id="cb1089-3"><a href="advancedchapter.html#cb1089-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(a) <span class="sc">%*%</span> d <span class="co"># Dot product</span></span></code></pre></div>
+<p>To find the inverse of a square matrix, we can use <code>solve</code>. To find the generalised Moore-Penrose inverse of any matrix, we can use <code>ginv</code> from <code>MASS</code>:</p>
+<div class="sourceCode" id="cb1090"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1090-1"><a href="advancedchapter.html#cb1090-1" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(A)</span>
+<span id="cb1090-2"><a href="advancedchapter.html#cb1090-2" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(B)  <span class="co"># Doesn&#39;t work because B isn&#39;t square</span></span>
+<span id="cb1090-3"><a href="advancedchapter.html#cb1090-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1090-4"><a href="advancedchapter.html#cb1090-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1090-5"><a href="advancedchapter.html#cb1090-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ginv</span>(A)  <span class="co"># Same as solve(A), because A is non-singular and square</span></span>
+<span id="cb1090-6"><a href="advancedchapter.html#cb1090-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ginv</span>(B)</span></code></pre></div>
+<p><code>solve</code> can also be used to solve equations systems. To solve the equation <span class="math inline">\(Ax = y\)</span>:</p>
+<div class="sourceCode" id="cb1091"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1091-1"><a href="advancedchapter.html#cb1091-1" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(A, y)</span></code></pre></div>
+<p>The eigenvalues and eigenvectors of a square matrix can be found using <code>eigen</code>:</p>
+<div class="sourceCode" id="cb1092"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1092-1"><a href="advancedchapter.html#cb1092-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span>
+<span id="cb1092-2"><a href="advancedchapter.html#cb1092-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)<span class="sc">$</span>values   <span class="co"># Eigenvalues only</span></span>
+<span id="cb1092-3"><a href="advancedchapter.html#cb1092-3" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)<span class="sc">$</span>vectors  <span class="co"># Eigenvectors only</span></span></code></pre></div>
+<p>The singular value decomposition, QR decomposition, and the Choleski factorisation of a matrix are computed as follows:</p>
+<div class="sourceCode" id="cb1093"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1093-1"><a href="advancedchapter.html#cb1093-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svd</span>(A)</span>
+<span id="cb1093-2"><a href="advancedchapter.html#cb1093-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qr</span>(A)</span>
+<span id="cb1093-3"><a href="advancedchapter.html#cb1093-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chol</span>(C)</span></code></pre></div>
+<p><code>qr</code> also provides the rank of the matrix:</p>
+<div class="sourceCode" id="cb1094"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1094-1"><a href="advancedchapter.html#cb1094-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qr</span>(A)<span class="sc">$</span>rank</span>
+<span id="cb1094-2"><a href="advancedchapter.html#cb1094-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qr</span>(B)<span class="sc">$</span>rank</span></code></pre></div>
+<p>Finally, you can get the determinant<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> of a matrix using <code>det</code>:</p>
+<div class="sourceCode" id="cb1095"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1095-1"><a href="advancedchapter.html#cb1095-1" aria-hidden="true" tabindex="-1"></a><span class="fu">det</span>(A)</span></code></pre></div>
+<p>As a P.S., I’ll also mention the <code>matlab</code> package, which contains functions for running computations using MATLAB-like function calls. This is useful if you want to reuse MATLAB code in R without translating it row-by-row. Incidentally, this also brings us nicely into the next section.</p>
+</div>
+</div>
+<div id="integration" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Integration with other programming languages<a href="advancedchapter.html#integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R is great for a lot of things, but it is obviously not the best choice for every task. There are a number of packages that can be used to harvest the power of other languages, or to integrate your R code with code that you or others have developed in other programming languages. In this section, we’ll mention a few of them.</p>
+<div id="integration-with-c" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Integration with C++<a href="advancedchapter.html#integration-with-c" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>C++ is commonly used to speed up functions, for instance involving loops that can’t be vectorised or parallelised due to dependencies between different iterations. The <code>Rcpp</code> package (Eddelbuettel &amp; Balamuta, 2018) allows you to easily call C++ functions from R, as well as calling R functions from C++. See <code>vignette("Rcpp-introduction", "Rcpp")</code> for details.</p>
+<p>An important difference between R and C++ that you should be aware of is that the indexing of vectors (and similar objects) in C++ starts with 0. So the first element of the vector is element 0, the second is element 1, and so forth. Bear this in mind if you pass a vector and a list of indices to C++ functions.</p>
+</div>
+<div id="integration-with-python" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Integration with Python<a href="advancedchapter.html#integration-with-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>reticulate</code> package can be used to call Python functions from R. See <code>vignette("calling_python", "reticulate")</code> for some examples.</p>
+<p>Some care has to be taken when sending data back and forth between R and Python. In R <code>NA</code> is used to represent missing data and <code>NaN</code> (not a number) is used to represent things that should be numbers but aren’t (e.g. the result of computing <code>0/0</code>). Perfectly reasonable! However, for reasons unknown to humanity, popular Python packages like Pandas, NumPy and SciKit-Learn use <code>NaN</code> instead of <code>NA</code> to represent missing data - but only for <code>double</code> (<code>numeric</code>) variables. <code>integer</code> and <code>logical</code> variables have no way to represent missing data in Pandas. Tread gently if there are <code>NA</code> or <code>NaN</code> values in your data.</p>
+<p>Like in C++, the indexing of vectors (and similar objects) in Python starts with 0.</p>
+</div>
+<div id="integration-with-tensorflow-and-pytorch" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Integration with Tensorflow and PyTorch<a href="advancedchapter.html#integration-with-tensorflow-and-pytorch" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tensorflow, Keras and PyTorch are popular frameworks for deep learning. To use Tensorflow or Keras with R, you can use the <code>keras</code> package. See <code>vignette("index", "keras")</code> for an introduction and Chollet &amp; Allaire (2018) for a thorough treatise. Similarly, to use PyTorch with R, use the <code>torch</code> package. In both cases, it can take some tampering to get the frameworks to run on a GPU.</p>
+</div>
+<div id="integration-with-spark" class="section level3 hasAnchor" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> Integration with Spark<a href="advancedchapter.html#integration-with-spark" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you need to process large datasets using Spark, you can do so from R using the <code>sparklyr</code> package. It can be used both with local and cloud clusters, and (as the name seems to imply) is easy to integrate with <code>dplyr</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="62">
+<li id="fn62"><p>And why else would you load it…?<a href="advancedchapter.html#fnref62" class="footnote-back">↩︎</a></p></li>
+<li id="fn63"><p>Why though?!<a href="advancedchapter.html#fnref63" class="footnote-back">↩︎</a></p></li>
+<li id="fn64"><p>If your CPU has 3 or fewer cores, you should lower this number.<a href="advancedchapter.html#fnref64" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>Do you <em>really</em> need it, though?<a href="advancedchapter.html#fnref65" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="mlchapter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="errorchapter.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
