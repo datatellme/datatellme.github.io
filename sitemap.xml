@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/about/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/01_Ge/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/02_Ex/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/03_Lev/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/The_Old_Testament/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/01_mkdocs/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/02_Jupyter_nb_to_md/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/03_python_rmd/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/04_python_reticulate/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/statistics/01-Introduction_K/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/statistics/02-basics_K/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/statistics/MSWR/</loc>
-         <lastmod>2023-02-05</lastmod>
+         <loc>https://example.com/statistics/StatWR/</loc>
+         <lastmod>2023-02-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

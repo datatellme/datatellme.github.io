@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 들어가며 | R 통계분석</title>
+  <meta name="description" content="1 들어가며 | R 통계분석" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 들어가며 | R 통계분석" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 들어가며 | R 통계분석" />
+  
+  
+  
+
+<meta name="author" content="psnam" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="thebasics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="preamble.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R 통계 분석</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>안녕하세요</a></li>
+<li class="chapter" data-level="1" data-path="Introduction.html"><a href="Introduction.html"><i class="fa fa-check"></i><b>1</b> 들어가며</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Introduction.html"><a href="Introduction.html#whatR"><i class="fa fa-check"></i><b>1.1</b> R이란?</a></li>
+<li class="chapter" data-level="1.2" data-path="Introduction.html"><a href="Introduction.html#Rinstallation"><i class="fa fa-check"></i><b>1.2</b> R 설치하기</a></li>
+<li class="chapter" data-level="1.3" data-path="Introduction.html"><a href="Introduction.html#RStudioinstallation"><i class="fa fa-check"></i><b>1.3</b> RStudio 설치하기</a></li>
+<li class="chapter" data-level="1.4" data-path="Introduction.html"><a href="Introduction.html#LaTeXinstallation"><i class="fa fa-check"></i><b>1.4</b> 레이텍 설치하기</a></li>
+<li class="chapter" data-level="1.5" data-path="Introduction.html"><a href="Introduction.html#packageinstallation"><i class="fa fa-check"></i><b>1.5</b> Packages 설치하기</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="thebasics.html"><a href="thebasics.html"><i class="fa fa-check"></i><b>2</b> 기본</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="thebasics.html"><a href="thebasics.html#rstudio-살펴보기"><i class="fa fa-check"></i><b>2.1</b> RStudio 살펴보기</a></li>
+<li class="chapter" data-level="2.2" data-path="thebasics.html"><a href="thebasics.html#runningcode"><i class="fa fa-check"></i><b>2.2</b> R 코드 실행하기</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="thebasics.html"><a href="thebasics.html#r-스크립트"><i class="fa fa-check"></i><b>2.2.1</b> R 스크립트</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="thebasics.html"><a href="thebasics.html#varsandfuncs"><i class="fa fa-check"></i><b>2.3</b> 변수와 함수</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="thebasics.html"><a href="thebasics.html#데이터-저장"><i class="fa fa-check"></i><b>2.3.1</b> 데이터 저장</a></li>
+<li class="chapter" data-level="2.3.2" data-path="thebasics.html"><a href="thebasics.html#변수-이름"><i class="fa fa-check"></i><b>2.3.2</b> 변수 이름</a></li>
+<li class="chapter" data-level="2.3.3" data-path="thebasics.html"><a href="thebasics.html#벡터와-데이터프레임"><i class="fa fa-check"></i><b>2.3.3</b> 벡터와 데이터프레임</a></li>
+<li class="chapter" data-level="2.3.4" data-path="thebasics.html"><a href="thebasics.html#함수"><i class="fa fa-check"></i><b>2.3.4</b> 함수</a></li>
+<li class="chapter" data-level="2.3.5" data-path="thebasics.html"><a href="thebasics.html#maths"><i class="fa fa-check"></i><b>2.3.5</b> 수학연산</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="thebasics.html"><a href="thebasics.html#descstats"><i class="fa fa-check"></i><b>2.4</b> 기술통계</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="thebasics.html"><a href="thebasics.html#숫자-데이터"><i class="fa fa-check"></i><b>2.4.1</b> 숫자 데이터</a></li>
+<li class="chapter" data-level="2.4.2" data-path="thebasics.html"><a href="thebasics.html#catdata1"><i class="fa fa-check"></i><b>2.4.2</b> 명목 데이터</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="thebasics.html"><a href="thebasics.html#그래프와-숫자-데이터"><i class="fa fa-check"></i><b>2.5</b> 그래프와 숫자 데이터</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="thebasics.html"><a href="thebasics.html#나의-그래프"><i class="fa fa-check"></i><b>2.5.1</b> 나의 그래프</a></li>
+<li class="chapter" data-level="2.5.2" data-path="thebasics.html"><a href="thebasics.html#색과-형태-및-축"><i class="fa fa-check"></i><b>2.5.2</b> 색과 형태 및 축</a></li>
+<li class="chapter" data-level="2.5.3" data-path="thebasics.html"><a href="thebasics.html#축의-한계와-스케일"><i class="fa fa-check"></i><b>2.5.3</b> 축의 한계와 스케일</a></li>
+<li class="chapter" data-level="2.5.4" data-path="thebasics.html"><a href="thebasics.html#comparinggroups"><i class="fa fa-check"></i><b>2.5.4</b> 그룹 비교</a></li>
+<li class="chapter" data-level="2.5.5" data-path="thebasics.html"><a href="thebasics.html#박스-그래풀럿"><i class="fa fa-check"></i><b>2.5.5</b> 박스 그래풀럿</a></li>
+<li class="chapter" data-level="2.5.6" data-path="thebasics.html"><a href="thebasics.html#히스토그램"><i class="fa fa-check"></i><b>2.5.6</b> 히스토그램</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="thebasics.html"><a href="thebasics.html#catdata2"><i class="fa fa-check"></i><b>2.6</b> 그래프와 명목 데인터</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="thebasics.html"><a href="thebasics.html#막대-그래프"><i class="fa fa-check"></i><b>2.6.1</b> 막대 그래프</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="thebasics.html"><a href="thebasics.html#그래프-저장"><i class="fa fa-check"></i><b>2.7</b> 그래프 저장</a></li>
+<li class="chapter" data-level="2.8" data-path="thebasics.html"><a href="thebasics.html#troubleshooting"><i class="fa fa-check"></i><b>2.8</b> 오류 문제 해결</a></li>
+</ul></li>
+<li class="divider"></li>
+<li>&copy; 2023 psnam</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R 통계분석</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> 들어가며<a href="Introduction.html#Introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<pre><code>학습 목표
+
+1. R의 장.단점을 할 수 있습니다.
+2. R 프로그램을 설치 할 수 있습니다.
+3. RStudio 프로그램을 설치할 수 있습니다.
+4. 레이텍 프로그램을 설치 할 수 있습니다.
+5. R 패키지를 설치 할 수 있습니다.</code></pre>
+<div id="whatR" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> R이란?<a href="Introduction.html#whatR" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R의 환상의 세계에 오신 것을 환영합니다!</p>
+<p>R은 다른 통계 소프트웨어 패키지와 비교했을 때 장점이 매우 많습니다. 첫째, 무료이며 다목적이며 빠르고 현대적입니다. 둘째, 질문에 답하고 새로운 R 도구를 개발하는 데 도움이 되는 크고 친근한 사용자 커뮤니티가 있습니다. 셋째, 17,000개 이상의 애드온 패키지를 사용할 수 있는 R은 다른 통계 소프트웨어보다 더 많은 데이터 분석 기능을 제공합니다. 넷째, 정치학, 환경화학, 천문학과 같이 다양한 분야를 위한 전문 도구가 포함되며, 새로운 방법은 다른 프로그램에 도입되기 훨씬 전에 R에 도입됩니다. 다섯번째, R을 사용하면 동일한 분석을 두 번 이상 쉽게 반복할 수 있는 재현 가능한 연구 및 워크플로를 쉽게 구성할 수 있습니다.</p>
+<p>R은 다른 프로그래밍 언어와 다릅니다. 소프트웨어 엔지니어의 프로그래밍 작업을 위한 도구가 아니라 데이터 분석을 위한 도구로 통계학자가 개발했습니다. 처음부터 데이터를 처리하도록 설계되었으며 그 결과를 보여줍니다. 그러나 대화형 웹 페이지, 자동화된 보고서 및 API를 만드는 데 사용할 수 있을 만큼 유연합니다.</p>
+<p>R은 간단히 말해서 현재 데이터 분석을 위한 최고의 도구입니다.</p>
+<p>그러나 R에게도 단점은 있습니다.</p>
+<p>장점과 단점은 동전의 양면과도 같습니다. 그래서 우리는 장점을 극대화하고 단점 최소화 시키는 패러독스 메니지먼트 전략이 필요합니다.</p>
+</div>
+<div id="Rinstallation" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> R 설치하기<a href="Introduction.html#Rinstallation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>다운로드하기위해서R Project 웹사이트로 접속합니다.</p>
+<p><a href="https://cran.r-project.org/mirrors.html" class="uri">https://cran.r-project.org/mirrors.html</a></p>
+<p>다운로드 미러, 즉 소프트웨어를 다운로드할 서버를 선택합니다. 가까운 거울을 선택하는 것이 좋습니다. 그런 다음 해당 링크를 따라 Linux<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, Mac 또는 Windows용 R을 다운로드하도록 선택할 수 있습니다. [그림] <a href="Introduction.html#fig:downloadr">1.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:downloadr"></span>
+<img src="f/downloadr.png" alt="A screenshot from the R download page at https://ftp.acc.umu.se/mirror/CRAN/" width="80%" />
+<p class="caption">
+[그림] 1.1: A screenshot from the R download page at <a href="https://ftp.acc.umu.se/mirror/CRAN/" class="uri">https://ftp.acc.umu.se/mirror/CRAN/</a>
+</p>
+</div>
+<p>다운로드해야 하는 R 버전을 (기본) 바이너리라고 합니다. 다운로드하고 실행하여 R을 설치하십시오. R의 64비트 및 32비트 버전에 대한 언급을 볼 수 있습니다. 최신 컴퓨터(이 경우 2010년 이후의 컴퓨터를 의미)를 사용하는 경우 64비트 버전을 사용해야 합니다.</p>
+</div>
+<div id="RStudioinstallation" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> RStudio 설치하기<a href="Introduction.html#RStudioinstallation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>이제 R 프로그래밍 언어를 설치했습니다. 코드를 쉽게 작성, 실행 및 디버그할 수 있는 통합 개발 환경 또는 줄여서 IDE를 사용하면 작업이 더 쉬워집니다. 이 책은 RStudio IDE와 함께 사용하도록 작성되었지만 99.9%는 ESS가 있는 Emacs 또는 Jupyter 노트북과 같은 다른 IDE에서도 똑같이 잘 작동합니다.</p>
+<p>RStudio를 다운로드하려면 RStudio 다운로드 페이지로 이동하십시오.</p>
+<p><a href="https://rstudio.com/products/rstudio/download/#download" class="uri">https://rstudio.com/products/rstudio/download/#download</a></p>
+<p>링크를 클릭하여 운영 체제용 설치 프로그램을 다운로드한 다음 실행합니다.</p>
+</div>
+<div id="LaTeXinstallation" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 레이텍 설치하기<a href="Introduction.html#LaTeXinstallation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="packageinstallation" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Packages 설치하기<a href="Introduction.html#packageinstallation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R에는 수많은 기능이 포함되어 있지만 물론 이러한 기능은 데이터로 수행할 수 있는 모든 가능한 작업을 처리할 수 없습니다. 그것은 packages를 통해서 가능하게 해줍니다. 패키지는 R에 새로운 기능을 추가하는 함수 및 데이터 집합의 모음입니다. 데이터에 모호한 통계 테스트를 적용하시겠습니까? 데이터를 지도에 표시하시겠습니까? R에서 C++ 코드를 실행하시겠습니까? 데이터 처리 프로세스의 일부를 가속화하시겠습니까? 이를 위한 R 패키지가 있습니다. 사실, 17,000개 이상의 패키지와 그 수를 포함하여 여러분이 원하는 거의 모든 것을 위한 R 패키지가 있습니다. 모든 패키지는 R 커뮤니티, 즉 여러분과 저와 같은 사용자가 기여했습니다.</p>
+<p>대부분의 R 패키지는 전 세계의 서버 네트워크(소위 mirrors)인 공식 R 저장소인 CRAN에서 사용할 수 있습니다. CRAN의 패키지는 게시되기 전에 확인되어 수행해야 하는 작업을 수행하고 악성 구성 요소를 포함하지 않는지 확인합니다. 따라서 CRAN에서 패키지를 다운로드하는 것은 일반적으로 안전한 것으로 간주됩니다.</p>
+<p>이 장의 나머지 부분에서는 R에 그래픽 기능을 추가하는 <code>ggplot2</code>라는 패키지를 사용할 것입니다. CRAN에서 패키지를 설치하려면 RStudio 메뉴에서 Tools &gt; Install packages를 선택한 다음 다음을 작성할 수 있습니다. 나타나는 팝업 창의 텍스트 상자에 <code>ggplot2</code> 또는 다음 코드 행을 사용하십시오.:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Introduction.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<p>다운로드할 CRAN 미러 위치를 선택하라는 메뉴가 나타날 수 있습니다. 가장 가까운 것을 선택하거나 기본 옵션을 사용하십시오. 선택 사항은 다운로드 속도에 영향을 줄 수 있지만 대부분의 경우 큰 차이는 없습니다. 패키지용 폴더를 만들지 여부를 묻는 메시지가 표시될 수도 있으며 이에 동의해야 합니다.</p>
+<p>R이 패키지를 다운로드하고 설치하면 콘솔 패널에 여러 기술 메시지가 인쇄됩니다(성공적인 설치 중에 이러한 메시지가 표시되는 예는 <a href="#installationmessages"><strong>??</strong></a> 섹션에서 찾을 수 있습니다). <code>ggplot2</code>은 R이 설치할 패키지 수에 따라 달라지므로 몇 분 정도 걸릴 수 있습니다. 설치가 성공적으로 완료되면 다음과 같은 메시지와 함께 완료됩니다.:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Introduction.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> <span class="fu">DONE</span> (ggplot2)</span></code></pre></div>
+<p>Or, on some systems,</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Introduction.html#cb4-1" aria-hidden="true" tabindex="-1"></a>package ‘ggplot2’ successfully unpacked and MD5 sums checked</span></code></pre></div>
+<p>어떤 이유로 설치에 실패하면 일반적으로 (때로는 알 수 없는) 오류 메시지가 표시됩니다. <a href="thebasics.html#troubleshooting">2.8</a> 섹션에서 오류 문제 해결에 대한 자세한 내용을 읽을 수 있습니다. <a href="https://support.rstudio.com/hc/en-us/articles/200554786-Problem-Installing-Packages의" class="uri">https://support.rstudio.com/hc/en-us/articles/200554786-Problem-Installing-Packages의</a> RStudio 지원 페이지에서 사용할 수 있는 패키지를 설치할 때 일반적인 문제 목록도 있습니다.</p>
+<p>패키지를 설치한 후에도 아직 완료되지 않았습니다. 패키지가 설치되었을 수 있지만 해당 기능과 데이터 세트는 패키지를 로드할 때까지 사용할 수 없습니다. 새로운 R 세션을 시작합니다. 운 좋게도 <code>library</code> 기능을 사용하는 짧은 코드 한 줄로 수행됩니다<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> 스크립트 파일 맨 위에 두는 것이 좋습니다.:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="Introduction.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>R 패키지 설치 및 업데이트에 대한 자세한 내용은 섹션에서 설명합니다. <a href="#moreonpackages"><strong>??</strong></a>.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>많은 Linux 배포판의 경우 R은 패키지 관리 시스템에서도 사용할 수 있습니다.<a href="Introduction.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><code>library</code>를 사용하면 사람들이 R 패키지를 libraries로 잘못 참조하게 됩니다. 라이브러리를 패키지를 저장하는 장소로 생각하고 <code>라이브러리</code>를 호출하는 것은 라이브러리로 이동하여 패키지를 가져오는 것을 의미합니다.<a href="Introduction.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="thebasics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
