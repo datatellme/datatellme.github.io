@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 파이썬 기초 | Biz Statistic With Python</title>
+  <meta name="description" content="1 파이썬 기초 | Biz Statistic With Python" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 파이썬 기초 | Biz Statistic With Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 파이썬 기초 | Biz Statistic With Python" />
+  
+  
+  
+
+<meta name="author" content="sinamp" />
+
+
+<meta name="date" content="2023-02-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="preamble.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://datatellme.github.io">Data Tell Me Something</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="파이썬-기초.html"><a href="파이썬-기초.html"><i class="fa fa-check"></i><b>1</b> 파이썬 기초</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="파이썬-기초.html"><a href="파이썬-기초.html#파이썬-프로그램-기초"><i class="fa fa-check"></i><b>1.1</b> 파이썬 프로그램 기초</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="파이썬-기초.html"><a href="파이썬-기초.html#파이썬의-자료형"><i class="fa fa-check"></i><b>1.1.1</b> 파이썬의 자료형</a></li>
+<li class="chapter" data-level="1.1.2" data-path="파이썬-기초.html"><a href="파이썬-기초.html#파이썬-제어문"><i class="fa fa-check"></i><b>1.1.2</b> 파이썬 제어문</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="파이썬-기초.html"><a href="파이썬-기초.html#데이터-분석을-위한-파이썬-라이브러리"><i class="fa fa-check"></i><b>1.2</b> 데이터 분석을 위한 파이썬 라이브러리</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="파이썬-기초.html"><a href="파이썬-기초.html#통계분석을-위한-라이브러리"><i class="fa fa-check"></i><b>1.2.1</b> 통계분석을 위한 라이브러리</a></li>
+<li class="chapter" data-level="1.2.2" data-path="파이썬-기초.html"><a href="파이썬-기초.html#numpy"><i class="fa fa-check"></i><b>1.2.2</b> NumPy</a></li>
+<li class="chapter" data-level="1.2.3" data-path="파이썬-기초.html"><a href="파이썬-기초.html#pandas"><i class="fa fa-check"></i><b>1.2.3</b> Pandas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li>&copy; Step by Step.</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biz Statistic With Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="파이썬-기초" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> 파이썬 기초<a href="파이썬-기초.html#파이썬-기초" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<pre><code>학습 목표
+
+1. 파이썬을 사용하는 이유를 알 수 있습니다.
+2. 파이썬의 기초적를 알 수 있습니다.
+3. 파이썬의 라이브러리를  사용할 수 있습니다.</code></pre>
+<div id="파이썬-프로그램-기초" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 파이썬 프로그램 기초<a href="파이썬-기초.html#파이썬-프로그램-기초" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="파이썬의-자료형" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> 파이썬의 자료형<a href="파이썬-기초.html#파이썬의-자료형" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="숫자형과-문자형" class="section level4 hasAnchor" number="1.1.1.1">
+<h4><span class="header-section-number">1.1.1.1</span> 숫자형과 문자형<a href="파이썬-기초.html#숫자형과-문자형" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="파이썬-기초.html#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">123</span> </span>
+<span id="cb2-2"><a href="파이썬-기초.html#cb2-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">&#39;abc&#39;</span> </span>
+<span id="cb2-3"><a href="파이썬-기초.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(a), <span class="bu">type</span>(b))</span></code></pre></div>
+<pre><code>## &lt;class &#39;int&#39;&gt; &lt;class &#39;str&#39;&gt;</code></pre>
+</div>
+<div id="리스트-튜플-딕셔너리" class="section level4 hasAnchor" number="1.1.1.2">
+<h4><span class="header-section-number">1.1.1.2</span> 리스트, 튜플, 딕셔너리<a href="파이썬-기초.html#리스트-튜플-딕셔너리" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="파이썬-기초.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#리스트 생성</span></span>
+<span id="cb4-2"><a href="파이썬-기초.html#cb4-2" aria-hidden="true" tabindex="-1"></a>List <span class="op">=</span> [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]</span>
+<span id="cb4-3"><a href="파이썬-기초.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="파이썬-기초.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#튜플 생성</span></span>
+<span id="cb4-5"><a href="파이썬-기초.html#cb4-5" aria-hidden="true" tabindex="-1"></a>Tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)  </span>
+<span id="cb4-6"><a href="파이썬-기초.html#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="파이썬-기초.html#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#딕셔너리 생성</span></span>
+<span id="cb4-8"><a href="파이썬-기초.html#cb4-8" aria-hidden="true" tabindex="-1"></a>Dic <span class="op">=</span> {<span class="st">&#39;경기도&#39;</span>:<span class="st">&#39;일산&#39;</span>, <span class="st">&#39;강원도&#39;</span>:<span class="st">&#39;원주&#39;</span>, <span class="st">&#39;충청도&#39;</span>:<span class="st">&#39;천안&#39;</span>, <span class="st">&#39;전라도&#39;</span>:<span class="st">&#39;전주&#39;</span>}  </span>
+<span id="cb4-9"><a href="파이썬-기초.html#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="파이썬-기초.html#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(List), <span class="bu">type</span>(Tuple), <span class="bu">type</span>(Dic))</span></code></pre></div>
+<pre><code>## &lt;class &#39;list&#39;&gt; &lt;class &#39;tuple&#39;&gt; &lt;class &#39;dict&#39;&gt;</code></pre>
+</div>
+</div>
+<div id="파이썬-제어문" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> 파이썬 제어문<a href="파이썬-기초.html#파이썬-제어문" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="if-문" class="section level4 hasAnchor" number="1.1.2.1">
+<h4><span class="header-section-number">1.1.2.1</span> if 문<a href="파이썬-기초.html#if-문" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="파이썬-기초.html#cb6-1" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb6-2"><a href="파이썬-기초.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> point <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb6-3"><a href="파이썬-기초.html#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;vip&#39;</span>)</span>
+<span id="cb6-4"><a href="파이썬-기초.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-5"><a href="파이썬-기초.html#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;member&#39;</span>)</span></code></pre></div>
+<pre><code>## member</code></pre>
+</div>
+<div id="for-문" class="section level4 hasAnchor" number="1.1.2.2">
+<h4><span class="header-section-number">1.1.2.2</span> for 문<a href="파이썬-기초.html#for-문" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="파이썬-기초.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]: </span>
+<span id="cb8-2"><a href="파이썬-기초.html#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a)</span></code></pre></div>
+<pre><code>## 1
+## 2
+## 3
+## 4
+## 5</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="파이썬-기초.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> b <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>): </span>
+<span id="cb10-2"><a href="파이썬-기초.html#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(b)</span></code></pre></div>
+<pre><code>## 1
+## 3
+## 5
+## 7
+## 9</code></pre>
+</div>
+<div id="while-문" class="section level4 hasAnchor" number="1.1.2.3">
+<h4><span class="header-section-number">1.1.2.3</span> while 문<a href="파이썬-기초.html#while-문" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="파이썬-기초.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. 초기화</span></span>
+<span id="cb12-2"><a href="파이썬-기초.html#cb12-2" aria-hidden="true" tabindex="-1"></a>customer_count <span class="op">=</span> <span class="dv">0</span>  </span>
+<span id="cb12-3"><a href="파이썬-기초.html#cb12-3" aria-hidden="true" tabindex="-1"></a>sum1 <span class="op">=</span> <span class="dv">0</span>   </span>
+<span id="cb12-4"><a href="파이썬-기초.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="파이썬-기초.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;customer_count sum&#39;</span>)</span>
+<span id="cb12-6"><a href="파이썬-기초.html#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="파이썬-기초.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#2. 조건 검사</span></span></code></pre></div>
+<pre><code>## customer_count sum</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="파이썬-기초.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (sum1 <span class="op">&lt;</span> <span class="dv">20</span>):  </span>
+<span id="cb14-2"><a href="파이썬-기초.html#cb14-2" aria-hidden="true" tabindex="-1"></a>    customer_count <span class="op">=</span> customer_count <span class="op">+</span> <span class="dv">1</span> </span>
+<span id="cb14-3"><a href="파이썬-기초.html#cb14-3" aria-hidden="true" tabindex="-1"></a>    sum1 <span class="op">=</span> sum1 <span class="op">+</span> customer_count  </span>
+<span id="cb14-4"><a href="파이썬-기초.html#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(customer_count, sum1)  </span></code></pre></div>
+<pre><code>## 1 1
+## 2 3
+## 3 6
+## 4 10
+## 5 15
+## 6 21</code></pre>
+</div>
+</div>
+</div>
+<div id="데이터-분석을-위한-파이썬-라이브러리" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 데이터 분석을 위한 파이썬 라이브러리<a href="파이썬-기초.html#데이터-분석을-위한-파이썬-라이브러리" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="통계분석을-위한-라이브러리" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> 통계분석을 위한 라이브러리<a href="파이썬-기초.html#통계분석을-위한-라이브러리" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="파이썬-기초.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="파이썬-기초.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="파이썬-기초.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas <span class="im">import</span> DataFrame</span></code></pre></div>
+</div>
+<div id="numpy" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> NumPy<a href="파이썬-기초.html#numpy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="배열-생성하기" class="section level4 hasAnchor" number="1.2.2.1">
+<h4><span class="header-section-number">1.2.2.1</span> 배열 생성하기<a href="파이썬-기초.html#배열-생성하기" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="파이썬-기초.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-2"><a href="파이썬-기초.html#cb19-2" aria-hidden="true" tabindex="-1"></a>data1 <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span> ,<span class="dv">5</span>]</span>
+<span id="cb19-3"><a href="파이썬-기초.html#cb19-3" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array(data1) </span>
+<span id="cb19-4"><a href="파이썬-기초.html#cb19-4" aria-hidden="true" tabindex="-1"></a>a1</span></code></pre></div>
+<pre><code>## array([0, 1, 2, 3, 4, 5])</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="파이썬-기초.html#cb21-1" aria-hidden="true" tabindex="-1"></a>a1.dtype</span></code></pre></div>
+<pre><code>## dtype(&#39;int32&#39;)</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="파이썬-기초.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. 1부터 10까지 범위 안에서 간격 2를 갖는 배열 생성</span></span>
+<span id="cb23-2"><a href="파이썬-기초.html#cb23-2" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.arange(start <span class="op">=</span> <span class="dv">1</span>, stop <span class="op">=</span> <span class="dv">10</span>, step <span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb23-3"><a href="파이썬-기초.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a1)</span>
+<span id="cb23-4"><a href="파이썬-기초.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="파이썬-기초.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#2. 0부터 10까지 범위 안에서 간격 1을 갖는 배열 생성</span></span></code></pre></div>
+<pre><code>## [1 3 5 7 9]</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="파이썬-기초.html#cb25-1" aria-hidden="true" tabindex="-1"></a>a2<span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
+<span id="cb25-2"><a href="파이썬-기초.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a2)</span></code></pre></div>
+<pre><code>## [0 1 2 3 4 5 6 7 8 9]</code></pre>
+</div>
+<div id="배열-연산하기" class="section level4 hasAnchor" number="1.2.2.2">
+<h4><span class="header-section-number">1.2.2.2</span> 배열 연산하기<a href="파이썬-기초.html#배열-연산하기" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="파이썬-기초.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb27-2"><a href="파이썬-기초.html#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="파이썬-기초.html#cb27-3" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>]) </span>
+<span id="cb27-4"><a href="파이썬-기초.html#cb27-4" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb27-5"><a href="파이썬-기초.html#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="파이썬-기초.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;----------덧셈----------&#39;</span>)</span></code></pre></div>
+<pre><code>## ----------덧셈----------</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="파이썬-기초.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1<span class="op">+</span>arr2)</span></code></pre></div>
+<pre><code>## [11 16 22 33]</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="파이썬-기초.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;----------뺄셈----------&#39;</span>)</span></code></pre></div>
+<pre><code>## ----------뺄셈----------</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="파이썬-기초.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1<span class="op">-</span>arr2)</span></code></pre></div>
+<pre><code>## [ 9 14 18 27]</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="파이썬-기초.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;----------곱셈----------&#39;</span>)</span></code></pre></div>
+<pre><code>## ----------곱셈----------</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="파이썬-기초.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1<span class="op">*</span>arr2)</span></code></pre></div>
+<pre><code>## [10 15 40 90]</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="파이썬-기초.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;----------나눗셈--------&#39;</span>)</span></code></pre></div>
+<pre><code>## ----------나눗셈--------</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="파이썬-기초.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr1<span class="op">/</span>arr2)</span></code></pre></div>
+<pre><code>## [10. 15. 10. 10.]</code></pre>
+</div>
+<div id="배열의-인덱싱과-슬라이싱" class="section level4 hasAnchor" number="1.2.2.3">
+<h4><span class="header-section-number">1.2.2.3</span> 배열의 인덱싱과 슬라이싱<a href="파이썬-기초.html#배열의-인덱싱과-슬라이싱" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>인덱싱 (Indexing)</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="파이썬-기초.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb43-2"><a href="파이썬-기초.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="파이썬-기초.html#cb43-3" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
+<span id="cb43-4"><a href="파이썬-기초.html#cb43-4" aria-hidden="true" tabindex="-1"></a>a1</span></code></pre></div>
+<pre><code>## array([ 0, 10, 20, 30, 40, 50])</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="파이썬-기초.html#cb45-1" aria-hidden="true" tabindex="-1"></a>a1[<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## 40</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="파이썬-기초.html#cb47-1" aria-hidden="true" tabindex="-1"></a>a1[<span class="dv">5</span>] <span class="op">=</span> <span class="dv">70</span> </span>
+<span id="cb47-2"><a href="파이썬-기초.html#cb47-2" aria-hidden="true" tabindex="-1"></a>a1</span></code></pre></div>
+<pre><code>## array([ 0, 10, 20, 30, 40, 70])</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="파이썬-기초.html#cb49-1" aria-hidden="true" tabindex="-1"></a>a1[[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>]] </span></code></pre></div>
+<pre><code>## array([10, 30, 40])</code></pre>
+<ul>
+<li>슬라이싱 (Slicing)</li>
+</ul>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="파이썬-기초.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb51-2"><a href="파이썬-기초.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="파이썬-기초.html#cb51-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb51-4"><a href="파이썬-기초.html#cb51-4" aria-hidden="true" tabindex="-1"></a>b1</span></code></pre></div>
+<pre><code>## array([0, 1, 2, 3, 4, 5])</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="파이썬-기초.html#cb53-1" aria-hidden="true" tabindex="-1"></a>b1[<span class="dv">1</span>:<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## array([1, 2, 3])</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="파이썬-기초.html#cb55-1" aria-hidden="true" tabindex="-1"></a>b1[<span class="dv">2</span>:]</span></code></pre></div>
+<pre><code>## array([2, 3, 4, 5])</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="파이썬-기초.html#cb57-1" aria-hidden="true" tabindex="-1"></a>b1[<span class="dv">2</span>:<span class="dv">5</span>] <span class="op">=</span> np.array([<span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">45</span>])</span>
+<span id="cb57-2"><a href="파이썬-기초.html#cb57-2" aria-hidden="true" tabindex="-1"></a>b1</span></code></pre></div>
+<pre><code>## array([ 0,  1, 25, 35, 45,  5])</code></pre>
+</div>
+<div id="배열의-차원-변경하기" class="section level4 hasAnchor" number="1.2.2.4">
+<h4><span class="header-section-number">1.2.2.4</span> 배열의 차원 변경하기<a href="파이썬-기초.html#배열의-차원-변경하기" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="파이썬-기초.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb59-2"><a href="파이썬-기초.html#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="파이썬-기초.html#cb59-3" aria-hidden="true" tabindex="-1"></a>Vector <span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
+<span id="cb59-4"><a href="파이썬-기초.html#cb59-4" aria-hidden="true" tabindex="-1"></a>Matrix <span class="op">=</span> Vector.reshape(<span class="dv">2</span>,<span class="dv">5</span>)</span>
+<span id="cb59-5"><a href="파이썬-기초.html#cb59-5" aria-hidden="true" tabindex="-1"></a>Matrix</span></code></pre></div>
+<pre><code>## array([[0, 1, 2, 3, 4],
+##        [5, 6, 7, 8, 9]])</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="파이썬-기초.html#cb61-1" aria-hidden="true" tabindex="-1"></a>Vector <span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
+<span id="cb61-2"><a href="파이썬-기초.html#cb61-2" aria-hidden="true" tabindex="-1"></a>Matrix <span class="op">=</span> Vector.reshape(<span class="op">-</span><span class="dv">1</span> , <span class="dv">5</span>)</span>
+<span id="cb61-3"><a href="파이썬-기초.html#cb61-3" aria-hidden="true" tabindex="-1"></a>Matrix</span></code></pre></div>
+<pre><code>## array([[0, 1, 2, 3, 4],
+##        [5, 6, 7, 8, 9]])</code></pre>
+</div>
+</div>
+<div id="pandas" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Pandas<a href="파이썬-기초.html#pandas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pandas의-자료구조" class="section level4 hasAnchor" number="1.2.3.1">
+<h4><span class="header-section-number">1.2.3.1</span> Pandas의 자료구조<a href="파이썬-기초.html#pandas의-자료구조" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Series</li>
+</ul>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="파이썬-기초.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb63-2"><a href="파이썬-기초.html#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="파이썬-기초.html#cb63-3" aria-hidden="true" tabindex="-1"></a>series <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb63-4"><a href="파이썬-기초.html#cb63-4" aria-hidden="true" tabindex="-1"></a>series</span></code></pre></div>
+<pre><code>## 0    1
+## 1    2
+## 2    3
+## 3    4
+## 4    5
+## dtype: int64</code></pre>
+<ul>
+<li>DataFrame</li>
+</ul>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="파이썬-기초.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb65-2"><a href="파이썬-기초.html#cb65-2" aria-hidden="true" tabindex="-1"></a>columns_list <span class="op">=</span> [<span class="st">&#39;고객이름&#39;</span>, <span class="st">&#39;나이&#39;</span>, <span class="st">&#39;등급&#39;</span>]</span>
+<span id="cb65-3"><a href="파이썬-기초.html#cb65-3" aria-hidden="true" tabindex="-1"></a>value_list <span class="op">=</span> [[<span class="st">&#39;원종호&#39;</span>, <span class="dv">26</span>, <span class="st">&#39;Silver&#39;</span>], [<span class="st">&#39;김수현&#39;</span>, <span class="dv">23</span>, <span class="st">&#39;Gold&#39;</span>], [<span class="st">&#39;김진표&#39;</span>, <span class="dv">30</span>, <span class="st">&#39;Vip&#39;</span>]]</span>
+<span id="cb65-4"><a href="파이썬-기초.html#cb65-4" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(data <span class="op">=</span> value_list, columns <span class="op">=</span> columns_list)</span></code></pre></div>
+<pre><code>##   고객이름  나이      등급
+## 0  원종호  26  Silver
+## 1  김수현  23    Gold
+## 2  김진표  30     Vip</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="파이썬-기초.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb67-2"><a href="파이썬-기초.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="파이썬-기초.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span> <span class="op">=</span> {<span class="st">&#39;고객이름&#39;</span> : [<span class="st">&#39;원종호&#39;</span>,<span class="st">&#39;김수현&#39;</span>,<span class="st">&#39;김진표&#39;</span>], <span class="st">&#39;나이&#39;</span> : [<span class="dv">26</span>,<span class="dv">23</span>,<span class="dv">30</span>], <span class="st">&#39;등급&#39;</span> : [<span class="st">&#39;Silver&#39;</span>,<span class="st">&#39;Gold&#39;</span>,<span class="st">&#39;Vip&#39;</span>]} </span>
+<span id="cb67-4"><a href="파이썬-기초.html#cb67-4" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(data <span class="op">=</span> <span class="bu">dict</span>)</span></code></pre></div>
+<pre><code>##   고객이름  나이      등급
+## 0  원종호  26  Silver
+## 1  김수현  23    Gold
+## 2  김진표  30     Vip</code></pre>
+</div>
+<div id="pandas를-이용한-기초통계" class="section level4 hasAnchor" number="1.2.3.2">
+<h4><span class="header-section-number">1.2.3.2</span> Pandas를 이용한 기초통계<a href="파이썬-기초.html#pandas를-이용한-기초통계" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="파이썬-기초.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb69-2"><a href="파이썬-기초.html#cb69-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb69-3"><a href="파이썬-기초.html#cb69-3" aria-hidden="true" tabindex="-1"></a>sales_data <span class="op">=</span> {<span class="st">&#39;화장품&#39;</span>:  [<span class="dv">300</span>, <span class="dv">274</span>, <span class="dv">150</span>, <span class="dv">524</span>, <span class="dv">211</span>],</span>
+<span id="cb69-4"><a href="파이썬-기초.html#cb69-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;의류&#39;</span>: [<span class="dv">773</span>, <span class="dv">657</span>, <span class="dv">699</span>, <span class="dv">324</span>, <span class="dv">487</span>],</span>
+<span id="cb69-5"><a href="파이썬-기초.html#cb69-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;식음료&#39;</span>: [<span class="dv">362</span>, <span class="dv">131</span>, <span class="dv">593</span>, <span class="dv">348</span>, <span class="dv">98</span>],</span>
+<span id="cb69-6"><a href="파이썬-기초.html#cb69-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">&#39;전자제품&#39;</span>: [<span class="dv">458</span>, <span class="dv">667</span>, <span class="dv">123</span>, <span class="dv">521</span>, <span class="dv">662</span>]}</span>
+<span id="cb69-7"><a href="파이썬-기초.html#cb69-7" aria-hidden="true" tabindex="-1"></a>index_list <span class="op">=</span> [<span class="st">&#39;2014&#39;</span>, <span class="st">&#39;2015&#39;</span>, <span class="st">&#39;2016&#39;</span>, <span class="st">&#39;2017&#39;</span>, <span class="st">&#39;2018&#39;</span>]</span>
+<span id="cb69-8"><a href="파이썬-기초.html#cb69-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-9"><a href="파이썬-기초.html#cb69-9" aria-hidden="true" tabindex="-1"></a>df_store <span class="op">=</span> pd.DataFrame(data <span class="op">=</span> sales_data, index <span class="op">=</span> index_list)</span>
+<span id="cb69-10"><a href="파이썬-기초.html#cb69-10" aria-hidden="true" tabindex="-1"></a>df_store</span></code></pre></div>
+<pre><code>##       화장품   의류  식음료  전자제품
+## 2014  300  773  362   458
+## 2015  274  657  131   667
+## 2016  150  699  593   123
+## 2017  524  324  348   521
+## 2018  211  487   98   662</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="파이썬-기초.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">#평균 출력</span></span>
+<span id="cb71-2"><a href="파이썬-기초.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_store.mean()) </span>
+<span id="cb71-3"><a href="파이썬-기초.html#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="파이썬-기초.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co">#표준편차 출력</span></span></code></pre></div>
+<pre><code>## 화장품     291.8
+## 의류      588.0
+## 식음료     306.4
+## 전자제품    486.2
+## dtype: float64</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="파이썬-기초.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_store.std())</span></code></pre></div>
+<pre><code>## 화장품     142.246968
+## 의류      181.110464
+## 식음료     200.721947
+## 전자제품    222.213186
+## dtype: float64</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="파이썬-기초.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((df_store.mean(axis<span class="op">=</span><span class="dv">1</span>)))</span></code></pre></div>
+<pre><code>## 2014    473.25
+## 2015    432.25
+## 2016    391.25
+## 2017    429.25
+## 2018    364.50
+## dtype: float64</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="파이썬-기초.html#cb77-1" aria-hidden="true" tabindex="-1"></a>df_store.describe( )</span></code></pre></div>
+<pre><code>##               화장품          의류         식음료        전자제품
+## count    5.000000    5.000000    5.000000    5.000000
+## mean   291.800000  588.000000  306.400000  486.200000
+## std    142.246968  181.110464  200.721947  222.213186
+## min    150.000000  324.000000   98.000000  123.000000
+## 25%    211.000000  487.000000  131.000000  458.000000
+## 50%    274.000000  657.000000  348.000000  521.000000
+## 75%    300.000000  699.000000  362.000000  662.000000
+## max    524.000000  773.000000  593.000000  667.000000</code></pre>
+</div>
+<div id="dataframe에서-원하는-데이터-추출" class="section level4 hasAnchor" number="1.2.3.3">
+<h4><span class="header-section-number">1.2.3.3</span> DataFrame에서 원하는 데이터 추출<a href="파이썬-기초.html#dataframe에서-원하는-데이터-추출" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="파이썬-기초.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb79-2"><a href="파이썬-기초.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb79-3"><a href="파이썬-기초.html#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-4"><a href="파이썬-기초.html#cb79-4" aria-hidden="true" tabindex="-1"></a>dep_data <span class="op">=</span> {<span class="st">&#39;명동점&#39;</span>: [<span class="dv">59060</span>, <span class="dv">49296</span>, <span class="dv">62015</span>, <span class="dv">48621</span>, <span class="dv">46712</span>, <span class="dv">31216</span>, <span class="dv">38467</span>],</span>
+<span id="cb79-5"><a href="파이썬-기초.html#cb79-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;분당점&#39;</span>: [<span class="dv">9312</span>, <span class="dv">1267</span>, <span class="dv">6893</span>, <span class="dv">7226</span>, <span class="dv">8878</span>, <span class="dv">13622</span>, <span class="dv">18228</span>],</span>
+<span id="cb79-6"><a href="파이썬-기초.html#cb79-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;광주점&#39;</span>: [<span class="dv">2627</span>, <span class="dv">4145</span>, <span class="dv">4088</span>, <span class="dv">4321</span>, <span class="dv">4679</span>, <span class="dv">4994</span>, <span class="dv">5544</span>],</span>
+<span id="cb79-7"><a href="파이썬-기초.html#cb79-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;부산점&#39;</span>: [<span class="dv">14211</span>, <span class="dv">11071</span>, <span class="dv">11234</span>, <span class="dv">15424</span>, <span class="dv">12146</span>, <span class="dv">39415</span>, <span class="dv">57866</span>],</span>
+<span id="cb79-8"><a href="파이썬-기초.html#cb79-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;송도점&#39;</span>: [np.nan,np.nan, <span class="dv">9912</span>, <span class="dv">9224</span>, <span class="dv">8395</span>, <span class="dv">9786</span>, <span class="dv">9667</span>]}</span>
+<span id="cb79-9"><a href="파이썬-기초.html#cb79-9" aria-hidden="true" tabindex="-1"></a>index_list <span class="op">=</span> [<span class="st">&#39;2011&#39;</span>, <span class="st">&#39;2012&#39;</span>, <span class="st">&#39;2013&#39;</span>, <span class="st">&#39;2014&#39;</span>, <span class="st">&#39;2015&#39;</span>, <span class="st">&#39;2016&#39;</span>, <span class="st">&#39;2017&#39;</span>]</span>
+<span id="cb79-10"><a href="파이썬-기초.html#cb79-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-11"><a href="파이썬-기초.html#cb79-11" aria-hidden="true" tabindex="-1"></a>df_store <span class="op">=</span> pd.DataFrame(dep_data, index <span class="op">=</span> index_list)</span>
+<span id="cb79-12"><a href="파이썬-기초.html#cb79-12" aria-hidden="true" tabindex="-1"></a>df_store</span></code></pre></div>
+<pre><code>##         명동점    분당점   광주점    부산점     송도점
+## 2011  59060   9312  2627  14211     NaN
+## 2012  49296   1267  4145  11071     NaN
+## 2013  62015   6893  4088  11234  9912.0
+## 2014  48621   7226  4321  15424  9224.0
+## 2015  46712   8878  4679  12146  8395.0
+## 2016  31216  13622  4994  39415  9786.0
+## 2017  38467  18228  5544  57866  9667.0</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="파이썬-기초.html#cb81-1" aria-hidden="true" tabindex="-1"></a>df_store[<span class="dv">0</span>:<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>##         명동점   분당점   광주점    부산점  송도점
+## 2011  59060  9312  2627  14211  NaN
+## 2012  49296  1267  4145  11071  NaN</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="파이썬-기초.html#cb83-1" aria-hidden="true" tabindex="-1"></a>df_store.loc[<span class="st">&#39;2016&#39;</span>]</span></code></pre></div>
+<pre><code>## 명동점    31216.0
+## 분당점    13622.0
+## 광주점     4994.0
+## 부산점    39415.0
+## 송도점     9786.0
+## Name: 2016, dtype: float64</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="파이썬-기초.html#cb85-1" aria-hidden="true" tabindex="-1"></a>df_store[<span class="st">&#39;명동점&#39;</span>]</span></code></pre></div>
+<pre><code>## 2011    59060
+## 2012    49296
+## 2013    62015
+## 2014    48621
+## 2015    46712
+## 2016    31216
+## 2017    38467
+## Name: 명동점, dtype: int64</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="파이썬-기초.html#cb87-1" aria-hidden="true" tabindex="-1"></a>df_store[<span class="st">&#39;명동점&#39;</span>][<span class="st">&#39;2013&#39;</span>:<span class="st">&#39;2015&#39;</span>]</span></code></pre></div>
+<pre><code>## 2013    62015
+## 2014    48621
+## 2015    46712
+## Name: 명동점, dtype: int64</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
