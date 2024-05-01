@@ -2,72 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/about/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/bibledata/01_Ge/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/blog/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/bibledata/02_Ex/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/blog/python%20with%20chat%20GPT/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/bibledata/03_Lev/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/blog/quant%20with%20python/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/bibledata/The_Old_Testament/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/blog/shot%20with%20phone/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/blog/posts/2023-04-13-%ED%80%80%ED%8A%B8%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%94%A9%EC%9D%98%20%EA%B8%B0%EC%B4%88%20%EC%86%8C%EA%B0%9C/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/blog/posts/2023-04-14-Python%20%EA%B8%B0%EC%B4%88/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/blog/posts/2024-04-30-blog-md-%EC%9E%91%EC%84%B1%EA%B8%B0/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/blog/posts/2024-05-01-first-post/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/01_mkdocs/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/02_Jupyter_nb_to_md/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/03_python_rmd/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/04_python_reticulate/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/statistics/01-Introduction_K/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/data/Xaringan/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/statistics/02-basics_K/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/quant/01_quant/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/statistics/StatWP/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <loc>https://example.com/shot/01_movipy/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/statistics/R-Introduction_K/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/statistics/R-basics_K/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/statistics/StatWR/</loc>
-         <lastmod>2023-02-07</lastmod>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/textmining/01_Ge/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/textmining/02_Ex/</loc>
+         <lastmod>2024-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/textmining/03_Lev/</loc>
+         <lastmod>2024-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
