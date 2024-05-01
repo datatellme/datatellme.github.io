@@ -26,11 +26,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/bibledata/The_Old_Testament/</loc>
-         <lastmod>2024-05-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/blog/</loc>
          <lastmod>2024-05-01</lastmod>
          <changefreq>daily</changefreq>
@@ -107,16 +102,6 @@
     </url>
     <url>
          <loc>https://example.com/statistics/R-basics_K/</loc>
-         <lastmod>2024-05-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/statistics/StatWP/</loc>
-         <lastmod>2024-05-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/statistics/StatWR/</loc>
          <lastmod>2024-05-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
