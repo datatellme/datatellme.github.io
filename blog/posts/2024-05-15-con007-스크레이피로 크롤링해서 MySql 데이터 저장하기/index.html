@@ -1,0 +1,200 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link href=https://example.com/blog/posts/2024-05-15-con007-%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%94%BC%EB%A1%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%B4%EC%84%9C%20MySql%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0/ rel=canonical><link rel=icon href=../../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.0, mkdocs-material-9.5.20"><title>스크레이피(Scrapy)로 크롤링해서 MySql 데이터 저장하기 - Data-Tell-Me</title><link rel=stylesheet href=../../../assets/stylesheets/main.66ac8b77.min.css><link rel=stylesheet href=../../../assets/stylesheets/palette.06af60db.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style><script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=blue data-md-color-accent=purple> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#scrapy-mysql class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../../.. title=Data-Tell-Me class="md-header__button md-logo" aria-label=Data-Tell-Me data-md-component=logo> <img src=../../../img/peterpark_01.jpg alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Data-Tell-Me </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> 스크레이피(Scrapy)로 크롤링해서 MySql 데이터 저장하기 </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=blue data-md-color-accent=purple aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg> </label> <input class=md-option data-md-color-media data-md-color-scheme=slate data-md-color-primary=teal data-md-color-accent=lime aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg> </label> </form> <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../../about/ class=md-tabs__link> About </a> </li> <li class=md-tabs__item> <a href=../../../statistics/R-Introduction_K/ class=md-tabs__link> Statistics </a> </li> <li class=md-tabs__item> <a href=../../../data/01_mkdocs/ class=md-tabs__link> Data Skill </a> </li> <li class=md-tabs__item> <a href=../../../bibledata/01_Ge/ class=md-tabs__link> Text Mining </a> </li> <li class=md-tabs__item> <a href=../../../shot/01_movipy/ class=md-tabs__link> Shot </a> </li> <li class=md-tabs__item> <a href=../../../quant/01_quant/ class=md-tabs__link> Quant </a> </li> <li class=md-tabs__item> <a href=../../ class=md-tabs__link> Blog </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../../.. title=Data-Tell-Me class="md-nav__button md-logo" aria-label=Data-Tell-Me data-md-component=logo> <img src=../../../img/peterpark_01.jpg alt=logo> </a> Data-Tell-Me </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../.. class=md-nav__link> <span class=md-ellipsis> Home </span> </a> </li> <li class=md-nav__item> <a href=../../../about/ class=md-nav__link> <span class=md-ellipsis> About </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> <span class=md-ellipsis> Statistics </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Statistics </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../statistics/R-Introduction_K/ class=md-nav__link> <span class=md-ellipsis> R-Introduction </span> </a> </li> <li class=md-nav__item> <a href=../../../statistics/R-basics_K/ class=md-nav__link> <span class=md-ellipsis> R-basics </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4> <label class=md-nav__link for=__nav_4 id=__nav_4_label tabindex=0> <span class=md-ellipsis> Data Skill </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=false> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Data Skill </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../data/01_mkdocs/ class=md-nav__link> <span class=md-ellipsis> mkdocs </span> </a> </li> <li class=md-nav__item> <a href=../../../data/02_Jupyter_nb_to_md/ class=md-nav__link> <span class=md-ellipsis> Jupyter_to_md </span> </a> </li> <li class=md-nav__item> <a href=../../../data/03_python_rmd/ class=md-nav__link> <span class=md-ellipsis> python_rmd </span> </a> </li> <li class=md-nav__item> <a href=../../../data/04_python_reticulate/ class=md-nav__link> <span class=md-ellipsis> python_reticulate </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_5> <label class=md-nav__link for=__nav_5 id=__nav_5_label tabindex=0> <span class=md-ellipsis> Text Mining </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Text Mining </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../bibledata/01_Ge/ class=md-nav__link> <span class=md-ellipsis> 창세기 </span> </a> </li> <li class=md-nav__item> <a href=../../../bibledata/02_Ex/ class=md-nav__link> <span class=md-ellipsis> 출애굽기 </span> </a> </li> <li class=md-nav__item> <a href=../../../bibledata/03_Lev/ class=md-nav__link> <span class=md-ellipsis> 레위기 </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_6> <label class=md-nav__link for=__nav_6 id=__nav_6_label tabindex=0> <span class=md-ellipsis> Shot </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_6_label aria-expanded=false> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Shot </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../shot/01_movipy/ class=md-nav__link> <span class=md-ellipsis> movipy </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_7> <label class=md-nav__link for=__nav_7 id=__nav_7_label tabindex=0> <span class=md-ellipsis> Quant </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_7_label aria-expanded=false> <label class=md-nav__title for=__nav_7> <span class="md-nav__icon md-icon"></span> Quant </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../quant/01_quant/ class=md-nav__link> <span class=md-ellipsis> quant </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../ class=md-nav__link> <span class=md-ellipsis> Blog </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1 id=scrapy-mysql>스크레이피(Scrapy)로 크롤링해서 MySql 데이터 저장하기</h1> <h2 id=_1>들어가며</h2> <ul> <li> <p>웹크롤링을 자동화하기 위해서는 스크레이피를 이용하는 것이 매우 유용한것 같습니다.</p> </li> <li> <p>스크레이피로 데이터를 클롤링하고 MySql DB에 저장하는 방법을 알아봅니다.</p> </li> <li> <p>특히 스크레이피 수행 절차를 살표 보고 절차에 따라 프로젝트를 수행하는 방법을 알아보겠습니다.</p> </li> <li> <p>스크레이피의 파이프라인(Pipeline)을 어떤 분야에 사용하는지도 살펴보겠습니다.</p> </li> </ul> <p><strong>스크레이피(Scrapy) 장점</strong></p> <ul> <li> <p>스크레이피(Scrapy)는 파이썬으로 작성된 오픈 소스 웹 크롤링 및 스크래핑 프레임워크입니다. 이 프레임워크를 사용하면 웹사이트에서 데이터를 수집하고 추출하는 데 사용할 수 있습니다. 스크레이피는 다양한 웹사이트에서 데이터를 추출하는 데 유용한 기능을 제공하며, 크롤링된 데이터를 정리하고 처리하는 과정을 단순화합니다.</p> </li> <li> <p>스크레이피는 강력한 웹 크롤러 엔진과 간편한 사용법을 결합하여 웹 데이터 수집 작업을 효율적으로 수행할 수 있도록 지원합니다. 또한 스크레이피는 다양한 웹사이트에 대한 크롤링 규칙을 정의하고 관리하기 쉽게 해주는 강력한 설정 기능을 제공합니다.</p> </li> <li> <p>이러한 특징들은 스크레이피를 웹 스크래핑 및 크롤링 작업을 자동화하고 대규모 데이터를 수집하는 데 널리 사용되는 도구로 만들어주었습니다.</p> </li> </ul> <h2 id=_2>스크레이피 수행 절차</h2> <ul> <li> <p>프로젝트 생성: 스크레이피 프로젝트를 생성합니다. 명령 프롬프트나 터미널에서 scrapy startproject 프로젝트명 명령을 실행하여 새로운 스크레이피 프로젝트를 생성합니다.</p> </li> <li> <p>아이템 파일 정의: 스크래핑하고자 하는 데이터의 구조를 정의합니다. 이를 위해 items.py 파일에 데이터 아이템 클래스를 정의합니다.</p> </li> <li> <p>스파이더 작성: 웹페이지를 크롤링하기 위한 스파이더(크롤러)를 작성합니다. 스파이더는 spiders 디렉터리에 Python 파일로 작성됩니다. 각 스파이더는 크롤링할 웹페이지의 URL 및 데이터 추출 규칙을 정의합니다.</p> </li> <li> <p>파이프라인(Pipeline) 작성: 추출한 데이터를 원하는 형식으로 파일에 출력하거나 데이터베이스에 저장합니다. 특히 MySql 에 저장하려면 스크레이피의 파이프라인(Pipeline)을 사용하여 데이터를 처리하고 저장하여야 합니다.</p> </li> <li> <p>파이프라인(Pipeline) 실행: 작성한 스파이더를 실행하고 해당하는 파이프라인을 적용하여 웹 크롤링 및 스크래핑을 수행하여 데이터를 처리합니다.</p> </li> </ul> <p><strong>프로젝트 생성</strong> </p> <ul> <li> <p>스크레이피 프로젝트를 생성하는 방법은 다음과 같습니다.</p> </li> <li> <p>Powershell 이나 명령 프롬프트(Windows) 또는 터미널(Mac 또는 Linux)을 엽니다.</p> </li> <li> <p>스크레이피를 설치하기전 가상환경 myscrapyenv을 설치합니다.</p> </li> </ul> <p><div class=highlight><pre><span></span><code>C:\users\oem\conda create -n myscrapyenv python=3.10
+</code></pre></div> - 만들어진 가상공간으로 들어갑니다.</p> <div class=highlight><pre><span></span><code><span class=n>C</span><span class=p>:</span>\<span class=n>users</span>\<span class=n>oem</span>\<span class=n>conda</span> <span class=n>activate</span> <span class=n>myscrapyenv</span>
+</code></pre></div> <ul> <li>그리고 가상공간 myscrapyenv 안에서 다음 명령을 실행하여 스크레이피를 설치합니다:</li> </ul> <div class=highlight><pre><span></span><code>conda install -c conda-forge scrapy
+</code></pre></div> <p>프로젝트를 생성할 디렉토리로 이동합니다. 예를 들어, C:\gppj\gppj10_my\pj 디렉토리에 프로젝트를 생성하고 다음과 같이 이동합니다:</p> <div class=highlight><pre><span></span><code>cd C:\gppj\gppj10_my\pj
+</code></pre></div> <p>다음 명령을 사용하여 새로운 스크레이피 프로젝트를 생성합니다. 프로젝트 이름은 QuotesSpider로 지정합니다:</p> <div class=highlight><pre><span></span><code>scrapy startproject QuotesSpider
+</code></pre></div> <p>프로젝트가 성공적으로 생성되면 해당 디렉토리에 QuotesSpider라는 새로운 디렉토리가 생성됩니다. 이 디렉토리 안에는 스크레이피 프로젝트의 기본 구조와 파일이 같이 포함되어 있습니다.</p> <div class=highlight><pre><span></span><code> scrapy.cfg
+ QuotesSpider
+  -- spiders
+     -- __init.py__
+  -- items.py
+  -- middlewares.py
+  -- pipelines.py
+  -- settings.py
+  -- __init.py__
+</code></pre></div> <p>프로젝트 생성 후에는 스크레이피 프로젝트의 기본 구조와 파일을 탐색하고, 필요에 따라 수정하여 크롤링 및 스크래핑 작업을 수행할 수 있습니다.</p> <p><strong>아이템(Item) 파일 정의</strong> </p> <ul> <li> <p>스크레이피에서 아이템(Item)은 크롤링된 데이터의 구조를 정의하는데 사용됩니다. 아이템은 일반적으로 웹 페이지에서 추출한 필드 및 값의 집합으로, 원하는 데이터를 나타내는 데 사용됩니다. 아이템을 정의하는 것은 크롤러가 웹 페이지에서 수집한 정보를 구조화하고 저장하는 방법을 지정하는 것과 유사합니다.</p> </li> <li> <p>아이템을 정의하기 위해서는 스크레이피 프로젝트의 items.py 파일을 수정합니다. 아이템을 정의하는 과정은 파이썬 클래스를 사용하여 필드를 정의하는 것으로 이루어집니다.</p> </li> <li> <p>웹 사이트에서 명언(quotes)을 크롤링하고자 할 때 사용할 수 있는 QuoteItem 아이템을 아래와 같이 정의합니다.</p> </li> </ul> <div class=highlight><pre><span></span><code># items.py
+
+import scrapy
+
+class QuoteItem(scrapy.Item):
+    text = scrapy.Field()   # 명언 텍스트
+    author = scrapy.Field()  # 작가
+    tags = scrapy.Field()    # 태그
+</code></pre></div> <p>위의 예제에서 QuoteItem 클래스는 스크레이피의 Item 클래스를 상속하고 있습니다. 각 필드는 scrapy.Field()로 정의되어 있으며, 이는 스크레이피에서 제공하는 필드 유형 중 하나입니다. 크롤러가 웹 페이지에서 데이터를 수집하면 해당 데이터가 QuoteItem 객체의 인스턴스로 저장됩니다. 이러한 구조를 통해 데이터를 구조화하고, 필요한 필드에 액세스할 수 있습니다.</p> <p>아이템을 정의한 후에는 스크레이피 크롤러에서 해당 아이템을 사용하여 웹 페이지에서 데이터를 추출하고, 필요에 따라 저장하거나 다른 처리를 수행할 수 있습니다.</p> <p><strong>스파이더(Spider) 작성</strong></p> <ul> <li> <p>스크레이피에서 스파이더(Spider)는 웹 사이트를 크롤링하는 데 사용되는 핵심 구성 요소입니다. 스파이더는 크롤링할 웹 페이지의 URL 목록을 가져오고, 각 페이지를 방문하여 데이터를 수집하고 처리하는 역할을 합니다. 스파이더는 사용자가 정의한 규칙에 따라 작동하며, 크롤링할 대상 웹 사이트의 구조와 동작을 지정합니다.</p> </li> <li> <p>스크레이피에서 스파이더는 파이썬 클래스로 정의되며, scrapy.Spider 클래스를 상속합니다. 아래는 간단한 예제를 통해 스파이더를 작성하는 과정을 설명하겠습니다.</p> </li> <li> <p>예를 들어, 'quotes.toscrape.com'이라는 웹 사이트에서 명언(quotes)을 크롤링하는 스파이더를 작성해보겠습니다.</p> </li> <li> <p>폴더는 QuotesSpider에서 quotes.py 파일을 만들고 아래 코드를 작성하고 실행시킵니다.</p> </li> </ul> <div class=highlight><pre><span></span><code>scrapy genspider quotes quotes.toscrape.com
+</code></pre></div> <ul> <li>폴더는 QuotesSpider/spiders 안에 quotes.py 파일이 만들어지고 아래 코드를 작성해서 저장합니다.</li> </ul> <div class=highlight><pre><span></span><code># quotes.py
+
+import scrapy
+
+class QuotesSpider(scrapy.Spider):
+    name = &#39;quotes&#39;  # 스파이더의 이름
+    start_urls = [&#39;http://quotes.toscrape.com/&#39;]  # 크롤링을 시작할 URL 목록
+
+    def parse(self, response):
+        # 크롤링된 페이지에서 명언 데이터 추출
+        for quote in response.css(&#39;div.quote&#39;):
+            yield {
+                &#39;text&#39;: quote.css(&#39;span.text::text&#39;).get(),
+                &#39;author&#39;: quote.css(&#39;span small.author::text&#39;).get(),
+                &#39;tags&#39;: quote.css(&#39;div.tags a.tag::text&#39;).getall(),
+            }
+
+        # 다음 페이지의 URL 추출하여 다음 요청 보내기
+        next_page = response.css(&#39;li.next a::attr(href)&#39;).get()
+        if next_page is not None:
+            yield response.follow(next_page, self.parse)
+</code></pre></div> <p>위의 코드에서 QuotesSpider 클래스는 scrapy.Spider를 상속하고, name 속성은 스파이더의 이름을 정의합니다. start_urls 속성은 크롤링을 시작할 URL 목록을 정의합니다.</p> <p>parse 메서드는 각 웹 페이지의 응답을 처리하고, 원하는 데이터를 추출하는데 사용됩니다. 여기서는 CSS 선택자를 사용하여 명언의 텍스트, 작가 및 태그를 추출하고, yield 문을 통해 추출된 데이터를 출력합니다.</p> <p>또한, 다음 페이지로 이동하기 위해 response.follow() 메서드를 사용하여 다음 페이지의 URL을 추출하고 요청을 보냅니다.</p> <p>이러한 방식으로 스파이더를 작성하면 스크레이피를 사용하여 웹 페이지에서 원하는 데이터를 크롤링할 수 있습니다.</p> <ul> <li>아래는 한국은행 오픈 API 서비스를 이용한 kor_bank_data 폴더안에 있는 스파이더를 작성하는 명령어 입니다. </li> </ul> <p><div class=highlight><pre><span></span><code>scrapy genspider collect_base_rate ecos.bok.or.kr
+</code></pre></div> - 실행하면 kor_bank_data/spiders 폴더안에 collect_base_rate.py 파일일 생성된 것을 확인 할 수 있습니다.</p> <p><strong>파이프라인(Pipeline) 작성</strong></p> <ul> <li> <p>스크레이피에서 추출한 데이터를 MySQL 데이터베이스에 저장하는 것은 가능합니다. 이를 위해서는 스크레이피의 파이프라인(Pipeline)을 사용하여 데이터를 처리하고 저장할 수 있습니다.</p> </li> <li> <p>아래는 스크레이피 파이프라인을 사용하여 MySQL 데이터베이스에 데이터를 저장하는 예시입니다.</p> </li> <li> <p>먼저, 스크레이피 설정 파일(settings.py)에서 MySQL 연결 정보를 설정합니다.</p> </li> </ul> <div class=highlight><pre><span></span><code># settings.py
+
+MYSQL_HOST = &#39;localhost&#39;
+MYSQL_PORT = 3306
+MYSQL_USER = &#39;your_username&#39;
+MYSQL_PASSWORD = &#39;your_password&#39;
+MYSQL_DATABASE = &#39;your_database&#39;
+</code></pre></div> <p>다음으로, 아이템을 MySQL에 저장하는 파이프라인을 작성합니다.</p> <div class=highlight><pre><span></span><code># pipelines.py
+
+import pymysql
+
+class QuotesspiderPipeline(object):
+    def __init__(self, host, port, user, password, database):
+        self.host = host
+        self.port = port
+        self.user = user
+        self.password = password
+        self.database = database
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            host=crawler.settings.get(&#39;MYSQL_HOST&#39;, &#39;localhost&#39;),
+            port=crawler.settings.get(&#39;MYSQL_PORT&#39;, 3306),
+            user=crawler.settings.get(&#39;MYSQL_USER&#39;, &#39;root&#39;),
+            password=crawler.settings.get(&#39;MYSQL_PASSWORD&#39;, &#39;1234&#39;),
+            database=crawler.settings.get(&#39;MYSQL_DATABASE&#39;, &#39;test02_db&#39;)
+        )
+
+    def open_spider(self, spider):
+        self.connection = pymysql.connect(
+            host=self.host,
+            port=self.port,
+            user=self.user,
+            password=self.password,
+            database=self.database,
+            charset=&#39;utf8mb4&#39;
+        )
+        self.cursor = self.connection.cursor()
+
+    def close_spider(self, spider):
+        self.connection.close()
+
+    def process_item(self, item, spider):
+        query_create_table = &quot;&quot;&quot;
+            CREATE TABLE IF NOT EXISTS quotes_data (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                text VARCHAR(255) UNIQUE,
+                author VARCHAR(100),
+                tags VARCHAR(255)
+            )
+        &quot;&quot;&quot;
+
+        query_insert_data = &quot;&quot;&quot;
+            INSERT INTO quotes_data (text, author, tags)
+            VALUES (%s, %s, %s)
+            ON DUPLICATE KEY UPDATE
+            author=VALUES(author), tags=VALUES(tags)
+        &quot;&quot;&quot;
+
+        self.cursor.execute(query_create_table)
+        self.cursor.execute(query_insert_data, (item[&#39;text&#39;], item[&#39;author&#39;], &#39;,&#39;.join(item[&#39;tags&#39;])))
+        self.connection.commit()
+        return item
+</code></pre></div> <p>위의 코드에서는 MySQLPipeline 클래스를 정의하고, 해당 클래스는 스크레이피의 파이프라인 클래스로 사용됩니다. 이 클래스는 아이템을 MySQL 데이터베이스에 저장하는 역할을 합니다. 아이템은 process_item 메서드를 통해 전달되며, 이 메서드에서 MySQL 쿼리를 실행하여 데이터베이스에 저장합니다.</p> <p>마지막으로, 스크레이피 설정 파일(settings.py)에서 파이프라인을 활성화합니다.</p> <div class=highlight><pre><span></span><code># settings.py
+
+ITEM_PIPELINES = {
+    &#39;your_project.pipelines.MySQLPipeline&#39;: 300,
+}
+</code></pre></div> <p>위의 설정은 스크레이피가 데이터를 처리할 때, MySQLPipeline 클래스를 사용하여 아이템을 저장하도록 지시합니다. 이 때, 300은 파이프라인의 우선순위를 나타내며, 값이 작을수록 우선순위가 높습니다.</p> <p>이렇게 하면 스크레이피를 사용하여 추출한 데이터를 MySQL 데이터베이스에 저장할 수 있습니다.</p> <p>참고로, 위의 코드에서 'your_table'은 데이터를 저장할 MySQL 테이블의 이름을 나타내며, 'your_project.pipelines.MySQLPipeline'은 실제 프로젝트의 파이프라인 모듈과 클래스 이름을 나타냅니다. 이를 실제 프로젝트의 구조에 맞게 수정해야 합니다.</p> <p><strong>파이프라인(Pipeline) 실행</strong></p> <p>스크레이피 파이프라인을 실행하려면 다음과 같이 하면 됩니다:</p> <ul> <li> <p>QuotesSpider 폴더로 이동합니다.</p> </li> <li> <p>명령 프롬프트 또는 터미널을 엽니다.</p> </li> <li> <p>다음 명령어를 사용하여 스크레이피의 crawl 명령을 실행합니다.</p> </li> </ul> <div class=highlight><pre><span></span><code>scrapy crawl &lt;spider_name&gt;
+</code></pre></div> <p>여기서 <spider_name>은 실행하려는 스파이더의 이름입니다. 스파이더 이름은 프로젝트의 spiders 디렉토리에 있는 파이썬 파일의 클래스 이름과 동일해야 합니다.</p> <p>예를 들어, 만약 스크레이피 프로젝트 디렉토리에 QuotesSpider라는 프로젝트가 있고, 이 프로젝트 안에 spiders 디렉토리안에 quotes.py라는 스파이더가 있다면, 다음과 같이 명령을 실행할 수 있습니다.</p> <div class=highlight><pre><span></span><code>scrapy crawl quotes
+</code></pre></div> <p>이 명령은 quotes 스파이더를 실행하고 해당하는 파이프라인을 적용하여 데이터를 처리합니다.</p> <h2 id=pipeline>파이프라인(Pipeline)</h2> <p>스크레이피의 파이프라인(Pipeline)에 대해서 조금 더 살펴보면 파이프라인 추출된 아이템을 처리하고 저장하기 위한 컴포넌트입니다. 스크레이피의 파이프라인은 아이템을 받아들이고 처리하는 일련의 메서드로 구성되어 있습니다. 이를 통해 데이터를 정제, 저장, 필터링 및 다양한 후속 처리 작업을 수행할 수 있습니다.</p> <p>파이프라인은 일반적으로 다음과 같은 작업을 수행합니다:</p> <ul> <li> <p>데이터베이스 저장: 추출된 데이터를 데이터베이스에 저장합니다. </p> </li> <li> <p>파일 저장: 추출된 데이터를 파일로 저장합니다(예: CSV, JSON 등).</p> </li> <li> <p>데이터 정제 및 가공: 추출된 데이터를 정제하고 필요한 형식으로 가공합니다.</p> </li> <li> <p>로깅: 추출된 데이터를 기록하고 로그를 관리합니다.</p> </li> <li> <p>다른 서비스로 전송: 추출된 데이터를 다른 서비스로 전송하거나 연동합니다.</p> </li> </ul> <p>스크레이피의 파이프라인은 여러 개의 컴포넌트로 구성되며, 각 컴포넌트는 개별적인 기능을 수행합니다. 이러한 파이프라인 컴포넌트는 설정 파일(settings.py)에서 활성화하고 우선순위를 조절하여 사용할 수 있습니다. 파이프라인은 아이템의 처리 순서와 방법을 제어하며, 추출된 데이터를 효율적으로 관리하고 처리할 수 있도록 합니다. </p> <p><strong>데이터베이스 저장</strong></p> <p>MySql 데이터베이스 저장은 위의 파이프라인 작성에서 설명하였습니다. 나머지는 아래에서 간단하게 살펴보도록 하겠습니다.</p> <p><strong>파일 저장</strong></p> <p>스크레이피의 파이프라인은 주로 아이템을 처리하고 저장하는 데 사용됩니다. 아래는 간단한 스크레이피 파이프라인의 예제 코드입니다. 이 예제는 스크래핑된 아이템을 CSV 파일에 저장하는 파이프라인을 보여줍니다.</p> <div class=highlight><pre><span></span><code>import csv
+
+class CsvPipeline:
+    def open_spider(self, spider):
+        self.file = open(&#39;scraped_data.csv&#39;, &#39;w&#39;, newline=&#39;&#39;)
+        self.writer = csv.writer(self.file)
+        self.writer.writerow([&#39;title&#39;, &#39;price&#39;, &#39;description&#39;])
+
+    def process_item(self, item, spider):
+        self.writer.writerow([item[&#39;title&#39;], item[&#39;price&#39;], item[&#39;description&#39;]])
+        return item
+
+    def close_spider(self, spider):
+        self.file.close()
+</code></pre></div> <p>위 코드에서 CsvPipeline은 스크레이피의 파이프라인 컴포넌트로, 스크래핑된 아이템을 CSV 파일에 저장합니다. open_spider 메서드는 스파이더가 시작될 때 호출되어 파일을 열고 헤더를 쓰는 역할을 합니다. process_item 메서드는 각 아이템을 받아서 CSV 파일에 쓰는 역할을 합니다. close_spider 메서드는 스파이더가 종료될 때 호출되어 파일을 닫습니다.</p> <p>이 파이프라인을 사용하려면 settings.py 파일에서 파이프라인을 활성화해야 합니다:</p> <div class=highlight><pre><span></span><code>ITEM_PIPELINES = {
+    &#39;myproject.pipelines.CsvPipeline&#39;: 300,
+}
+</code></pre></div> <p>이렇게 하면 스크래핑된 아이템이 CsvPipeline을 통해 처리되고, CSV 파일에 저장됩니다.</p> <p><strong>데이터 정제 및 가공</strong></p> <p>데이터 정제 및 가공은 추출된 데이터를 필요에 맞게 정리하고 가공하는 과정을 말합니다. 이 과정에서 데이터의 불필요한 부분을 제거하거나 변형하여 데이터의 품질을 향상시키고 분석에 활용할 수 있는 형태로 만듭니다.</p> <p>예를 들어, 스크래핑한 웹 페이지에서 추출한 텍스트 데이터를 기반으로 한 데이터 정제 및 가공의 예를 살펴보겠습니다:</p> <ul> <li> <p>불필요한 태그 제거: HTML 웹 페이지에서 데이터를 추출할 때, 종종 불필요한 HTML 태그가 함께 추출될 수 있습니다. 이러한 태그를 제거하여 순수한 텍스트 데이터만을 남깁니다.</p> </li> <li> <p>공백 제거: 추출된 텍스트 데이터에는 공백이 포함될 수 있습니다. 데이터 정제 단계에서는 공백을 제거하여 데이터의 일관성을 유지합니다.</p> </li> <li> <p>특수 문자 제거: 텍스트 데이터에는 특수 문자나 기호가 포함될 수 있습니다. 이러한 문자를 제거하여 데이터의 깔끔한 형태를 유지합니다.</p> </li> <li> <p>문자열 변환: 텍스트 데이터의 일부를 특정 형식으로 변환할 수 있습니다. 예를 들어, 날짜 형식을 통일하거나 특정 키워드를 다른 형태로 변환할 수 있습니다.</p> </li> <li> <p>데이터 유효성 검사: 추출된 데이터가 올바른 형식인지 확인하고, 필요한 경우 오류를 처리합니다. 이를 통해 데이터의 품질을 유지하고 신뢰성을 확보할 수 있습니다.</p> </li> </ul> <p>이러한 데이터 정제 및 가공 작업을 통해 추출된 데이터를 분석이나 시각화에 활용할 수 있는 품질 높은 형태로 만들 수 있습니다.</p> <p>스크레이피의 파이프라인을 사용하여 데이터를 정제하고 가공하는 예제 코드를 제공해 드리겠습니다. 이 예제는 간단한 정제 및 가공 프로세스를 보여줍니다. 이 예제에서는 아이템의 일부 속성을 정제하고 새로운 속성을 추가하여 결과를 반환합니다.</p> <div class=highlight><pre><span></span><code>class DataProcessingPipeline:
+    def process_item(self, item, spider):
+        # 아이템에서 필요한 데이터 추출
+        title = item[&#39;title&#39;]
+        description = item[&#39;description&#39;]
+        price = item[&#39;price&#39;]
+
+        # 가격 문자열에서 특수 문자 및 공백 제거
+        price = price.replace(&#39;$&#39;, &#39;&#39;).replace(&#39;,&#39;, &#39;&#39;).strip()
+
+        # 가격을 숫자 형식으로 변환
+        try:
+            price = float(price)
+        except ValueError:
+            price = None
+
+        # 새로운 속성 추가 및 정제된 데이터로 업데이트
+        item[&#39;cleaned_price&#39;] = price
+        item[&#39;processed_description&#39;] = self.process_description(description)
+
+        return item
+
+    def process_description(self, description):
+        # 여기에서 추가적인 데이터 정제 또는 가공 로직을 수행할 수 있습니다.
+        # 예를 들어, HTML 태그를 제거하거나 특정 단어를 필터링할 수 있습니다.
+        return description
+</code></pre></div> <p>위의 코드에서 DataProcessingPipeline은 아이템의 데이터를 정제하고 가공하는 스크레이피 파이프라인입니다. process_item 메서드는 각 아이템을 받아서 필요한 데이터를 추출하고, 가격을 정제하고 숫자 형식으로 변환합니다. 또한, description 속성을 가공하는 process_description 메서드를 사용하여 추가적인 데이터 정제 또는 가공을 수행할 수 있습니다.</p> <p>이 파이프라인을 사용하려면 settings.py 파일에서 파이프라인을 활성화해야 합니다:</p> <div class=highlight><pre><span></span><code>ITEM_PIPELINES = {
+    &#39;myproject.pipelines.DataProcessingPipeline&#39;: 300,
+}
+</code></pre></div> <p>이렇게 하면 스크래핑된 아이템이 DataProcessingPipeline을 통해 처리되고, 데이터가 정제되고 가공된 후에 저장됩니다.</p> <p><strong>로깅: 추출된 데이터를 기록하고 로그를 관리</strong></p> <p>스크레이피의 파이프라인을 사용하여 추출된 데이터를 기록하고 로그를 관리하는 예제 코드를 제공해 드리겠습니다. 이 예제는 추출된 아이템을 로그 파일에 기록하는 간단한 로깅 파이프라인을 보여줍니다.</p> <div class=highlight><pre><span></span><code>import logging
+
+class LoggingPipeline:
+    def __init__(self):
+        self.logger = logging.getLogger(__name__)
+
+    def process_item(self, item, spider):
+        # 추출된 데이터를 로그 파일에 기록
+        self.logger.info(f&quot;Extracted item: {item}&quot;)
+
+        # 파이프라인을 통해 아이템을 전달
+        return item
+</code></pre></div> <p>위의 코드에서 LoggingPipeline은 추출된 아이템을 로그 파일에 기록하는 스크레이피 파이프라인입니다. process_item 메서드는 각 아이템을 받아서 로그 파일에 기록한 후에 그대로 반환합니다.</p> <p>이 파이프라인을 사용하려면 settings.py 파일에서 파이프라인을 활성화해야 합니다:</p> <div class=highlight><pre><span></span><code>ITEM_PIPELINES = {
+    &#39;myproject.pipelines.LoggingPipeline&#39;: 100,
+}
+</code></pre></div> <p>이렇게 하면 추출된 아이템이 LoggingPipeline을 통해 처리되고, 로그 파일에 기록됩니다.</p> <p><strong>다른 서비스로 전송</strong></p> <p>스크레이피의 파이프라인을 사용하여 추출된 데이터를 다른 서비스로 전송하는 예제 코드를 제공해 드리겠습니다. 이 예제는 추출된 아이템을 외부 API로 전송하는 간단한 파이프라인을 보여줍니다.</p> <div class=highlight><pre><span></span><code>import requests
+
+class APITransferPipeline:
+    def __init__(self, api_url):
+        self.api_url = api_url
+
+    def process_item(self, item, spider):
+        # 추출된 데이터를 외부 API로 전송
+        try:
+            response = requests.post(self.api_url, json=item)
+            response.raise_for_status()
+            spider.logger.info(f&quot;Item sent to API: {item}&quot;)
+        except requests.RequestException as e:
+            spider.logger.error(f&quot;Error sending item to API: {e}&quot;)
+
+        # 파이프라인을 통해 아이템을 전달
+        return item
+</code></pre></div> <p>위의 코드에서 APITransferPipeline은 추출된 아이템을 외부 API로 전송하는 스크레이피 파이프라인입니다. process_item 메서드는 각 아이템을 받아서 외부 API로 전송하고, 성공 또는 실패에 따라 로그를 남깁니다.</p> <p>이 파이프라인을 사용하려면 settings.py 파일에서 파이프라인을 활성화하고 API 엔드포인트 URL을 설정해야 합니다:</p> <div class=highlight><pre><span></span><code>ITEM_PIPELINES = {
+    &#39;myproject.pipelines.APITransferPipeline&#39;: 100,
+}
+
+API_URL = &#39;http://example.com/api&#39;
+</code></pre></div> <p>이렇게 하면 추출된 아이템이 APITransferPipeline을 통해 처리되고, 설정된 API 엔드포인트로 전송됩니다.</p> <h2 id=_3>결어</h2> <ul> <li> <p>이제 스크레이피의 프로젝트를 만들고 아이템, 스파이더, 파이프라인을 작성하여 실행하는 방법에 대하서 알게되었습니다.</p> </li> <li> <p>이러한 작성 방법에 따라 한국은행 오픈 API를 이용하여 거시경제 지표들을 크롤링하여 MySql 에 저장하는 방법을 알아 보도록하겠습니다.</p> </li> </ul> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> &copy; 2023 <a href=https://github.com/datatellme target=_blank rel=noopener>Data Tell Me</a> </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../../assets/javascripts/bundle.dd8806f2.min.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
