@@ -191,6 +191,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/blog/posts/2024-11-27-quant/</loc>
+         <lastmod>2024-11-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/data/01_mkdocs/</loc>
          <lastmod>2024-11-27</lastmod>
          <changefreq>daily</changefreq>
