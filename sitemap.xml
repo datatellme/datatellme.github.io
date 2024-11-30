@@ -226,6 +226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/data/06_Xaringan/</loc>
+         <lastmod>2024-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/quant/01_quant/</loc>
          <lastmod>2024-11-30</lastmod>
          <changefreq>daily</changefreq>
