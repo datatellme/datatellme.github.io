@@ -95,7 +95,7 @@ error: failed to push some refs to &#39;https://github.com/yourname/foo.git&#39;
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Integrate the remote changes (e.g. hint: &#39;git pull ...&#39;) before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
-</code></pre></div> <p>해결 방법: git pull을 클릭합니다. 그리고 처음부터 파일 수정, commit, push를 진행하면 됩니다.</p> <h2 id=sourcetree>홈페이지 내용 업데이트 자동화(Sourcetree)</h2> <p><strong>자동화 환경 세팅</strong></p> <ul> <li> <p>깃허브 업로드 프로그램인 Sourcetree를 설치한다.</p> </li> <li> <p>홈페이지 내용 수정파일 폴더와 업로드 파일 폴더를 구분</p> </li> <li> <p>내용 수정 폴더: C:\gppj\data-tell-me_ver04</p> </li> <li> <p>업로드 폴더: C:\gppj\data-tell-me_ver05</p> </li> <li> <p>내용 수정 폴더의 docs폴더에 마크다운 파일을 수정한다.</p> </li> <li> <p>자동화를 위한 배치 파일을 C:\gppj\auto_ver04 폴더에 작성한다.</p> </li> <li> <p>배치 파일명은 다음과 같이 예를 들어 명명한다. </p> </li> <li> <p>04_homp_mkdocs_build.bat</p> </li> <li> <p>05_homp_mkdocs_serve.bat</p> </li> <li> <p>06_copy_MkDocfiles.bat</p> </li> <li> <p>07_git_push.bat</p> </li> </ul> <p><strong>빌드 배치 파일 작성</strong></p> <ul> <li>04_homp_mkdocs_build.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
+</code></pre></div> <p>해결 방법: git pull을 클릭합니다. 그리고 처음부터 파일 수정, commit, push를 진행하면 됩니다.</p> <h2 id=sourcetree>홈페이지 내용 업데이트 자동화(Sourcetree)</h2> <p><strong>자동화 환경 세팅</strong></p> <ul> <li> <p>깃허브 업로드 프로그램인 Sourcetree를 설치한다.</p> </li> <li> <p>홈페이지 내용 수정파일 폴더와 업로드 파일 폴더를 구분</p> </li> <li> <p>내용 수정 폴더: C:\gppj\data-tell-me_ver04</p> </li> <li> <p>업로드 폴더: C:\gppj\data-tell-me_ver05</p> </li> <li> <p>내용 수정 폴더의 docs폴더에 마크다운 파일을 수정한다.</p> </li> <li> <p>자동화를 위한 배치 파일을 C:\gppj\auto_ver04 폴더에 작성한다.</p> </li> <li> <p>배치 파일명은 다음과 같이 예를 들어 명명한다. </p> </li> <li> <p>04_homp_mkdocs_build.bat</p> </li> <li> <p>05_homp_mkdocs_serve.bat</p> </li> <li> <p>06_copy_MkDocfiles.bat</p> </li> <li> <p>09_git_push.bat</p> </li> </ul> <p><strong>빌드 배치 파일 작성</strong></p> <ul> <li>04_homp_mkdocs_build.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
 &quot;C:\Users\oem\miniconda3\envs\myfirstenv\python.exe&quot; -m mkdocs build -f C:\gppj\data-tell-me_ver04\mkdocs.yml
 pause
 </code></pre></div> <p><strong>서버 배치 파일 작성</strong></p> <ul> <li>05_homp_mkdocs_serve.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
@@ -120,7 +120,7 @@ xcopy /e /i /y %source% %destination%
 :: 완료 메시지
 echo All files have been successfully copied to %destination%.
 pause
-</code></pre></div> <p><strong>Sourcetree git push 배치 파일 작성</strong></p> <ul> <li>07_git_push.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
+</code></pre></div> <p><strong>Sourcetree git push 배치 파일 작성</strong></p> <ul> <li>09_git_push.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
 
 REM Sourcetree 실행
 start &quot;&quot; &quot;C:\Users\oem\AppData\Local\SourceTree\app-3.4.21\Sourcetree.exe&quot;
