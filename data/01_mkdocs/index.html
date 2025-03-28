@@ -120,6 +120,38 @@ xcopy /e /i /y %source% %destination%
 :: 완료 메시지
 echo All files have been successfully copied to %destination%.
 pause
+</code></pre></div> <p><strong>Xaringan knit 파일 작성</strong></p> <ul> <li>07_Xaringa_macroeconfilesknit_run_knit.bat</li> </ul> <p><div class=highlight><pre><span></span><code>@echo off
+&quot;C:\R\R-4.4.0\bin\x64\Rscript.exe&quot; &quot;C:\gppj\auto_ver04\07_Xaringa_macroeconfilesknit_rmd.R&quot;
+
+pause
+</code></pre></div> <strong>Xaringan R 파일 작성</strong></p> <ul> <li> <p>07_Xaringa_macroeconfilesknit_rmd.R</p> </li> <li> <p>ver0401 폴더는 panel로 분류한 버전임.</p> </li> </ul> <div class=highlight><pre><span></span><code>setwd(&quot;C:/gppj/RPJ_sample&quot;)
+rmarkdown::render(&quot;C:/gppj/RPJ_sample/0102_ninjappt/ver0402/index.Rmd&quot;)
+</code></pre></div> <p><strong>Xaringan copy 파일 작성</strong></p> <ul> <li>08_Xaringa_copy_macroeconfiles.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
+:: 복사할 원본 디렉터리 경로
+set source=&quot;C:\gppj\RPJ_sample\0102_ninjappt\ver0402&quot;
+
+:: 복사 대상 디렉터리 경로
+set destination=&quot;C:\gppj\data-tell-me_ver05\quant\02_macroecon&quot;
+
+:: 대상 디렉터리가 없으면 생성
+if not exist %destination% (
+    echo Target directory does not exist. Creating: %destination%
+    mkdir %destination%
+)
+
+:: 모든 파일 복사
+xcopy /e /i /y %source% %destination%
+
+:: index.Rmd 파일 삭제
+set index_file=%destination%\index.Rmd
+if exist %index_file% (
+    echo Deleting index.Rmd from %destination%...
+    del %index_file%
+)
+
+:: 완료 메시지
+echo All files have been successfully copied to %destination%, and index.Rmd has been deleted.
+pause
 </code></pre></div> <p><strong>Sourcetree git push 배치 파일 작성</strong></p> <ul> <li>09_git_push.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
 
 REM Sourcetree 실행
