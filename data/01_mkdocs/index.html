@@ -95,7 +95,7 @@ error: failed to push some refs to &#39;https://github.com/yourname/foo.git&#39;
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Integrate the remote changes (e.g. hint: &#39;git pull ...&#39;) before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
-</code></pre></div> <p>해결 방법: git pull을 클릭합니다. 그리고 처음부터 파일 수정, commit, push를 진행하면 됩니다.</p> <h2 id=sourcetree>홈페이지 자동화(Sourcetree)</h2> <p><strong>자동화 환경 세팅</strong></p> <ul> <li> <p>깃허브 업로드 프로그램인 Sourcetree를 설치한다.</p> </li> <li> <p>홈페이지 내용 수정파일 폴더와 업로드 파일 폴더를 구분</p> </li> <li> <p>내용 수정 폴더: C:\gppj\data-tell-me_ver04</p> </li> <li> <p>업로드 폴더: C:\gppj\data-tell-me_ver05</p> </li> <li> <p>내용 수정 폴더의 docs폴더에 마크다운 파일을 수정한다.</p> </li> <li> <p>자동화를 위한 배치 파일을 C:\gppj\auto_ver04 폴더에 작성한다.</p> </li> </ul> <p><strong>배치 파일 및 관련 파일명</strong> </p> <ul> <li> <p>03_blog_gppj01_04030101.bat</p> </li> <li> <p>03_blog_gppj01_04030101.py</p> </li> <li> <p>04_homp_mkdocs_build.bat</p> </li> <li> <p>05_homp_mkdocs_serve.bat</p> </li> <li> <p>06_copy_MkDocfiles.bat</p> </li> <li> <p>07_Xaringa_macroeconfilesknit_run_knit.bat</p> </li> <li> <p>07_Xaringa_macroeconfilesknit_rmd.R</p> </li> <li> <p>08_Xaringa_copy_macroeconfiles.bat</p> </li> <li> <p>09_git_push.bat</p> </li> </ul> <p><strong>blog 빌드 배치 파일 작성</strong></p> <ul> <li>03_blog_gppj01_04030101.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
+</code></pre></div> <p>해결 방법: git pull을 클릭합니다. 그리고 처음부터 파일 수정, commit, push를 진행하면 됩니다.</p> <h2 id=sourcetree>홈페이지 자동화(Sourcetree)</h2> <p><strong>자동화 환경 세팅</strong></p> <ul> <li> <p>깃허브 업로드 프로그램인 Sourcetree를 설치한다.</p> </li> <li> <p>홈페이지 내용 수정파일 폴더와 업로드 파일 폴더를 구분</p> </li> <li> <p>내용 수정 폴더: C:\gppj\data-tell-me_ver04</p> </li> <li> <p>업로드 폴더: C:\gppj\data-tell-me_ver05</p> </li> <li> <p>내용 수정 폴더의 docs폴더에 마크다운 파일을 수정한다.</p> </li> <li> <p>자동화를 위한 배치 파일을 C:\gppj\auto_ver04 폴더에 작성한다.</p> </li> </ul> <p><strong>배치 파일 및 관련 파일명</strong> </p> <ul> <li> <p>03_blog_gppj01_04030101.bat</p> </li> <li> <p>03_blog_gppj01_04030101.py</p> </li> <li> <p>04_homp_mkdocs_build.bat</p> </li> <li> <p>05_homp_mkdocs_serve.bat</p> </li> <li> <p>06_copy_MkDocfiles.bat</p> </li> <li> <p>07_Xaringa_macroeconfilesknit_run_knit.bat</p> </li> <li> <p>07_Xaringa_macroeconfilesknit_rmd.R</p> </li> <li> <p>08_Xaringa_copy_macroeconfiles.bat</p> </li> <li> <p>09_git_push.bat</p> </li> <li> <p>10_homp_run_all.bat</p> </li> </ul> <p><strong>blog 빌드 배치 파일 작성</strong></p> <ul> <li>03_blog_gppj01_04030101.bat</li> </ul> <div class=highlight><pre><span></span><code>@echo off
 &quot;C:\Users\oem\miniconda3\envs\myfirstenv\python.exe&quot; C:\gppj\auto_ver04\03_blog_gppj01_04030101.py
 pause
 </code></pre></div> <p><strong>blog 빌드 파이썬 파일 작성</strong></p> <ul> <li>03_blog_gppj01_04030101.py</li> </ul> <div class=highlight><pre><span></span><code>import os
@@ -258,4 +258,31 @@ git push
 REM 완료 메시지
 echo 작업이 완료되었습니다.
 pause
-</code></pre></div> <h2 id=_3>결어</h2> <ul> <li> <p>MkDocs으로 여러분의 멋진 홈페이지를 만들 수 있습니다.</p> </li> <li> <p>배치 스크립트를 이용한 홈페이지 내용 업데이트 자동화를 통해서 수정된 내용을 바로 업로드 할 수 있습니다.</p> </li> <li> <p>MkDocs로 만든 홈페이지에 자신의 지식 아카이브를 차곡 차곡 축적해 보는 것은 어떠신지요.</p> </li> </ul> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> &copy; 2023 <a href=https://github.com/datatellme target=_blank rel=noopener>Data Tell Me</a> </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../assets/javascripts/bundle.dd8806f2.min.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
+</code></pre></div> <p><strong>홈페이지 전체 자동실행 배치 파일 작성</strong></p> <ul> <li> <p>10_homp_run_all.bat</p> </li> <li> <p>각 배치 파일의 마지막에 pause를 모두 exit /b로 변경하여 작업 완료 후 자동 종료로 세팅함</p> </li> </ul> <div class=highlight><pre><span></span><code>@echo off
+
+:: 작업 디렉토리를 C:\gppj\auto_ver04로 설정
+cd /d C:\gppj\auto_ver04
+
+
+:: 04_homp_mkdocs_build.bat 실행
+call 04_homp_mkdocs_build.bat
+
+
+:: 06_copy_MkDocfiles 실행
+call 06_copy_MkDocfiles.bat
+
+
+:: 07_Xaringa_macroeconfilesknit_run_knit.bat 실행
+call 07_Xaringa_macroeconfilesknit_run_knit.bat
+
+
+:: 08_Xaringa_copy_macroeconfiles.bat 실행
+call 08_Xaringa_copy_macroeconfiles.bat
+
+:: 09_git_push.bat 실행
+call 09_git_push.bat
+
+
+:: 작업 완료 후 자동 종료
+exit /b
+</code></pre></div> <h2 id=_3>결어</h2> <ul> <li> <p>MkDocs으로 여러분의 멋진 홈페이지를 만들 수 있습니다.</p> </li> <li> <p>배치 스크립트를 이용한 홈페이지 내용 업데이트 자동화를 통해서 수정된 내용을 바로 업로드 할 수 있습니다.</p> </li> <li> <p>모든 배치 파일을 순차적으로 자동실행하는 종합적인 배치파일을 작성하여 한번에 여러가지 작업을 순차적으로 실행 할 수 있습니다.</p> </li> <li> <p>MkDocs로 만든 홈페이지에 자신의 지식 아카이브를 차곡 차곡 축적해 보는 것은 어떠신지요.</p> </li> </ul> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> &copy; 2023 <a href=https://github.com/datatellme target=_blank rel=noopener>Data Tell Me</a> </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../assets/javascripts/bundle.dd8806f2.min.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
