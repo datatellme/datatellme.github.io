@@ -216,6 +216,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/blog/posts/2025-03-29-100books-%EB%B6%80%EC%9D%98%EC%B6%94%EC%9B%94%EC%B0%A8%EC%84%A0_001/</loc>
+         <lastmod>2025-03-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/data/01_mkdocs/</loc>
          <lastmod>2025-03-30</lastmod>
          <changefreq>daily</changefreq>
