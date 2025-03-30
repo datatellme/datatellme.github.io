@@ -181,31 +181,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/blog/posts/2024-10-04-%ED%80%80%ED%8A%B8/</loc>
-         <lastmod>2025-03-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/blog/posts/2024-11-27-macroecon/</loc>
-         <lastmod>2025-03-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/blog/posts/2024-11-28-quant/</loc>
-         <lastmod>2025-03-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/blog/posts/2024-11-29-quant/</loc>
-         <lastmod>2025-03-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/blog/posts/2024-11-30-macroecon/</loc>
-         <lastmod>2025-03-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://example.com/blog/posts/2025-03-28-book000-100%EA%B6%8C%20%EC%B1%85%20%EC%9D%BD%EA%B8%B0%20%EB%AA%A9%EB%A1%9D%ED%91%9C/</loc>
          <lastmod>2025-03-30</lastmod>
          <changefreq>daily</changefreq>
