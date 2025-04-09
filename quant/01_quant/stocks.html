@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩</title>
+  <meta name="description" content="Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩" />
+  
+  <meta name="twitter:description" content="Chapter 4 주식 종목 선택 자동화 작성 방법 | 퀀트 트레이딩" />
+  
+
+<meta name="author" content="psnam" />
+
+
+<meta name="date" content="2025-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="macroecon.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">퀀트 트레이딩</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#%EC%9D%B4-%EC%B1%85%EC%97%90%EA%B2%8C-%EA%B4%80%ED%95%98%EC%97%AC"><i class="fa fa-check"></i>이 책에게 관하여</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 퀀트 트레이딩 기초</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="03-stocks.html"><a href="#%ED%80%80%ED%8A%B8-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%94%A9%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%9A%94%EC%86%8C"><i class="fa fa-check"></i><b>1.1</b> 퀀트 트레이딩의 기초 요소</a></li>
+<li class="chapter" data-level="1.2" data-path="03-stocks.html"><a href="#%ED%80%80%ED%8A%B8-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%94%A9%EC%9D%98-%EC%9E%A5%EC%A0%90"><i class="fa fa-check"></i><b>1.2</b> 퀀트 트레이딩의 장점</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prosess.html"><a href="prosess.html"><i class="fa fa-check"></i><b>2</b> 퀀트 트레이딩의 절차 및 투자심리</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="03-stocks.html"><a href="#%EC%A0%88%EC%B0%A8"><i class="fa fa-check"></i><b>2.1</b> 절차</a></li>
+<li class="chapter" data-level="2.2" data-path="03-stocks.html"><a href="#%EC%9A%B0%EB%A6%AC%EA%B0%80-%EB%B9%A0%EC%A7%88-%EC%88%98-%EC%9E%88%EB%8A%94-%ED%88%AC%EC%9E%90-%EC%8B%AC%EB%A6%AC"><i class="fa fa-check"></i><b>2.2</b> 우리가 빠질 수 있는 투자 심리</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="macroecon.html"><a href="macroecon.html"><i class="fa fa-check"></i><b>3</b> 거시경제 분석</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="03-stocks.html"><a href="#macroecon-%EC%9E%90%EB%8F%99%ED%99%94-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95"><i class="fa fa-check"></i><b>3.1</b> macroecon 자동화 작성 방법</a></li>
+<li class="chapter" data-level="3.2" data-path="03-stocks.html"><a href="#xaringa-%EB%8B%9B%ED%8A%B8-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>3.2</b> Xaringa 닛트 배치 파일 작성</a></li>
+<li class="chapter" data-level="3.3" data-path="03-stocks.html"><a href="#xaringa-%EB%8B%9B%ED%8A%B8-r-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>3.3</b> Xaringa 닛트 R 파일 작성</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="stocks.html"><a href="stocks.html"><i class="fa fa-check"></i><b>4</b> 주식 종목 선택 자동화 작성 방법</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="03-stocks.html"><a href="#%EC%9E%90%EB%8F%99%ED%99%94-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85"><i class="fa fa-check"></i><b>4.1</b> 자동화 환경 세팅</a></li>
+<li class="chapter" data-level="4.2" data-path="03-stocks.html"><a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-mysql-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>4.2</b> stock 데이터 mysql 업로드 배치 파일 작성</a></li>
+<li class="chapter" data-level="4.3" data-path="03-stocks.html"><a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8C%8C%EC%9D%B4%EC%8D%A8-%EC%8B%A4%ED%96%89-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>4.3</b> stock 데이터 파이써 실행 파일 작성</a></li>
+<li class="chapter" data-level="4.4" data-path="03-stocks.html"><a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-rmd-%ED%8C%8C%EC%9D%BC-knit-%ED%95%98%EB%8A%94-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>4.4</b> stock 데이터 Rmd 파일 knit 하는 배치 파일 작성</a></li>
+<li class="chapter" data-level="4.5" data-path="03-stocks.html"><a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-rmd-%ED%8C%8C%EC%9D%BC-knit-%ED%95%98%EB%8A%94-r-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>4.5</b> stock 데이터 Rmd 파일 knit 하는 R 파일 작성</a></li>
+<li class="chapter" data-level="4.6" data-path="03-stocks.html"><a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-all-run-%ED%95%98%EB%8A%94-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1"><i class="fa fa-check"></i><b>4.6</b> stock 데이터 all Run 하는 배치 파일 작성</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://datatellme.github.io/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">퀀트 트레이딩</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stocks" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 주식 종목 선택 자동화 작성 방법<a href="stocks.html#stocks" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="자동화-환경-세팅" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 자동화 환경 세팅<a href="#%EC%9E%90%EB%8F%99%ED%99%94-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>파이썬 프로그램을 설치한다.</p></li>
+<li><p>파이썬 R프로그램에 관련 패키지를 인스톨한다.</p></li>
+<li><p>R프로그램에 다음 패키지를 (임포트)한다</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="stocks.html#cb3-1" tabindex="-1"></a>import requests as rq</span>
+<span id="cb3-2"><a href="stocks.html#cb3-2" tabindex="-1"></a>from io import BytesIO</span>
+<span id="cb3-3"><a href="stocks.html#cb3-3" tabindex="-1"></a>import pandas as pd</span>
+<span id="cb3-4"><a href="stocks.html#cb3-4" tabindex="-1"></a>from bs4 import BeautifulSoup</span>
+<span id="cb3-5"><a href="stocks.html#cb3-5" tabindex="-1"></a>import re</span>
+<span id="cb3-6"><a href="stocks.html#cb3-6" tabindex="-1"></a>import numpy as np</span>
+<span id="cb3-7"><a href="stocks.html#cb3-7" tabindex="-1"></a>import pymysql</span>
+<span id="cb3-8"><a href="stocks.html#cb3-8" tabindex="-1"></a>import tkinter as tk</span>
+<span id="cb3-9"><a href="stocks.html#cb3-9" tabindex="-1"></a>from tkinter import messagebox</span>
+<span id="cb3-10"><a href="stocks.html#cb3-10" tabindex="-1"></a>import cloudscraper</span>
+<span id="cb3-11"><a href="stocks.html#cb3-11" tabindex="-1"></a>from datetime import datetime, timedelta</span>
+<span id="cb3-12"><a href="stocks.html#cb3-12" tabindex="-1"></a>from tqdm import tqdm</span></code></pre></div>
+<ul>
+<li><p>자동화를 위한 배치 파일을 C:_ver05 폴더에 작성한다.</p></li>
+<li><p>배치 파일명은 다음과 같이 명명한다.</p></li>
+<li><p>01_stock_run_py.bat</p></li>
+<li><p>06_100_run_py.bat</p></li>
+<li><p>07_100_knit_rmd04.bat</p></li>
+<li><p>07_100_knit_rmd04.R</p></li>
+<li><p>08_100_run_all.bat</p></li>
+</ul>
+</div>
+<div id="stock-데이터-mysql-업로드-배치-파일-작성" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> stock 데이터 mysql 업로드 배치 파일 작성<a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-mysql-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>01_stock_run_py.bat</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="stocks.html#cb4-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb4-2"><a href="stocks.html#cb4-2" tabindex="-1"></a><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\myfirstenv\python.exe&quot;</span> econ04_0103.py C<span class="sc">:</span>\gppj\auto_ver05</span>
+<span id="cb4-3"><a href="stocks.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="stocks.html#cb4-4" tabindex="-1"></a><span class="sc">::</span> 작업 완료 후 자동 종료</span>
+<span id="cb4-5"><a href="stocks.html#cb4-5" tabindex="-1"></a>exit <span class="sc">/</span>b</span></code></pre></div>
+</div>
+<div id="stock-데이터-파이써-실행-파일-작성" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> stock 데이터 파이써 실행 파일 작성<a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8C%8C%EC%9D%B4%EC%8D%A8-%EC%8B%A4%ED%96%89-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>006_100_run_py.bat</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="stocks.html#cb5-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb5-2"><a href="stocks.html#cb5-2" tabindex="-1"></a><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\myfirstenv\python.exe&quot;</span> gppj01_0403040108050503.py C<span class="sc">:</span>\gppj\auto_ver05</span>
+<span id="cb5-3"><a href="stocks.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="stocks.html#cb5-4" tabindex="-1"></a><span class="sc">::</span> 작업 완료 후 자동 종료</span>
+<span id="cb5-5"><a href="stocks.html#cb5-5" tabindex="-1"></a>exit <span class="sc">/</span>b</span></code></pre></div>
+</div>
+<div id="stock-데이터-rmd-파일-knit-하는-배치-파일-작성" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> stock 데이터 Rmd 파일 knit 하는 배치 파일 작성<a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-rmd-%ED%8C%8C%EC%9D%BC-knit-%ED%95%98%EB%8A%94-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>07_100_knit_rmd04.bat</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="stocks.html#cb6-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb6-2"><a href="stocks.html#cb6-2" tabindex="-1"></a><span class="st">&quot;C:\R\R-4.4.0</span><span class="sc">\b</span><span class="st">in</span><span class="sc">\x64</span><span class="st">\Rscript.exe&quot;</span> <span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver05\100_knit_rmd04.R&quot;</span></span>
+<span id="cb6-3"><a href="stocks.html#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="stocks.html#cb6-4" tabindex="-1"></a><span class="sc">::</span> 작업 완료 후 자동 종료</span>
+<span id="cb6-5"><a href="stocks.html#cb6-5" tabindex="-1"></a>exit <span class="sc">/</span>b</span></code></pre></div>
+</div>
+<div id="stock-데이터-rmd-파일-knit-하는-r-파일-작성" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> stock 데이터 Rmd 파일 knit 하는 R 파일 작성<a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-rmd-%ED%8C%8C%EC%9D%BC-knit-%ED%95%98%EB%8A%94-r-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>07_100_knit_rmd04.R</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="stocks.html#cb7-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb7-2"><a href="stocks.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span>
+<span id="cb7-3"><a href="stocks.html#cb7-3" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb7-4"><a href="stocks.html#cb7-4" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="stocks.html#cb7-5" tabindex="-1"></a><span class="co"># Set Python environment if needed (remove if not necessary)</span></span>
+<span id="cb7-6"><a href="stocks.html#cb7-6" tabindex="-1"></a><span class="fu">use_python</span>(<span class="st">&quot;C:/Users/oem/miniconda3/envs/myfirstenv&quot;</span>, <span class="at">required =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-7"><a href="stocks.html#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="stocks.html#cb7-8" tabindex="-1"></a><span class="co"># Function to render the Rmd file to HTML</span></span>
+<span id="cb7-9"><a href="stocks.html#cb7-9" tabindex="-1"></a>knit_rmd_to_html <span class="ot">&lt;-</span> <span class="cf">function</span>(rmd_file, <span class="at">output_file =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb7-10"><a href="stocks.html#cb7-10" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
+<span id="cb7-11"><a href="stocks.html#cb7-11" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(rmd_file)) {</span>
+<span id="cb7-12"><a href="stocks.html#cb7-12" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="fu">sprintf</span>(<span class="st">&quot;Error: Rmd file does not exist -&gt; %s&quot;</span>, rmd_file))</span>
+<span id="cb7-13"><a href="stocks.html#cb7-13" tabindex="-1"></a>    }</span>
+<span id="cb7-14"><a href="stocks.html#cb7-14" tabindex="-1"></a>    </span>
+<span id="cb7-15"><a href="stocks.html#cb7-15" tabindex="-1"></a>    <span class="co"># Render the Rmd file to HTML</span></span>
+<span id="cb7-16"><a href="stocks.html#cb7-16" tabindex="-1"></a>    rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="at">input =</span> rmd_file, <span class="at">output_file =</span> output_file)</span>
+<span id="cb7-17"><a href="stocks.html#cb7-17" tabindex="-1"></a>    </span>
+<span id="cb7-18"><a href="stocks.html#cb7-18" tabindex="-1"></a>    <span class="co"># Success message</span></span>
+<span id="cb7-19"><a href="stocks.html#cb7-19" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">sprintf</span>(<span class="st">&quot;Successfully knitted %s to HTML.&quot;</span>, rmd_file))</span>
+<span id="cb7-20"><a href="stocks.html#cb7-20" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb7-21"><a href="stocks.html#cb7-21" tabindex="-1"></a>    <span class="fu">message</span>(<span class="fu">sprintf</span>(<span class="st">&quot;An error occurred: %s&quot;</span>, e<span class="sc">$</span>message))</span>
+<span id="cb7-22"><a href="stocks.html#cb7-22" tabindex="-1"></a>  })</span>
+<span id="cb7-23"><a href="stocks.html#cb7-23" tabindex="-1"></a>}</span>
+<span id="cb7-24"><a href="stocks.html#cb7-24" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="stocks.html#cb7-25" tabindex="-1"></a><span class="co"># Define output directories</span></span>
+<span id="cb7-26"><a href="stocks.html#cb7-26" tabindex="-1"></a>output_directory <span class="ot">&lt;-</span> <span class="st">&quot;C:/gppj/econ_blog06/0101_git&quot;</span></span>
+<span id="cb7-27"><a href="stocks.html#cb7-27" tabindex="-1"></a>output_directory01 <span class="ot">&lt;-</span> <span class="st">&quot;C:/gppj/data-tell-me_ver05/quant/03_stock&quot;</span></span>
+<span id="cb7-28"><a href="stocks.html#cb7-28" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="stocks.html#cb7-29" tabindex="-1"></a><span class="co"># Ensure the output directories exist</span></span>
+<span id="cb7-30"><a href="stocks.html#cb7-30" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(output_directory)) {</span>
+<span id="cb7-31"><a href="stocks.html#cb7-31" tabindex="-1"></a>  <span class="fu">dir.create</span>(output_directory, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-32"><a href="stocks.html#cb7-32" tabindex="-1"></a>}</span>
+<span id="cb7-33"><a href="stocks.html#cb7-33" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(output_directory01)) {</span>
+<span id="cb7-34"><a href="stocks.html#cb7-34" tabindex="-1"></a>  <span class="fu">dir.create</span>(output_directory01, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-35"><a href="stocks.html#cb7-35" tabindex="-1"></a>}</span>
+<span id="cb7-36"><a href="stocks.html#cb7-36" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="stocks.html#cb7-37" tabindex="-1"></a><span class="co"># Get current date-time</span></span>
+<span id="cb7-38"><a href="stocks.html#cb7-38" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">Sys.time</span>(), <span class="st">&quot;%Y-%m-%d-%H&quot;</span>)</span>
+<span id="cb7-39"><a href="stocks.html#cb7-39" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="stocks.html#cb7-40" tabindex="-1"></a><span class="co"># Define file paths</span></span>
+<span id="cb7-41"><a href="stocks.html#cb7-41" tabindex="-1"></a>rmd_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(output_directory, <span class="fu">paste0</span>(current_time, <span class="st">&quot;-100종목 선정 방법_hompi_ver0712.Rmd&quot;</span>))</span>
+<span id="cb7-42"><a href="stocks.html#cb7-42" tabindex="-1"></a>output_html <span class="ot">&lt;-</span> <span class="fu">file.path</span>(output_directory, <span class="fu">paste0</span>(current_time, <span class="st">&quot;-100종목 선정 방법_hompi_ver0712.html&quot;</span>))</span>
+<span id="cb7-43"><a href="stocks.html#cb7-43" tabindex="-1"></a>output_html01 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(output_directory01, <span class="st">&quot;index.html&quot;</span>)</span>
+<span id="cb7-44"><a href="stocks.html#cb7-44" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="stocks.html#cb7-45" tabindex="-1"></a><span class="co"># Knit Rmd to HTML</span></span>
+<span id="cb7-46"><a href="stocks.html#cb7-46" tabindex="-1"></a><span class="fu">knit_rmd_to_html</span>(rmd_file, output_html)</span>
+<span id="cb7-47"><a href="stocks.html#cb7-47" tabindex="-1"></a><span class="fu">knit_rmd_to_html</span>(rmd_file, output_html01)</span></code></pre></div>
+</div>
+<div id="stock-데이터-all-run-하는-배치-파일-작성" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> stock 데이터 all Run 하는 배치 파일 작성<a href="#stock-%EB%8D%B0%EC%9D%B4%ED%84%B0-all-run-%ED%95%98%EB%8A%94-%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>08_100_run_all.bat</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="stocks.html#cb8-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb8-2"><a href="stocks.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="stocks.html#cb8-3" tabindex="-1"></a><span class="sc">::</span> 작업 디렉토리를 C<span class="sc">:</span>\gppj\auto_ver05로 설정</span>
+<span id="cb8-4"><a href="stocks.html#cb8-4" tabindex="-1"></a>cd <span class="sc">/</span>d C<span class="sc">:</span>\gppj\auto_ver05</span>
+<span id="cb8-5"><a href="stocks.html#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="stocks.html#cb8-6" tabindex="-1"></a><span class="sc">::</span> <span class="dv">06</span>_100_run_py.bat 실행</span>
+<span id="cb8-7"><a href="stocks.html#cb8-7" tabindex="-1"></a>call <span class="dv">06</span>_100_run_py.bat</span>
+<span id="cb8-8"><a href="stocks.html#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="stocks.html#cb8-9" tabindex="-1"></a><span class="sc">::</span> <span class="dv">07</span>_100_knit_rmd04.bat 실행</span>
+<span id="cb8-10"><a href="stocks.html#cb8-10" tabindex="-1"></a>call <span class="dv">07</span>_100_knit_rmd04.bat</span>
+<span id="cb8-11"><a href="stocks.html#cb8-11" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="stocks.html#cb8-12" tabindex="-1"></a>exit <span class="sc">/</span>b</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="macroecon.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://datatellme.github.io/03-stocks.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
