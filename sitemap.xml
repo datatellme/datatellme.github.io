@@ -251,6 +251,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/quant/04_quant_book/</loc>
+         <lastmod>2025-04-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/shot/01_movipy/</loc>
          <lastmod>2025-04-11</lastmod>
          <changefreq>daily</changefreq>
