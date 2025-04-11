@@ -1,1 +1,975 @@
-<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link href=https://example.com/quant/02_macroecon/ rel=canonical><link href=../01_quant/ rel=prev><link href=../03_stock/ rel=next><link rel=icon href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.0, mkdocs-material-9.5.20"><title>macroecon - Data-Tell-Me</title><link rel=stylesheet href=../../assets/stylesheets/main.66ac8b77.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.06af60db.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=blue data-md-color-accent=purple> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#_1 class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title=Data-Tell-Me class="md-header__button md-logo" aria-label=Data-Tell-Me data-md-component=logo> <img src=../../img/peterpark_01.jpg alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Data-Tell-Me </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> macroecon </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media data-md-color-scheme=default data-md-color-primary=blue data-md-color-accent=purple aria-label="Switch to dark mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg> </label> <input class=md-option data-md-color-media data-md-color-scheme=slate data-md-color-primary=teal data-md-color-accent=lime aria-label="Switch to light mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg> </label> </form> <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../about/ class=md-tabs__link> About </a> </li> <li class=md-tabs__item> <a href=../../statistics/R-Introduction_K/ class=md-tabs__link> Statistics </a> </li> <li class=md-tabs__item> <a href=../../data/01_mkdocs/ class=md-tabs__link> Data Skill </a> </li> <li class=md-tabs__item> <a href=../../bibledata/01_Ge/ class=md-tabs__link> Text Mining </a> </li> <li class=md-tabs__item> <a href=../../shot/01_movipy/ class=md-tabs__link> Shot </a> </li> <li class="md-tabs__item md-tabs__item--active"> <a href=../01_quant/ class=md-tabs__link> Quant </a> </li> <li class=md-tabs__item> <a href=../../blog/ class=md-tabs__link> Blog </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title=Data-Tell-Me class="md-nav__button md-logo" aria-label=Data-Tell-Me data-md-component=logo> <img src=../../img/peterpark_01.jpg alt=logo> </a> Data-Tell-Me </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> <span class=md-ellipsis> Home </span> </a> </li> <li class=md-nav__item> <a href=../../about/ class=md-nav__link> <span class=md-ellipsis> About </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex=0> <span class=md-ellipsis> Statistics </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Statistics </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../statistics/R-Introduction_K/ class=md-nav__link> <span class=md-ellipsis> R-Introduction </span> </a> </li> <li class=md-nav__item> <a href=../../statistics/R-basics_K/ class=md-nav__link> <span class=md-ellipsis> R-basics </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_4> <label class=md-nav__link for=__nav_4 id=__nav_4_label tabindex=0> <span class=md-ellipsis> Data Skill </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=false> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Data Skill </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../data/01_mkdocs/ class=md-nav__link> <span class=md-ellipsis> mkdocs </span> </a> </li> <li class=md-nav__item> <a href=../../data/02_Jupyter_nb_to_md/ class=md-nav__link> <span class=md-ellipsis> Jupyter_to_md </span> </a> </li> <li class=md-nav__item> <a href=../../data/03_python_rmd/ class=md-nav__link> <span class=md-ellipsis> python_rmd </span> </a> </li> <li class=md-nav__item> <a href=../../data/04_python_reticulate/ class=md-nav__link> <span class=md-ellipsis> python_reticulate </span> </a> </li> <li class=md-nav__item> <a href=../../data/05_batch_script/ class=md-nav__link> <span class=md-ellipsis> batch script </span> </a> </li> <li class=md-nav__item> <a href=../../data/06_Xaringan/ class=md-nav__link> <span class=md-ellipsis> Xaringan </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_5> <label class=md-nav__link for=__nav_5 id=__nav_5_label tabindex=0> <span class=md-ellipsis> Text Mining </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Text Mining </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../bibledata/01_Ge/ class=md-nav__link> <span class=md-ellipsis> 창세기 </span> </a> </li> <li class=md-nav__item> <a href=../../bibledata/02_Ex/ class=md-nav__link> <span class=md-ellipsis> 출애굽기 </span> </a> </li> <li class=md-nav__item> <a href=../../bibledata/03_Lev/ class=md-nav__link> <span class=md-ellipsis> 레위기 </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_6> <label class=md-nav__link for=__nav_6 id=__nav_6_label tabindex=0> <span class=md-ellipsis> Shot </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_6_label aria-expanded=false> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Shot </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../shot/01_movipy/ class=md-nav__link> <span class=md-ellipsis> movipy </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_7 checked> <label class=md-nav__link for=__nav_7 id=__nav_7_label tabindex> <span class=md-ellipsis> Quant </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_7_label aria-expanded=true> <label class=md-nav__title for=__nav_7> <span class="md-nav__icon md-icon"></span> Quant </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../01_quant/ class=md-nav__link> <span class=md-ellipsis> quant </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> macroecon </span> </a> </li> <li class=md-nav__item> <a href=../03_stock/ class=md-nav__link> <span class=md-ellipsis> stock </span> </a> </li> <li class=md-nav__item> <a href=../04_quant_book/ class=md-nav__link> <span class=md-ellipsis> quant_book </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../../blog/ class=md-nav__link> <span class=md-ellipsis> Blog </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <h1 id=_1>주식 투자를 위한 거시 경제 전망</h1> </article> </div> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </button> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> &copy; 2023 <a href=https://github.com/datatellme target=_blank rel=noopener>Data Tell Me</a> </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script> <script src=../../assets/javascripts/bundle.dd8806f2.min.js></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>주식 투자를 위한  거시 경제 전망</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Peter Park, Ph.D." />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link rel="stylesheet" href="css/mytheme.css" type="text/css" />
+    <link rel="stylesheet" href="css/nanaum-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: title-slide, right, top
+background-image: url(img/frame-art02.png), url(img/frame-art02.png)
+background-position: 90% 75%, 75% 75%
+background-size: 8%, cover
+
+.right-column[
+# 주식 투자를 위한 &lt;br&gt;거시 경제 전망
+### - 거시경제 지표를 중심으로 - 
+
+**Peter Park, Ph.D.**&lt;br&gt;
+2025-04-11
+]
+
+.palegrey[.left[.footnote[ [ ](https://www.rawpixel.com/image/575297/artistic-canvas-background-template)]]]
+
+???
+혹시 표지 디자인 출처 표시 필요시 위에 작성
+
+
+---
+
+name: about-me
+layout: false
+class: about-me-slide, inverse, middle, center
+
+# 나에 대하여(About me)
+
+&lt;img style="border-radius: 50%;" src="https://datatellme.github.io/img/peterpark_01.jpg" width="150px"/&gt;
+
+## 피터 박
+
+### 데이터 분석가
+
+.fade[서강대학교&lt;br&gt;서울, Korea]
+
+[datatellme.github.io](https://datatellme.github.io/)
+
+---
+
+layout: true
+
+&lt;a class="footer-link" href="https://datatellme.github.io/"&gt;datatellme.github.io; Peter Park&lt;/a&gt;
+
+&lt;!-- this adds the link footer to all slides, depends on footer-link class in css--&gt;
+
+---
+
+class: left
+
+# 당신에 대하여(About you)
+
+--
+
+.pull-left-narrow[
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 416L168.6 180.7c15.3-34.4 40.3-63.5 72-83.7l146.9-94c3-1.9 6.5-2.9 10-2.9C407.7 0 416 8.3 416 18.6v1.6c0 2.6-.5 5.1-1.4 7.5L354.8 176.9c-1.9 4.7-2.8 9.7-2.8 14.7c0 5.5 1.2 11 3.4 16.1L448 416H240.9l11.8-35.4 40.4-13.5c6.5-2.2 10.9-8.3 10.9-15.2s-4.4-13-10.9-15.2l-40.4-13.5-13.5-40.4C237 276.4 230.9 272 224 272s-13 4.4-15.2 10.9l-13.5 40.4-40.4 13.5C148.4 339 144 345.1 144 352s4.4 13 10.9 15.2l40.4 13.5L207.1 416H64zM279.6 141.5c-1.1-3.3-4.1-5.5-7.6-5.5s-6.5 2.2-7.6 5.5l-6.7 20.2-20.2 6.7c-3.3 1.1-5.5 4.1-5.5 7.6s2.2 6.5 5.5 7.6l20.2 6.7 6.7 20.2c1.1 3.3 4.1 5.5 7.6 5.5s6.5-2.2 7.6-5.5l6.7-20.2 20.2-6.7c3.3-1.1 5.5-4.1 5.5-7.6s-2.2-6.5-5.5-7.6l-20.2-6.7-6.7-20.2zM32 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>]]
+.pull-right-wide[### 당신은 주식 투자에 관심이 있습니다.]
+
+--
+
+.pull-left-narrow[
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:2em;width:2.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M45.6 32C20.4 32 0 52.4 0 77.6V434.4C0 459.6 20.4 480 45.6 480c5.1 0 10-.8 14.7-2.4C74.6 472.8 177.6 440 320 440s245.4 32.8 259.6 37.6c4.7 1.6 9.7 2.4 14.7 2.4c25.2 0 45.6-20.4 45.6-45.6V77.6C640 52.4 619.6 32 594.4 32c-5 0-10 .8-14.7 2.4C565.4 39.2 462.4 72 320 72S74.6 39.2 60.4 34.4C55.6 32.8 50.7 32 45.6 32zM96 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm272 0c7.9 0 15.4 3.9 19.8 10.5L512.3 353c5.4 8 5.6 18.4 .4 26.5s-14.7 12.3-24.2 10.7C442.7 382.4 385.2 376 320 376c-65.6 0-123.4 6.5-169.3 14.4c-9.8 1.7-19.7-2.9-24.7-11.5s-4.3-19.4 1.9-27.2L197.3 265c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l26.4 33.1 87-127.6c4.5-6.6 11.9-10.5 19.8-10.5z"/></svg>]]
+.pull-right-wide[### 당신은 거시경제에 대해서 궁금합니다.]
+
+--
+.pull-left-narrow[
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:2em;width:2em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>]]
+.pull-right-wide[### 당신은 거시경제와 주식투자가 어떤 관계인지 알고 싶습니다.]
+
+
+---
+class: left
+
+# .my-gold[미래] 당신에 대해서
+
+--
+
+.pull-left-narrow[
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:2em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>]]
+.pull-right-wide[### **당신은 .my-gold[거시경제**]에 관해서 알기를 원합니다.] 
+
+--
+
+.pull-left-narrow[
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:2em;width:2.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 0c14.5 0 27.2 9.7 30.9 23.8l23.9 89.6 75.9-53.3c11.9-8.3 27.8-7.6 39 1.7s14.6 24.9 8.4 38.1l-39.3 84 92.4 8c14.4 1.2 26.2 12 28.8 26.3s-4.9 28.5-18 34.6l-84.1 39.1 65.7 65.5c10.3 10.2 12.4 26.1 5.1 38.7s-22 18.7-36 14.9L391 386.8l8.2 92.4c1.3 14.4-7.3 27.9-20.9 32.9s-28.9 .1-37.2-11.7l-53.1-76-53.1 76c-8.3 11.9-23.6 16.7-37.2 11.7s-22.2-18.5-20.9-32.9l8.2-92.4L95.4 410.9c-14 3.8-28.8-2.3-36-14.9s-5.2-28.4 5.1-38.7l65.7-65.5L46 252.7c-13.1-6.1-20.5-20.3-18-34.6s14.3-25.1 28.8-26.3l92.4-8-39.3-84c-6.1-13.1-2.7-28.8 8.4-38.1s27.1-10 39-1.7l75.9 53.3 23.9-89.6C260.8 9.7 273.5 0 288 0zm0 156.2l-4.8 18c-2.7 10.1-10.2 18.2-20 21.8s-20.8 2.1-29.3-3.9l-15.2-10.7 7.9 16.8c4.4 9.5 4 20.5-1.3 29.6s-14.5 15-25 15.9l-18.5 1.6 16.8 7.8c9.5 4.4 16.2 13.2 18 23.5s-1.5 20.8-8.9 28.2l-13.2 13.1 17.9-4.8c10.1-2.7 20.9-.3 28.9 6.4s12.2 16.9 11.3 27.3l-1.6 18.5 10.6-15.2c6-8.6 15.8-13.7 26.2-13.7s20.2 5.1 26.2 13.7l10.6 15.2-1.6-18.5c-.9-10.4 3.3-20.6 11.3-27.3s18.8-9.1 28.9-6.4l17.9 4.8-13.2-13.1c-7.4-7.4-10.7-17.9-8.9-28.2s8.5-19.1 18-23.5l16.8-7.8-18.5-1.6c-10.4-.9-19.7-6.8-25-15.9s-5.7-20.1-1.3-29.6l7.9-16.8-15.2 10.7c-8.6 6-19.5 7.5-29.3 3.9s-17.3-11.7-20-21.8l-4.8-18z"/></svg>]]
+.pull-right-wide[### **당신은 .my-gold[주식투자**]를 잘 하길 원합니다.] 
+
+--
+
+.pull-left-narrow[.center[
+# **&amp;#x1F3A1;**]]
+.pull-right-wide[.center[### **당신은 거시경제 분석을 통해서 .my-gold[주식투자]를 &lt;br&gt;잘 할 수 있습니다.**]]
+
+---
+
+name: question
+class: inverse, middle, center
+
+{{content}}
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 거시경제를 &lt;br&gt;어떻게 분석 하지요?
+
+
+---
+
+## 들어가며
+
+- 2025년 4월 11일의 주식투자를 위해 거시 경제 상황을 살펴봅니다. 
+
+- 거시 경제 상황은 하이엠의 매직 경제 프레임워크를 사용합니다.
+
+- 매직 경제 프레임워크은 심플하면서도 여러가지 다양한 측면을 종합적으로 살펴볼 수 있기 때문입니다. 
+
+- 거시경제를 분석할 때 매직 경제 프레임워크이 아닌 다른 틀을 사용하셔도 됩니다.
+
+- 하지만 하나의 통일된 프레임워크를 가지고 분석 하는 것이 필요합니다.
+
+- 여기서 얻고자하는 아래의 문제제기 중 거시적 문제의 질문에 대한 답을 얻기위한 것입니다. 
+
+---
+
+## 문제 제기
+
+- 질문 1: 미국의 장단기 금리차는 어떠할 것인가요?
+
+- 질문 2: 각국의 환율은 어떠할 것인가요?  
+
+- 질문 3: 세계경제는 어떠할 것인가요?
+
+- 질문 4: 미국 인플레이션은 어떠할 것인가?
+
+- 질문 5: 미국 증시(나스닥)는 어떠할 것인가?
+
+- 질문 6: 한국 증시(코스닥)는 어떠할 것인가?
+
+- 이러한 문제 제기는 한국의 현재 증시상황에서 투자에 참여 여부를 결정하기 위해서 하는 것입니다. 
+
+---
+
+## 하이엠의 매직 경제 프레임워크
+
+
+### 경제는 사이클입니다.
+
+- 경제는 일정 기간 주기적으로 반복됩니다.
+
+- 경제는 높고 낮음 또는 좋고 나쁨이 반복됩니다. 
+
+- 미국의 경제 사이클 주기는 10년입니다.
+
+- 한국의 경제 사이클 주기는 4년입니다.
+
+- 한국의 반도체 사이클 주기도 4년입니다.
+
+---
+
+## 하이엠의 매직 경제 프레임워크
+
+### 경제는 사이클입니다.
+
+- 경기 순환과정은 저점-회복기-확장기-정점-후퇴기-수축기-저점 등을 반복해서 순환하는 것입니다. 
+
+- 거시경제로 현재 경기순환과정이 어느 지점인지 파악하는 것이 중요합니다.
+
+- 주식시장 사이클이 선행하고 이어서 경기 순환 사이클이 후행합니다.
+
+- 주식시장 사이클과 경기순환 사이클을 함께 종합해서 경기 순환과정의 지점을 판단합니다.
+
+---
+
+## 하이엠의 매직 경제 프레임워크
+
+### 물가, 금리, 성장률은 같이 움직입니다.
+
+- 성장률(실질 GDP 증가, 투자 증가, 고용량 증가, 소비 증가, 주가 상승)이 높아집니다.
+
+- 금리가 상승합니다.
+
+- 물가가 상승합니다
+
+---
+
+## 하이엠의 매직 경제 프레임워크
+
+### 자본주의는 금리가 지배하고 금리는 FED가 지배합니다.
+
+- FED는 미국의 중앙은행인 연방준비제도이사회입니다. 우리나라의 한국은행 같은 역할을 하는 곳입니다.
+
+- FED에서는 테일러 금리, 장단기 금리차, 미국 실업률 등을 고려하여 미국의 기준 금리를 결정합니다.
+
+- FED의 주요 역할은 미국내의 인플래이션을 억제하여 물가를 안정시키는 데 있습니다.
+
+- FED의 경제성장률 2%, 인플레이션 2.5%를 유지하는 것이 목표이며 이것을 실행하기 위해 기준금리를 결정합니다.
+
+- FED의 기준 금리 결정 기준은 Taylor Rule를 참고해서 결정합니다.
+
+---
+
+## 하이엠의 매직 경제 프레임워크
+
+### 팍스아메리카는 끝나고 분리된 세상이 옵니다. 
+
+- 세계 경제는 이제 서로 개별적으로 움직기 시작했습니다.
+
+- 한국경제의 경우 중국에 수출 및 수입의 의존이 커서 커플링 현상이 발생합니다.
+
+- 그래서 미국 경제 상황 뿐만아니라 중국, 일본 등의 경제 등을 함께 살펴야 합니다.
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 미국의 장단기 금리차는 &lt;br&gt;어떠할 것인가요?
+
+
+---
+
+class: left
+
+
+
+```
+## [1] "T10Y2Y"
+```
+
+&lt;img src="index_files/figure-html/T10Y2Y_quantmod-1.png" width="90%" height="auto" /&gt;
+---
+
+## 경기 흐름을 예측하는 장단기금리차
+
+### 2년 10년 장단기 금리차 그래프(FRED)
+
+- 2025년 4월 11일의 미국 경기는 어떤 상태인가요?
+
+- 2년 10년 장단기 금리차는 2025-04-10  기준 0.56입니다.
+
+- 통상적으로 2년물 국채 수익률보다 10년물 국채 수익률이 놓은데 이것이 10년 마다 역전되는 현상이 발생 합니다(강영현, 2023).
+
+- 이는 앞으로 경기가 침체 될 것을 예고하는 시그널을 나타내 주고 있는 것입니다. 
+
+
+---
+
+
+
+```
+## [1] "T10Y3M"
+```
+
+&lt;img src="index_files/figure-html/T103Y_quantmdod-1.png" width="90%" height="auto" /&gt;
+
+---
+
+
+## 경기 흐름을 예측하는 장단기금리차
+
+### 3개월 10년 장단기 금리차(FRED)
+
+
+- 2025년 4월 11일의 미국 경기는 어떤 상태인가요?
+
+- 3개월 10년 장단기 금리차는 2025-04-10  기준 0.06입니다.
+
+- 3개월 10년 장단기 금리차는 FED에서 참조하는 지표입니다.
+
+- 이제 미국 경기는 5년 경기 사이클의 시작입니다.
+
+
+---
+
+
+
+```
+## [1] "EFFR"
+```
+
+&lt;img src="index_files/figure-html/EFFR_quantmod-1.png" width="90%" height="auto" /&gt;
+---
+
+## 경기 흐름을 예측하는 장단기금리차
+
+### 미국 기준 금리 그래프(FRED)
+
+- FED는 미국의 기준금리를 향후 어떻게 결정할 것인가요?
+
+- 2022년 이후의 높은 테일러 금리로 인하여 연준은 2022년 초부터 금리를 올려 2025-04-09  기준 4.33입니다. 
+
+
+---
+
+
+
+```
+## [1] "UNRATE"
+```
+
+&lt;img src="index_files/figure-html/UNRATE_quantmod-1.png" width="90%" height="auto" /&gt;
+---
+
+## 경기 흐름을 예측하는 미국 실업율
+
+### 미국 실업율(FRED)
+
+
+- FED는 완전 고용상태인 실업률 3%로 내외를 목표로 기준금리를 결정합니다.
+
+- 실업률은 2025-03-01  기준 4.2(계절조정)입니다.
+
+-  FED는 완전 고용상태인 실업률을 3% 기준으로 판단 합니다.
+
+- 미국의 6개월 미만의 단기 실업률이 개선되면 채권과 주식의 합산 수익률이 좋아지는 것으로 판단 할 수 있습니다(강영현, 2023). 
+
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 각국의 환율은 &lt;br&gt;어떠할 것인가요?
+
+
+---
+class: left
+
+
+
+```
+## [1] "USD/JPY"
+```
+
+&lt;img src="index_files/figure-html/USD/JPY-1.png" width="90%" height="auto" /&gt;
+---
+
+
+## 각국의 환율
+
+### 국제 위기의 신호등 일본 환율
+
+- 앞으로 국제사회에 경제 위기가 올 것인가요?
+
+- 일본엔은 2025-04-10  기준 145.57엔 입니다.
+
+- 세계 경제를 판단하는 기준은 105엔으로 이보다 낮아지면 경제위기 발생 가능성이 높아집니다.
+
+- 급격한 경제 위기, 금융 위기를 확인 할 수 있는 지표입니다.
+
+
+---
+
+class: left
+
+
+
+```
+## [1] "TM"
+```
+
+&lt;img src="index_files/figure-html/Toyota-1.png" width="90%" height="auto" /&gt;
+
+---
+
+
+## 각국의 환율
+
+### 국제 위기의 신호등 일본 환율
+
+
+- 도요타 자동차 주가는 일본 경기를 나타내는 지표중에 하나로 판단됩니다.
+
+---
+class: left
+
+
+
+
+```
+## [1] "USD/CNY"
+```
+
+&lt;img src="index_files/figure-html/USD/CNY-1.png" width="90%" height="auto" /&gt;
+
+---
+
+## 각국의 환율
+
+### 7위안의 공포
+
+- 중국 위안이 7 위안을 넘는 여부가 중요합니다. 
+
+- 위안화 환율은 2025-04-10  기준 7.33위안 입니다. 
+
+
+
+
+---
+class: left
+
+
+
+```
+## [1] "USD/KRW"
+```
+
+&lt;img src="index_files/figure-html/USD/KRW-1.png" width="90%" height="auto" /&gt;
+---
+
+## 각국의 환율
+
+### 위안과 원화의 커플링
+
+- 원화는 2025-04-10  기준 1456.13원 입니다. 
+
+- 한국의 코스피는 환율이 하락할 때 상승합니다(강영현,2023).
+
+- 이는 환율이 하락하면 외국인들의 주식매수가 늘어나게 되어 주가지수는 상승하는 것 입니다.  
+
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 세계경제는 &lt;br&gt;어떠할 것인가요?
+
+
+
+---
+
+class: left
+
+
+
+```
+## [1] "PCOPPUSDM"
+```
+
+&lt;img src="index_files/figure-html/PCOPPUSDM-1.png" width="90%" height="auto" /&gt;
+---
+
+
+## 세계경제 및 중국경제
+
+### 세계 경제는 구리
+
+- 향후 글로벌 경기 어떠할 것인가요?
+
+- 구리 가격은 2025-03-01  기준 9735.82$ 입니다.
+
+
+---
+class: left
+
+
+
+```
+## [1] "VALE"
+```
+
+&lt;img src="index_files/figure-html/VALE-1.png" width="90%" height="auto" /&gt;
+---
+
+
+## 세계경제 및 중국경제
+
+### 중국 경제는 철강석
+
+- 향후 중국 경기는 어떠할 것인가요?
+
+
+- 철강석 ETF는 2025-04-10  기준 8.89, 9.04, 8.66, 8.9, 7.08738\times 10^{7}, 8.9$입니다.
+
+
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 미국 인플레이션은 &lt;br&gt;어떠할 것인가요?
+
+
+
+---
+
+class: left
+
+
+
+```
+## [1] "DCOILWTICO"
+```
+
+&lt;img src="index_files/figure-html/DCOILWTICO-1.png" width="90%" height="auto" /&gt;
+
+---
+
+
+## 인플래이션을 결정하는 유가
+
+
+- 2025년 4월 11일 미국경제는 인플레이션인가요?
+
+- 2025년 4월 11일 미국경제의 물가는 높은가요?
+
+- 유가는 2025-04-07  기준 61.05 입니다. 
+
+
+---
+
+class: left
+
+
+
+```
+## [1] "T5YIFR"
+```
+
+&lt;img src="index_files/figure-html/T5YIFR-1.png" width="90%" height="auto" /&gt;
+---
+
+## 5년 기대 인플레이션(FRED)
+
+- 기대인플레이션은 2025-04-10  기준 2.06입니다.  
+
+- 미국의 5년 기대 인플레이션은 유가와 함께 움직입니다.
+
+- 위의 그래프에서도 유가와 5년 기대 인플레이션 그래프는 비슷하게 움직이는 것을 확인 할 수 있습니다.
+
+- 유가, 인플레이션, 금값은 같이 움직입니다.
+
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 미국 증시는 &lt;br&gt;어떠할 것인가요?
+
+
+---
+class: left
+
+
+
+
+```
+## [1] "DFII10"
+```
+
+&lt;img src="index_files/figure-html/DFII10-1.png" width="90%" height="auto" /&gt;
+
+---
+
+## 미국 증시 방향을 말해주는 실질금리
+
+- 미국 물가연동채권은 2025-04-09  기준 2.07입니다.
+
+- 미국증시는 빈등하여 점차로 오르고 있습니다.
+
+- 미국 주식이 지속적으로 오를지는 관망해 보아야 할 것 같습니다.
+
+
+
+
+---
+
+class: left
+
+
+
+
+```
+## [1] "IXIC"
+```
+
+&lt;img src="index_files/figure-html/NASDAQ-1.png" width="90%" height="auto" /&gt;
+
+---
+
+## 나스닥 지수
+
+- 미국 나스닥는 2025-04-10  기준으로 시가, 최고가, 최저가, 종가는 다음 1.663545\times 10^{4}, 1.671237\times 10^{4}, 1.589427\times 10^{4}, 1.638731\times 10^{4}, 1.186167\times 10^{10}, 1.638731\times 10^{4}입니다.
+
+
+
+
+---
+template: question
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:3em;width:3.38em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M160 80H512c8.8 0 16 7.2 16 16V320c0 8.8-7.2 16-16 16H490.8L388.1 178.9c-4.4-6.8-12-10.9-20.1-10.9s-15.7 4.1-20.1 10.9l-52.2 79.8-12.4-16.9c-4.5-6.2-11.7-9.8-19.4-9.8s-14.8 3.6-19.4 9.8L175.6 336H160c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM96 96V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120zm208 24a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+# 한국 증시는 &lt;br&gt;어떠할 것인가요?
+
+
+
+---
+
+class: left
+
+
+
+
+```
+## [1] "KS11"
+```
+
+&lt;img src="index_files/figure-html/KOSPI-1.png" width="90%" height="auto" /&gt;
+
+---
+
+## 한국증시
+
+__코스피__
+
+- 한국 코스피는 2025-04-11  기준으로 시가, 최고가, 최저가, 종가는 다음 2400.74, 2433.18, 2394.25, 2432.72, 3.60948\times 10^{5}, 2432.72입니다.
+
+
+
+---
+
+
+
+```
+## [1] "005930.KS"
+```
+
+&lt;img src="index_files/figure-html/Samsung-1.png" width="90%" height="auto" /&gt;
+
+---
+
+## 한국증시
+
+__삼성전자__
+
+
+- 삼성전자는 코스피와 비슷한 모양으로 움직이기 때문에 한번씩 확인이 필요합니다.
+
+- 삼성전자는 코스피와 비슷한 모양으로 움직이는 모습을 볼 수 있습니다.
+ 
+
+
+---
+
+
+
+
+```
+## [1] "KQ11"
+```
+
+&lt;img src="index_files/figure-html/KOSDAQ-1.png" width="90%" height="auto" /&gt;
+---
+
+
+## 한국증시
+
+__코스닥__
+
+- 한국 코스닥는 2025-04-11  기준으로 시가, 최고가, 최저가, 종가는 다음 673.09, 695.59, 672.74, 695.59, 1.037989\times 10^{6}, 695.59입니다.
+
+
+
+
+---
+
+name: live-coding
+background-color: var(--my-yellow)
+class: middle, center
+
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:3em;width:3.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+# 마치며
+
+
+---
+
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+__질문 1: 미국의 장단기 금리차는 어떠할 것인가요?__
+
+- 2년 10년 장단기금리차는 0.56이며 3개월 10년 장단기 금리차는 0.06입니다.
+
+- FRED는 미국 기준금리는  4.33 입니다.
+
+- 미국 실업율은  4.2로 3%보다 높습니다.
+
+
+---
+
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+__질문 2: 각국의 환율은 어떠할 것인가요?__  
+
+- 일본엔화는 145.57엔으로 105엔보다 높습니다.
+
+- 중국 위안화는 7.33위안으로 7위안화 보다 높습니다. 이것은 중국경제가 좋지않은 것을 의미한다고 볼 수 있습니다. 
+
+- 한국 원화는 1456.13원으로 계속 상승하고 있습니다. 이것은 외국인 투자자들에게는 불리한 상황입니다.
+
+
+---
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+__질문 3: 세계경제는 어떠할 것인가요?__
+
+- 구리가격은  9735.82$로 세계경제에 영향을 주고 있다고 할 수 있습니다. 
+
+- 철강석 ETF 가격은 저점에서 조정되고 있습니다. 이것은 중국 경제에 영향을 주는 것으로 판단됩니다.
+
+
+---
+
+
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+__질문 4: 미국 인플레이션은 어떠할 것인가?__
+
+- 유가는 61.05입니다. 미국 인플레이션이  박스권에서 등락을 거듭하고 있다고 판단 됩니다.
+
+- 미국의 5년 기대 인플레이션는 2.06로  박스권에서 등락을 거듭하고 있습니다.
+
+
+---
+
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+
+__질문 5: 미국 증시(나스닥)는 어떠할 것인가?__
+
+- 미국 물가연동채권은 2.07로 실질 금리가 변동할 것으로 예상됩니다.  
+
+- 미국 나스닥은 혼조세에 있습니다.
+
+
+---
+
+
+## 결어
+
+### 거시경제 상황
+
+2025년 4월 11일 거시경제 문제제기의 답변으로 정리합니다.
+
+
+__질문 6: 한국 증시(코스닥)는 어떠할 것인가?__
+
+- 한국 코스피는 미국 나스닥과 연동하고 있습니다.
+
+- 한국 코스닥은 미국 나스닥과 조금 다르게 움직이고 있습니다. 
+
+
+---
+
+## 결어
+
+### 투자 방향
+
+- 2025년 4월 11일에 한국에서의 투자방향은 어떠할 것인가요?
+
+- 2025년 4월 11일의 투자 방향은 나스닥과 국내 정치상황에 따라 결정하여야 할 것 같습니다.
+
+---
+
+## 참고문헌
+
+강영현(2023). 살때, 팔때, 벌때. 경기: 21세기 북스.
+
+테리엇(2020). 금융 데이터를 위한 파이썬. 서울: 비제이버블릭.
+
+하이엠(2022). 흔들리지 않는 투자를 위한 경제지표 9. 서울: 무블출판사.
+
+해리 조카코퓰러스(2015) R로 하는 퀀트 드레이딩. 서울: 에이콘
+
+ChatGPT(2022). https://openai.com/index/chatgpt/
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
