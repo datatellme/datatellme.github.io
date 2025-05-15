@@ -2,407 +2,412 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/about/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/01_Ge/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/02_Ex/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/03_Lev/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/bibledata/04_40day_pray_book/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/100%20books_2025/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/50_pray_2025/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/econ%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/macroeconomics/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/mongodb%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/mysql%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/python%20with%20chat%20GPT/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/quant%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/shot%20edit%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/statstics%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/stock%20with%20python/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2023-04-13-qcon001-%ED%80%80%ED%8A%B8%20%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%94%A9%EC%9D%98%20%EA%B8%B0%EC%B4%88/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2023-04-14-acon003-Python%20%EA%B8%B0%EC%B4%88/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-01-acon001-%EC%9E%90%EB%8F%99%ED%99%94%20%EC%9E%91%EC%97%85%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-01-acon002-Chat%20GPT%20%ED%99%9C%EC%9A%A9/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-01-mcon001-Movipy/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-03-aex001-%EC%9E%90%EB%8F%99%ED%99%94%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%A0%95%EB%B3%B4%20%EC%95%8C%EB%A6%AC%EB%AF%B8/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-03-aex002-%ED%85%8D%EC%8A%A4%ED%8A%B8%20%ED%8C%8C%EC%9D%BC%20%EC%9E%85%EB%A0%A5%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-04-aex003-Rmd%20%ED%8C%8C%EC%9D%BC%20%EC%9E%85%EB%A0%A5%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-04-aex011-MkDocs%EC%9D%98%20md%EC%97%90%EC%84%9C%20html%EB%B3%80%ED%99%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-04-aex012-MkDocs-%ED%95%9C%EB%B2%88%EC%97%90-serve/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-09-con004-Python%20%EC%8B%A4%ED%96%89%20%ED%8C%8C%EC%9D%BC%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-10-con005-mysql/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-11-con006-MkDoc%EC%9C%BC%EB%A1%9C%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-11-ex013-MySql%EC%97%90%20DB%EC%99%80%20%ED%85%8C%EC%9D%B4%EB%B8%94%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-11-ex014-MySql%EC%97%90%20csv%20%ED%8C%8C%EC%9D%BC%20%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%98%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-11-ex015-MySql%20%EB%AA%85%EB%A0%B9%EC%96%B4%20%EC%9E%85%EB%A0%A5%EA%B8%B0%20%EB%B0%8F%20%EA%B2%B0%EA%B3%BC%20csv%20%EC%A0%80%EC%9E%A5/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-12-ex016-MySql%EC%97%90%20%EC%97%B0%EB%8B%A8%EC%9C%84%20%EC%A3%BC%EA%B0%80%EC%A0%95%EB%B3%B4%20%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-14-ex017-MySql%EC%97%90%205%EC%9D%BC%20%EC%A3%BC%EA%B0%80%EC%A0%95%EB%B3%B4%20%EC%88%98%EC%A7%91%ED%95%98%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-15-con007-%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%94%BC%EB%A1%9C%20%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%B4%EC%84%9C%20MySql%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2024-05-16-ex018-%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%94%BC%EB%A1%9C%20%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89%20Open%20API%20%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A5%BC%20%EC%8A%A4%ED%81%AC%EB%A0%88%EC%9D%B4%ED%95%91/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-03-28-book000-100%EA%B6%8C%20%EC%B1%85%20%EC%9D%BD%EA%B8%B0%20%EB%AA%A9%EB%A1%9D%ED%91%9C/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-03-28-book002-%EB%A9%94%EB%AA%A8%EC%99%80%20%EA%B8%B0%EB%A1%9D_%EA%B9%80%EC%9D%B5%ED%95%9C/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-03-29-100books-%EB%B6%80%EC%9D%98%EC%B6%94%EC%9B%94%EC%B0%A8%EC%84%A0_001/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-05-100books-%EB%8A%99%EB%8A%94%EB%8B%A4%EB%8A%94%20%EC%B0%A9%EA%B0%81_002/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-07-100books-%EC%86%8C%ED%81%AC%EB%9D%BC%ED%85%8C%EC%8A%A4%20%EC%9D%B5%EC%8A%A4%ED%94%84%EB%A0%88%EC%8A%A4_003/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-15-100books-%EA%B8%B0%ED%9B%84%20%EB%AF%B8%EC%8B%9D_004/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-16-100books-%EC%9D%B4%EC%83%81%ED%95%9C%20%EC%A0%95%EC%83%81%20%EA%B0%80%EC%A1%B1_005/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-17-100books-%EC%9D%B4%EB%8D%95%EC%9D%BC%EC%9D%98%20%ED%95%9C%EA%B5%AD%ED%86%B5%EC%82%AC_006/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-19-100books-%EC%96%B4%EB%A5%B8%EC%9D%98%20%EB%AC%B8%EB%8B%B5%EB%B2%95_007/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-21-50-pray_2025_1%EC%9D%BC_%EC%98%88%EC%88%98%EB%8B%98%EC%9D%B4%20%EC%82%B4%EC%95%84%EB%82%98%EC%8B%9C%EB%8B%A4/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-22-50-pray_2025_2%EC%9D%BC_%EB%B3%B4%EB%83%84%EB%B0%9B%EC%9D%80%20%EC%9E%90/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-23-50-pray_2025_3%EC%9D%BC_%EC%98%88%EC%88%98%EB%8B%98%EC%9D%B4%20%EB%B6%80%ED%99%9C%ED%95%98%EC%8B%9C%EB%8B%A4/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-24-50-pray_2025_4%EC%9D%BC_%EC%82%B0%EC%9E%90%EC%9D%98%20%ED%95%98%EB%82%98%EB%8B%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-25-50-pray_2025_5%EC%9D%BC_%EB%B6%80%ED%99%9C%EC%9D%B4%EC%9A%94%20%EC%83%9D%EB%AA%85%EC%9D%B4%EC%8B%A0%20%EC%98%88%EC%88%98%EB%8B%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-26-50-pray_2025_6%EC%9D%BC_%EC%9C%A1%EC%9D%98%20%EB%AA%B8%EA%B3%BC%20%EC%8B%A0%EB%A0%B9%ED%95%9C%20%EB%AA%B8/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-28-50-pray_2025_7%EC%9D%BC_%EB%AC%B8%EB%93%A4%EC%9D%B4%20%EB%8B%AB%ED%98%94%EB%8A%94%EB%8D%B0%20%EC%98%88%EC%88%98%EA%BB%98%EC%84%9C%20%EC%98%A4%EC%82%AC/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-29-50-pray_2025_8%EC%9D%BC_%EB%82%B4%EB%A6%AC%EB%A7%89%EA%B8%B8%EC%97%90%EC%84%9C%20%EB%A7%8C%EB%82%9C%20%EC%A3%BC%EB%8B%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-30-100books-%EC%95%84%EC%A7%81%20%EA%B8%B4%20%EC%9D%B8%EC%83%9D%EC%9D%B4%20%EB%82%A8%EC%95%98%EC%8A%B5%EB%8B%88%EB%8B%A4/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-30-100books-%EC%95%84%EC%A7%81%20%EA%B8%B4%20%EC%9D%B8%EC%83%9D%EC%9D%B4%20%EB%82%A8%EC%95%98%EC%8A%B5%EB%8B%88%EB%8B%A4_008/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-04-30-50-pray_2025_9%EC%9D%BC_%EB%84%88%ED%9D%AC%EB%8A%94%20%EC%9D%B4%20%EB%AA%A8%EB%93%A0%20%EC%9D%BC%EC%97%90%20%EC%A6%9D%EC%9D%B8%EC%9D%B4%EB%9D%BC/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-01-50-pray_2025_10%EC%9D%BC_%EB%B6%80%ED%99%9C%20%EB%B0%98%EC%A0%84%EC%9D%98%20%EC%9D%80%ED%98%9C/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-02-100books-%EC%84%A0%EB%9F%89%ED%95%9C%20%EC%B0%A8%EB%B3%84%EC%A3%BC%EC%9D%98%EC%9E%90/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-02-100books-%EC%84%A0%EB%9F%89%ED%95%9C%20%EC%B0%A8%EB%B3%84%EC%A3%BC%EC%9D%98%EC%9E%90_009/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-02-50-pray_2025_11%EC%9D%BC_%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4%20%EB%A7%8C%EB%82%A8/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-03-50-pray_2025_12%EC%9D%BC_%EB%84%A4%EA%B0%80%20%EC%9D%B4%EA%B2%83%EB%93%A4%20%EB%B3%B4%EB%8B%A4%20%EB%82%98%EB%A5%BC%20%EB%8D%94%20%EC%82%AC%EB%9E%91%ED%95%98%EB%8A%90%EB%83%90/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-05-50-pray_2025_13%EC%9D%BC_%EB%B6%80%ED%99%9C%EC%9D%98%20%EC%A3%BC%EB%8B%98%EC%9D%84%20%EA%B8%B0%EB%8B%A4%EB%A6%AC%EB%A9%B0/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-06-50-pray_2025_14%EC%9D%BC_%EB%82%98%EB%A5%BC%20%EB%B6%80%EB%A5%B4%EC%8B%9C%EB%8A%94%20%EC%A3%BC%EB%8B%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-07-50-pray_2025_15%EC%9D%BC_%EC%84%A0%ED%95%9C%20%EB%AA%A9%EC%9E%90%EC%99%80%20%ED%91%B8%EB%A5%B8%20%EC%B4%88%EC%9E%A5/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-08-50-pray_2025/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/blog/posts/2025-05-09-50-pray_2025_17%EC%9D%BC_%EC%9E%83%EC%96%B4%EB%B2%84%EB%A6%B0%EC%9E%90%EB%A5%BC%20%EC%B0%BE%EC%95%84%EC%98%A4%EB%8A%94%20%EC%98%88%EC%88%98%EB%8B%98/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/blog/posts/2025-05-15-50-pray_2025_23%EC%9D%BC_%EB%AA%A9%EC%9E%90%EC%9D%98%20%EC%9D%8C%EC%84%B1%EC%9D%B4%20%EC%82%B4%EB%A6%B0%EB%8B%A4/</loc>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/01_mkdocs/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/02_Jupyter_nb_to_md/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/03_python_rmd/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/04_python_reticulate/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/05_batch_script/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/data/06_Xaringan/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/quant/01_quant/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/quant/02_macroecon/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/quant/03_stock/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/quant/04_quant_book/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/shot/01_movipy/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/statistics/R-Introduction_K/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/statistics/R-basics_K/</loc>
-         <lastmod>2025-05-14</lastmod>
+         <lastmod>2025-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
