@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 제목 | 파이썬 자동화 프로그램 만들기</title>
+  <title>Chapter 1 Mp3 파일 하나의 파일로 합치기 | 파이썬 자동화 프로그램 만들기</title>
   <meta name="description" content="bookdown sample" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 제목 | 파이썬 자동화 프로그램 만들기" />
+  <meta property="og:title" content="Chapter 1 Mp3 파일 하나의 파일로 합치기 | 파이썬 자동화 프로그램 만들기" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="bookdown sample" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 제목 | 파이썬 자동화 프로그램 만들기" />
+  <meta name="twitter:title" content="Chapter 1 Mp3 파일 하나의 파일로 합치기 | 파이썬 자동화 프로그램 만들기" />
   
   <meta name="twitter:description" content="bookdown sample" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="psnam" />
 
 
-<meta name="date" content="2025-05-26" />
+<meta name="date" content="2025-05-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path=""><a href="#%EC%9D%B4-%EC%B1%85%EC%97%90%EA%B2%8C-%EA%B4%80%ED%95%98%EC%97%AC"><i class="fa fa-check"></i>이 책에게 관하여</a></li>
-<li class="chapter" data-level="1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html"><i class="fa fa-check"></i><b>1</b> 제목</a>
+<li class="chapter" data-level="1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html"><i class="fa fa-check"></i><b>1</b> Mp3 파일 하나의 파일로 합치기</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub01_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.1</b> 서론</a></li>
 <li class="chapter" data-level="1.2" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub02_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.2</b> 업무자동화 설계하기</a></li>
@@ -170,12 +170,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="Sub00_2025-05-26-22-29" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> 제목<a href="Sub00_2025-05-26-22-29.html#Sub00_2025-05-26-22-29" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 1</span> Mp3 파일 하나의 파일로 합치기<a href="Sub00_2025-05-26-22-29.html#Sub00_2025-05-26-22-29" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="Sub01_2025-05-26-22-29" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> 서론<a href="Sub00_2025-05-26-22-29.html#Sub01_2025-05-26-22-29" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li></li>
-<li></li>
+<li><p>여러개의 Mp3 파일을 하나의 Mp3 파일로 합치는 자동화 프로그램을 만든다.</p></li>
+<li><p>오디오 CD에서 Mp3 파일로 변환면 트랙별로 만들어진다</p></li>
 <li></li>
 </ul>
 </div>
@@ -185,7 +185,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>무엇을 위해서 만드는가?</p></li>
 <li><p>왜 만드는가?</p></li>
-<li><p>말씀에 가장 많이 사용된 단어는 무엇인가?</p></li>
 </ul>
 <p><strong>작업 쪼개기</strong></p>
 <ul>
@@ -196,19 +195,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>필요 라이브러리 설치</strong></p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><p>moviepy: Mp3를 합치는 라이브러리</p></li>
+<li><p>tqdm: 진행 상황을 나타내는 라이브러리</p></li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="Sub00_2025-05-26-22-29.html#cb1-1" tabindex="-1"></a>pip install moviepy tqdm</span></code></pre></div>
 </div>
 <div id="Sub03_2025-05-26-22-29" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> 코딩하기<a href="Sub00_2025-05-26-22-29.html#Sub03_2025-05-26-22-29" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>1단계 작업</strong></p>
+<p><strong>실행 Bat파일 작성</strong></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="Sub00_2025-05-26-22-29.html#cb2-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb2-2"><a href="Sub00_2025-05-26-22-29.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="Sub00_2025-05-26-22-29.html#cb2-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
+<span id="cb2-4"><a href="Sub00_2025-05-26-22-29.html#cb2-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\mymovienv\python.exe&quot;</span></span>
+<span id="cb2-5"><a href="Sub00_2025-05-26-22-29.html#cb2-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\Mp3_convert_all_01.py&quot;</span></span>
+<span id="cb2-6"><a href="Sub00_2025-05-26-22-29.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="Sub00_2025-05-26-22-29.html#cb2-7" tabindex="-1"></a>echo Start.</span>
+<span id="cb2-8"><a href="Sub00_2025-05-26-22-29.html#cb2-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
+<span id="cb2-9"><a href="Sub00_2025-05-26-22-29.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="Sub00_2025-05-26-22-29.html#cb2-10" tabindex="-1"></a>echo.</span>
+<span id="cb2-11"><a href="Sub00_2025-05-26-22-29.html#cb2-11" tabindex="-1"></a>echo Done.</span>
+<span id="cb2-12"><a href="Sub00_2025-05-26-22-29.html#cb2-12" tabindex="-1"></a>pause</span></code></pre></div>
 <p><strong>2 단계 작업</strong></p>
 <ul>
 <li></li>
@@ -221,56 +232,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li></li>
 <li></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="Sub00_2025-05-26-22-29.html#cb1-1" tabindex="-1"></a>from moviepy.editor import concatenate_audioclips, AudioFileClip</span>
-<span id="cb1-2"><a href="Sub00_2025-05-26-22-29.html#cb1-2" tabindex="-1"></a>import os</span>
-<span id="cb1-3"><a href="Sub00_2025-05-26-22-29.html#cb1-3" tabindex="-1"></a>from tqdm import tqdm</span>
-<span id="cb1-4"><a href="Sub00_2025-05-26-22-29.html#cb1-4" tabindex="-1"></a>from datetime import datetime</span>
-<span id="cb1-5"><a href="Sub00_2025-05-26-22-29.html#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="Sub00_2025-05-26-22-29.html#cb1-6" tabindex="-1"></a><span class="co"># 원본 Mp3 파일이 있는 폴더</span></span>
-<span id="cb1-7"><a href="Sub00_2025-05-26-22-29.html#cb1-7" tabindex="-1"></a>path <span class="ot">=</span> r<span class="st">&quot;D:\music\WRC_003SB\WRC_003SB_The Destiny&quot;</span></span>
-<span id="cb1-8"><a href="Sub00_2025-05-26-22-29.html#cb1-8" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="Sub00_2025-05-26-22-29.html#cb1-9" tabindex="-1"></a><span class="co"># 합쳐진 Mp3 파일을 저장할 폴더</span></span>
-<span id="cb1-10"><a href="Sub00_2025-05-26-22-29.html#cb1-10" tabindex="-1"></a>output_path <span class="ot">=</span> r<span class="st">&quot;D:\music\WRC_000SB_all_01&quot;</span></span>
-<span id="cb1-11"><a href="Sub00_2025-05-26-22-29.html#cb1-11" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="Sub00_2025-05-26-22-29.html#cb1-12" tabindex="-1"></a><span class="co"># Mp3 저장 폴더가 없다면 생성</span></span>
-<span id="cb1-13"><a href="Sub00_2025-05-26-22-29.html#cb1-13" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_path, <span class="at">exist_ok=</span>True)</span>
-<span id="cb1-14"><a href="Sub00_2025-05-26-22-29.html#cb1-14" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="Sub00_2025-05-26-22-29.html#cb1-15" tabindex="-1"></a><span class="co"># Mp3 파일 목록 불러오기 및 정렬</span></span>
-<span id="cb1-16"><a href="Sub00_2025-05-26-22-29.html#cb1-16" tabindex="-1"></a>file_list <span class="ot">=</span> <span class="fu">sorted</span>([f <span class="cf">for</span> f <span class="cf">in</span> <span class="fu">os.listdir</span>(path) <span class="cf">if</span> <span class="fu">f.lower</span>()<span class="fu">.endswith</span>(<span class="st">&#39;.mp3&#39;</span>)])</span>
-<span id="cb1-17"><a href="Sub00_2025-05-26-22-29.html#cb1-17" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="Sub00_2025-05-26-22-29.html#cb1-18" tabindex="-1"></a><span class="co"># 모든 오디오 클립 읽기</span></span>
-<span id="cb1-19"><a href="Sub00_2025-05-26-22-29.html#cb1-19" tabindex="-1"></a>clips <span class="ot">=</span> []</span>
-<span id="cb1-20"><a href="Sub00_2025-05-26-22-29.html#cb1-20" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="Sub00_2025-05-26-22-29.html#cb1-21" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;📥 Mp3 파일 읽는 중...&quot;</span>)</span>
-<span id="cb1-22"><a href="Sub00_2025-05-26-22-29.html#cb1-22" tabindex="-1"></a><span class="cf">for</span> file_name <span class="cf">in</span> <span class="fu">tqdm</span>(file_list, <span class="at">desc=</span><span class="st">&quot;MP3 읽는 중&quot;</span>)<span class="sc">:</span></span>
-<span id="cb1-23"><a href="Sub00_2025-05-26-22-29.html#cb1-23" tabindex="-1"></a>    mp3_file <span class="ot">=</span> <span class="fu">os.path.join</span>(path, file_name)</span>
-<span id="cb1-24"><a href="Sub00_2025-05-26-22-29.html#cb1-24" tabindex="-1"></a>    try<span class="sc">:</span></span>
-<span id="cb1-25"><a href="Sub00_2025-05-26-22-29.html#cb1-25" tabindex="-1"></a>        audio <span class="ot">=</span> <span class="fu">AudioFileClip</span>(mp3_file)</span>
-<span id="cb1-26"><a href="Sub00_2025-05-26-22-29.html#cb1-26" tabindex="-1"></a>        <span class="fu">clips.append</span>(audio)</span>
-<span id="cb1-27"><a href="Sub00_2025-05-26-22-29.html#cb1-27" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
-<span id="cb1-28"><a href="Sub00_2025-05-26-22-29.html#cb1-28" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;❌ 오류 발생: {file_name} - {e}&quot;</span>)</span>
-<span id="cb1-29"><a href="Sub00_2025-05-26-22-29.html#cb1-29" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="Sub00_2025-05-26-22-29.html#cb1-30" tabindex="-1"></a><span class="co"># 오디오 클립 이어붙이기</span></span>
-<span id="cb1-31"><a href="Sub00_2025-05-26-22-29.html#cb1-31" tabindex="-1"></a><span class="cf">if</span> clips<span class="sc">:</span></span>
-<span id="cb1-32"><a href="Sub00_2025-05-26-22-29.html#cb1-32" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;🛠️ 클립 합치는 중...&quot;</span>)</span>
-<span id="cb1-33"><a href="Sub00_2025-05-26-22-29.html#cb1-33" tabindex="-1"></a>    final_clip <span class="ot">=</span> <span class="fu">concatenate_audioclips</span>(clips)</span>
-<span id="cb1-34"><a href="Sub00_2025-05-26-22-29.html#cb1-34" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="Sub00_2025-05-26-22-29.html#cb1-35" tabindex="-1"></a>    <span class="co"># 현재 시각 기반 동적 파일명 생성</span></span>
-<span id="cb1-36"><a href="Sub00_2025-05-26-22-29.html#cb1-36" tabindex="-1"></a>    folder_name <span class="ot">=</span> <span class="fu">os.path.basename</span>(<span class="fu">path.rstrip</span>(<span class="st">&quot;\/&quot;</span>))</span>
-<span id="cb1-37"><a href="Sub00_2025-05-26-22-29.html#cb1-37" tabindex="-1"></a>    timestamp <span class="ot">=</span> <span class="fu">datetime.now</span>()<span class="fu">.strftime</span>(<span class="st">&quot;%Y-%m-%d_%H%M&quot;</span>)</span>
-<span id="cb1-38"><a href="Sub00_2025-05-26-22-29.html#cb1-38" tabindex="-1"></a>    output_filename <span class="ot">=</span> f<span class="st">&quot;{folder_name}_{timestamp}.mp3&quot;</span></span>
-<span id="cb1-39"><a href="Sub00_2025-05-26-22-29.html#cb1-39" tabindex="-1"></a>    output_file <span class="ot">=</span> <span class="fu">os.path.join</span>(output_path, output_filename)</span>
-<span id="cb1-40"><a href="Sub00_2025-05-26-22-29.html#cb1-40" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="Sub00_2025-05-26-22-29.html#cb1-41" tabindex="-1"></a>    <span class="co"># 최종 파일 저장</span></span>
-<span id="cb1-42"><a href="Sub00_2025-05-26-22-29.html#cb1-42" tabindex="-1"></a>    <span class="fu">final_clip.write_audiofile</span>(output_file)</span>
-<span id="cb1-43"><a href="Sub00_2025-05-26-22-29.html#cb1-43" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="Sub00_2025-05-26-22-29.html#cb1-44" tabindex="-1"></a>    <span class="co"># 모든 클립 닫기</span></span>
-<span id="cb1-45"><a href="Sub00_2025-05-26-22-29.html#cb1-45" tabindex="-1"></a>    <span class="cf">for</span> clip <span class="cf">in</span> clips<span class="sc">:</span></span>
-<span id="cb1-46"><a href="Sub00_2025-05-26-22-29.html#cb1-46" tabindex="-1"></a>        <span class="fu">clip.close</span>()</span>
-<span id="cb1-47"><a href="Sub00_2025-05-26-22-29.html#cb1-47" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="Sub00_2025-05-26-22-29.html#cb1-48" tabindex="-1"></a>    <span class="fu">print</span>(f<span class="st">&quot;✅ 모든 Mp3 파일이 저장되었습니다: {output_file}&quot;</span>)</span>
-<span id="cb1-49"><a href="Sub00_2025-05-26-22-29.html#cb1-49" tabindex="-1"></a><span class="cf">else</span><span class="sc">:</span></span>
-<span id="cb1-50"><a href="Sub00_2025-05-26-22-29.html#cb1-50" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;❌ 합칠 mp3 파일이 없습니다.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="Sub00_2025-05-26-22-29.html#cb3-1" tabindex="-1"></a>from moviepy.editor import concatenate_audioclips, AudioFileClip</span>
+<span id="cb3-2"><a href="Sub00_2025-05-26-22-29.html#cb3-2" tabindex="-1"></a>import os</span>
+<span id="cb3-3"><a href="Sub00_2025-05-26-22-29.html#cb3-3" tabindex="-1"></a>from tqdm import tqdm</span>
+<span id="cb3-4"><a href="Sub00_2025-05-26-22-29.html#cb3-4" tabindex="-1"></a>from datetime import datetime</span>
+<span id="cb3-5"><a href="Sub00_2025-05-26-22-29.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="Sub00_2025-05-26-22-29.html#cb3-6" tabindex="-1"></a><span class="co"># 원본 Mp3 파일이 있는 폴더</span></span>
+<span id="cb3-7"><a href="Sub00_2025-05-26-22-29.html#cb3-7" tabindex="-1"></a>path <span class="ot">=</span> r<span class="st">&quot;D:\music\WRC_003SB\WRC_003SB_The Destiny&quot;</span></span>
+<span id="cb3-8"><a href="Sub00_2025-05-26-22-29.html#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="Sub00_2025-05-26-22-29.html#cb3-9" tabindex="-1"></a><span class="co"># 합쳐진 Mp3 파일을 저장할 폴더</span></span>
+<span id="cb3-10"><a href="Sub00_2025-05-26-22-29.html#cb3-10" tabindex="-1"></a>output_path <span class="ot">=</span> r<span class="st">&quot;D:\music\WRC_000SB_all_01&quot;</span></span>
+<span id="cb3-11"><a href="Sub00_2025-05-26-22-29.html#cb3-11" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="Sub00_2025-05-26-22-29.html#cb3-12" tabindex="-1"></a><span class="co"># Mp3 저장 폴더가 없다면 생성</span></span>
+<span id="cb3-13"><a href="Sub00_2025-05-26-22-29.html#cb3-13" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_path, <span class="at">exist_ok=</span>True)</span>
+<span id="cb3-14"><a href="Sub00_2025-05-26-22-29.html#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="Sub00_2025-05-26-22-29.html#cb3-15" tabindex="-1"></a><span class="co"># Mp3 파일 목록 불러오기 및 정렬</span></span>
+<span id="cb3-16"><a href="Sub00_2025-05-26-22-29.html#cb3-16" tabindex="-1"></a>file_list <span class="ot">=</span> <span class="fu">sorted</span>([f <span class="cf">for</span> f <span class="cf">in</span> <span class="fu">os.listdir</span>(path) <span class="cf">if</span> <span class="fu">f.lower</span>()<span class="fu">.endswith</span>(<span class="st">&#39;.mp3&#39;</span>)])</span>
+<span id="cb3-17"><a href="Sub00_2025-05-26-22-29.html#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="Sub00_2025-05-26-22-29.html#cb3-18" tabindex="-1"></a><span class="co"># 모든 오디오 클립 읽기</span></span>
+<span id="cb3-19"><a href="Sub00_2025-05-26-22-29.html#cb3-19" tabindex="-1"></a>clips <span class="ot">=</span> []</span>
+<span id="cb3-20"><a href="Sub00_2025-05-26-22-29.html#cb3-20" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="Sub00_2025-05-26-22-29.html#cb3-21" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;📥 Mp3 파일 읽는 중...&quot;</span>)</span>
+<span id="cb3-22"><a href="Sub00_2025-05-26-22-29.html#cb3-22" tabindex="-1"></a><span class="cf">for</span> file_name <span class="cf">in</span> <span class="fu">tqdm</span>(file_list, <span class="at">desc=</span><span class="st">&quot;MP3 읽는 중&quot;</span>)<span class="sc">:</span></span>
+<span id="cb3-23"><a href="Sub00_2025-05-26-22-29.html#cb3-23" tabindex="-1"></a>    mp3_file <span class="ot">=</span> <span class="fu">os.path.join</span>(path, file_name)</span>
+<span id="cb3-24"><a href="Sub00_2025-05-26-22-29.html#cb3-24" tabindex="-1"></a>    try<span class="sc">:</span></span>
+<span id="cb3-25"><a href="Sub00_2025-05-26-22-29.html#cb3-25" tabindex="-1"></a>        audio <span class="ot">=</span> <span class="fu">AudioFileClip</span>(mp3_file)</span>
+<span id="cb3-26"><a href="Sub00_2025-05-26-22-29.html#cb3-26" tabindex="-1"></a>        <span class="fu">clips.append</span>(audio)</span>
+<span id="cb3-27"><a href="Sub00_2025-05-26-22-29.html#cb3-27" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
+<span id="cb3-28"><a href="Sub00_2025-05-26-22-29.html#cb3-28" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;❌ 오류 발생: {file_name} - {e}&quot;</span>)</span>
+<span id="cb3-29"><a href="Sub00_2025-05-26-22-29.html#cb3-29" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="Sub00_2025-05-26-22-29.html#cb3-30" tabindex="-1"></a><span class="co"># 오디오 클립 이어붙이기</span></span>
+<span id="cb3-31"><a href="Sub00_2025-05-26-22-29.html#cb3-31" tabindex="-1"></a><span class="cf">if</span> clips<span class="sc">:</span></span>
+<span id="cb3-32"><a href="Sub00_2025-05-26-22-29.html#cb3-32" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;🛠️ 클립 합치는 중...&quot;</span>)</span>
+<span id="cb3-33"><a href="Sub00_2025-05-26-22-29.html#cb3-33" tabindex="-1"></a>    final_clip <span class="ot">=</span> <span class="fu">concatenate_audioclips</span>(clips)</span>
+<span id="cb3-34"><a href="Sub00_2025-05-26-22-29.html#cb3-34" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="Sub00_2025-05-26-22-29.html#cb3-35" tabindex="-1"></a>    <span class="co"># 현재 시각 기반 동적 파일명 생성</span></span>
+<span id="cb3-36"><a href="Sub00_2025-05-26-22-29.html#cb3-36" tabindex="-1"></a>    folder_name <span class="ot">=</span> <span class="fu">os.path.basename</span>(<span class="fu">path.rstrip</span>(<span class="st">&quot;\/&quot;</span>))</span>
+<span id="cb3-37"><a href="Sub00_2025-05-26-22-29.html#cb3-37" tabindex="-1"></a>    timestamp <span class="ot">=</span> <span class="fu">datetime.now</span>()<span class="fu">.strftime</span>(<span class="st">&quot;%Y-%m-%d_%H%M&quot;</span>)</span>
+<span id="cb3-38"><a href="Sub00_2025-05-26-22-29.html#cb3-38" tabindex="-1"></a>    output_filename <span class="ot">=</span> f<span class="st">&quot;{folder_name}_{timestamp}.mp3&quot;</span></span>
+<span id="cb3-39"><a href="Sub00_2025-05-26-22-29.html#cb3-39" tabindex="-1"></a>    output_file <span class="ot">=</span> <span class="fu">os.path.join</span>(output_path, output_filename)</span>
+<span id="cb3-40"><a href="Sub00_2025-05-26-22-29.html#cb3-40" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="Sub00_2025-05-26-22-29.html#cb3-41" tabindex="-1"></a>    <span class="co"># 최종 파일 저장</span></span>
+<span id="cb3-42"><a href="Sub00_2025-05-26-22-29.html#cb3-42" tabindex="-1"></a>    <span class="fu">final_clip.write_audiofile</span>(output_file)</span>
+<span id="cb3-43"><a href="Sub00_2025-05-26-22-29.html#cb3-43" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="Sub00_2025-05-26-22-29.html#cb3-44" tabindex="-1"></a>    <span class="co"># 모든 클립 닫기</span></span>
+<span id="cb3-45"><a href="Sub00_2025-05-26-22-29.html#cb3-45" tabindex="-1"></a>    <span class="cf">for</span> clip <span class="cf">in</span> clips<span class="sc">:</span></span>
+<span id="cb3-46"><a href="Sub00_2025-05-26-22-29.html#cb3-46" tabindex="-1"></a>        <span class="fu">clip.close</span>()</span>
+<span id="cb3-47"><a href="Sub00_2025-05-26-22-29.html#cb3-47" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="Sub00_2025-05-26-22-29.html#cb3-48" tabindex="-1"></a>    <span class="fu">print</span>(f<span class="st">&quot;✅ 모든 Mp3 파일이 저장되었습니다: {output_file}&quot;</span>)</span>
+<span id="cb3-49"><a href="Sub00_2025-05-26-22-29.html#cb3-49" tabindex="-1"></a><span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb3-50"><a href="Sub00_2025-05-26-22-29.html#cb3-50" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;❌ 합칠 mp3 파일이 없습니다.&quot;</span>)</span></code></pre></div>
 </div>
 <div id="Sub04_2025-05-26-22-29" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> 결어<a href="Sub00_2025-05-26-22-29.html#Sub04_2025-05-26-22-29" class="anchor-section" aria-label="Anchor link to header"></a></h2>
