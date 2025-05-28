@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 jpg파일들을 pdf로 만들기 | 파이썬 자동화 프로그램 만들기</title>
+  <meta name="description" content="bookdown sample" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 jpg파일들을 pdf로 만들기 | 파이썬 자동화 프로그램 만들기" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="bookdown sample" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 jpg파일들을 pdf로 만들기 | 파이썬 자동화 프로그램 만들기" />
+  
+  <meta name="twitter:description" content="bookdown sample" />
+  
+
+<meta name="author" content="psnam" />
+
+
+<meta name="date" content="2025-05-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Sub00_2025-05-28-10-58.html"/>
+<link rel="next" href="Sub00_2025-05-28-15-56.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">auto_pg</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#%EC%9D%B4-%EC%B1%85%EC%97%90%EA%B2%8C-%EA%B4%80%ED%95%98%EC%97%AC"><i class="fa fa-check"></i>이 책에게 관하여</a></li>
+<li class="chapter" data-level="1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html"><i class="fa fa-check"></i><b>1</b> Mp3 파일들을 하나의 파일로 합치기</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub01_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.1</b> 들어가며</a></li>
+<li class="chapter" data-level="1.2" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub02_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="1.3" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub03_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="1.4" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub04_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html"><i class="fa fa-check"></i><b>2</b> jpg파일들을 전자책(epub)으로 만들기</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub01_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.1</b> 들어가며</a></li>
+<li class="chapter" data-level="2.2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub02_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="2.3" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub03_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="2.4" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub04_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html"><i class="fa fa-check"></i><b>3</b> jpg파일들을 pdf로 만들기</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub01_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.1</b> 들어가며</a></li>
+<li class="chapter" data-level="3.2" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub02_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="3.3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub03_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="3.4" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub04_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html"><i class="fa fa-check"></i><b>4</b> JPG 이미지를 각각 하나의 TXT 파일로 저장하기</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub01_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.1</b> 들어가며</a></li>
+<li class="chapter" data-level="4.2" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub02_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="4.3" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub03_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="4.4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub04_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html"><i class="fa fa-check"></i><b>5</b> 여러 개의 mp4 파일을 읽어서 mp3로 변환하기</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub01_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.1</b> 들어가며</a></li>
+<li class="chapter" data-level="5.2" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub02_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="5.3" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub03_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="5.4" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub04_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html"><i class="fa fa-check"></i><b>6</b> 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub01_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.1</b> 들어가며</a></li>
+<li class="chapter" data-level="6.2" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub02_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="6.3" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub03_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="6.4" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub04_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://datatellme.github.io/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">파이썬 자동화 프로그램 만들기</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Sub00_2025-05-28-12-24" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> jpg파일들을 pdf로 만들기<a href="Sub00_2025-05-28-12-24.html#Sub00_2025-05-28-12-24" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Sub01_2025-05-28-12-24" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 들어가며<a href="Sub00_2025-05-28-12-24.html#Sub01_2025-05-28-12-24" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>여러개의 jpg 파일들을 하나의 pdf 파일로 합치는 자동화 프로그램을 만든다.</p></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div id="Sub02_2025-05-28-12-24" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 업무자동화 설계하기<a href="Sub00_2025-05-28-12-24.html#Sub02_2025-05-28-12-24" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>목표 정하기</strong></p>
+<ul>
+<li><p>무엇을 위해서 만드는가?</p></li>
+<li><p>왜 만드는가?</p></li>
+<li></li>
+</ul>
+<p><strong>작업 쪼개기</strong></p>
+<ul>
+<li><p>핵심 내용:</p></li>
+<li><p>1단계:</p></li>
+<li><p>2단계:</p></li>
+<li><p>3단계:</p></li>
+</ul>
+<p><strong>필요 라이브러리 설치</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="Sub00_2025-05-28-12-24.html#cb10-1" tabindex="-1"></a>pip install pillow tqdm</span></code></pre></div>
+<ul>
+<li>pip install tqdm 실행 bat 파일</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="Sub00_2025-05-28-12-24.html#cb11-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb11-2"><a href="Sub00_2025-05-28-12-24.html#cb11-2" tabindex="-1"></a><span class="sc">::</span> Miniconda 환경의 Python 실행 경로 지정</span>
+<span id="cb11-3"><a href="Sub00_2025-05-28-12-24.html#cb11-3" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\myfirstenv\python.exe&quot;</span></span>
+<span id="cb11-4"><a href="Sub00_2025-05-28-12-24.html#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="Sub00_2025-05-28-12-24.html#cb11-5" tabindex="-1"></a><span class="sc">::</span> pip install tqdm 실행</span>
+<span id="cb11-6"><a href="Sub00_2025-05-28-12-24.html#cb11-6" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">-</span>m pip install tqdm</span>
+<span id="cb11-7"><a href="Sub00_2025-05-28-12-24.html#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="Sub00_2025-05-28-12-24.html#cb11-8" tabindex="-1"></a>pause</span></code></pre></div>
+</div>
+<div id="Sub03_2025-05-28-12-24" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> 코딩하기<a href="Sub00_2025-05-28-12-24.html#Sub03_2025-05-28-12-24" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1 단계 작업</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><strong>2 단계 작업</strong></p>
+<ul>
+<li><p>이미지가 들어 있는 폴더 경로: D:</p></li>
+<li><p>PDF가 저장될 폴더: D:_pdf: 폴더가 없다면 자동 생성</p></li>
+<li><p>PDF 파일 이름: 현재 날짜+시간 기반으로 동적으로 생성: 예: Converted_2025-04-25_1423.pdf</p></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="Sub00_2025-05-28-12-24.html#cb12-1" tabindex="-1"></a>from PIL import Image</span>
+<span id="cb12-2"><a href="Sub00_2025-05-28-12-24.html#cb12-2" tabindex="-1"></a>import os</span>
+<span id="cb12-3"><a href="Sub00_2025-05-28-12-24.html#cb12-3" tabindex="-1"></a>from datetime import datetime</span>
+<span id="cb12-4"><a href="Sub00_2025-05-28-12-24.html#cb12-4" tabindex="-1"></a>from tqdm import tqdm</span>
+<span id="cb12-5"><a href="Sub00_2025-05-28-12-24.html#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="Sub00_2025-05-28-12-24.html#cb12-6" tabindex="-1"></a><span class="co"># 원본 이미지 폴더</span></span>
+<span id="cb12-7"><a href="Sub00_2025-05-28-12-24.html#cb12-7" tabindex="-1"></a>path <span class="ot">=</span> r<span class="st">&quot;D:</span><span class="sc">\v</span><span class="st">Flat\A&quot;</span></span>
+<span id="cb12-8"><a href="Sub00_2025-05-28-12-24.html#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="Sub00_2025-05-28-12-24.html#cb12-9" tabindex="-1"></a><span class="co"># PDF 저장 폴더</span></span>
+<span id="cb12-10"><a href="Sub00_2025-05-28-12-24.html#cb12-10" tabindex="-1"></a>ConvertedToPdfPath <span class="ot">=</span> r<span class="st">&quot;D:</span><span class="sc">\v</span><span class="st">Flat\Apdf&quot;</span></span>
+<span id="cb12-11"><a href="Sub00_2025-05-28-12-24.html#cb12-11" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="Sub00_2025-05-28-12-24.html#cb12-12" tabindex="-1"></a><span class="co"># PDF 저장 폴더가 없다면 생성</span></span>
+<span id="cb12-13"><a href="Sub00_2025-05-28-12-24.html#cb12-13" tabindex="-1"></a><span class="fu">os.makedirs</span>(ConvertedToPdfPath, <span class="at">exist_ok=</span>True)</span>
+<span id="cb12-14"><a href="Sub00_2025-05-28-12-24.html#cb12-14" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="Sub00_2025-05-28-12-24.html#cb12-15" tabindex="-1"></a><span class="co"># 파일 목록 불러오기 및 정렬</span></span>
+<span id="cb12-16"><a href="Sub00_2025-05-28-12-24.html#cb12-16" tabindex="-1"></a>file_list <span class="ot">=</span> <span class="fu">sorted</span>(<span class="fu">os.listdir</span>(path))</span>
+<span id="cb12-17"><a href="Sub00_2025-05-28-12-24.html#cb12-17" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="Sub00_2025-05-28-12-24.html#cb12-18" tabindex="-1"></a><span class="co"># 이미지 리스트 생성</span></span>
+<span id="cb12-19"><a href="Sub00_2025-05-28-12-24.html#cb12-19" tabindex="-1"></a>img_list <span class="ot">=</span> []</span>
+<span id="cb12-20"><a href="Sub00_2025-05-28-12-24.html#cb12-20" tabindex="-1"></a>k <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb12-21"><a href="Sub00_2025-05-28-12-24.html#cb12-21" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="Sub00_2025-05-28-12-24.html#cb12-22" tabindex="-1"></a><span class="cf">for</span> i <span class="cf">in</span> <span class="fu">tqdm</span>(file_list)<span class="sc">:</span></span>
+<span id="cb12-23"><a href="Sub00_2025-05-28-12-24.html#cb12-23" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">i.lower</span>()<span class="fu">.endswith</span>((<span class="st">&#39;.jpg&#39;</span>, <span class="st">&#39;.jpeg&#39;</span>, <span class="st">&#39;.png&#39;</span>))<span class="sc">:</span></span>
+<span id="cb12-24"><a href="Sub00_2025-05-28-12-24.html#cb12-24" tabindex="-1"></a>        k <span class="sc">+</span><span class="er">=</span> <span class="dv">1</span></span>
+<span id="cb12-25"><a href="Sub00_2025-05-28-12-24.html#cb12-25" tabindex="-1"></a>        <span class="cf">if</span> k % <span class="dv">100</span> <span class="sc">==</span> <span class="dv">0</span><span class="sc">:</span></span>
+<span id="cb12-26"><a href="Sub00_2025-05-28-12-24.html#cb12-26" tabindex="-1"></a>            <span class="fu">print</span>(f<span class="st">&quot;Progress : {k}/{len(file_list)}&quot;</span>)</span>
+<span id="cb12-27"><a href="Sub00_2025-05-28-12-24.html#cb12-27" tabindex="-1"></a>        img <span class="ot">=</span> <span class="fu">Image.open</span>(<span class="fu">os.path.join</span>(path, i))</span>
+<span id="cb12-28"><a href="Sub00_2025-05-28-12-24.html#cb12-28" tabindex="-1"></a>        img_rgb <span class="ot">=</span> <span class="fu">img.convert</span>(<span class="st">&#39;RGB&#39;</span>)</span>
+<span id="cb12-29"><a href="Sub00_2025-05-28-12-24.html#cb12-29" tabindex="-1"></a>        <span class="fu">img_list.append</span>(img_rgb)</span>
+<span id="cb12-30"><a href="Sub00_2025-05-28-12-24.html#cb12-30" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="Sub00_2025-05-28-12-24.html#cb12-31" tabindex="-1"></a><span class="co"># PDF 저장</span></span>
+<span id="cb12-32"><a href="Sub00_2025-05-28-12-24.html#cb12-32" tabindex="-1"></a><span class="cf">if</span> img_list<span class="sc">:</span></span>
+<span id="cb12-33"><a href="Sub00_2025-05-28-12-24.html#cb12-33" tabindex="-1"></a>    <span class="co"># 현재 시각 기반 동적 파일명</span></span>
+<span id="cb12-34"><a href="Sub00_2025-05-28-12-24.html#cb12-34" tabindex="-1"></a>    folder_name <span class="ot">=</span> <span class="fu">os.path.basename</span>(<span class="fu">path.rstrip</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">/&quot;</span>))</span>
+<span id="cb12-35"><a href="Sub00_2025-05-28-12-24.html#cb12-35" tabindex="-1"></a>    timestamp <span class="ot">=</span> <span class="fu">datetime.now</span>()<span class="fu">.strftime</span>(<span class="st">&quot;%Y-%m-%d_%H%M&quot;</span>)</span>
+<span id="cb12-36"><a href="Sub00_2025-05-28-12-24.html#cb12-36" tabindex="-1"></a>    output_filename <span class="ot">=</span> f<span class="st">&quot;{folder_name}_{timestamp}.pdf&quot;</span></span>
+<span id="cb12-37"><a href="Sub00_2025-05-28-12-24.html#cb12-37" tabindex="-1"></a>    output_path <span class="ot">=</span> <span class="fu">os.path.join</span>(ConvertedToPdfPath, output_filename)</span>
+<span id="cb12-38"><a href="Sub00_2025-05-28-12-24.html#cb12-38" tabindex="-1"></a></span>
+<span id="cb12-39"><a href="Sub00_2025-05-28-12-24.html#cb12-39" tabindex="-1"></a>    first_img <span class="ot">=</span> img_list[<span class="dv">0</span>]</span>
+<span id="cb12-40"><a href="Sub00_2025-05-28-12-24.html#cb12-40" tabindex="-1"></a>    rest_imgs <span class="ot">=</span> img_list[<span class="dv">1</span><span class="sc">:</span>]</span>
+<span id="cb12-41"><a href="Sub00_2025-05-28-12-24.html#cb12-41" tabindex="-1"></a></span>
+<span id="cb12-42"><a href="Sub00_2025-05-28-12-24.html#cb12-42" tabindex="-1"></a>    <span class="fu">first_img.save</span>(output_path, <span class="at">save_all=</span>True, <span class="at">append_images=</span>rest_imgs)</span>
+<span id="cb12-43"><a href="Sub00_2025-05-28-12-24.html#cb12-43" tabindex="-1"></a>    <span class="fu">print</span>(f<span class="st">&quot;PDF Saved: {output_path}&quot;</span>)</span>
+<span id="cb12-44"><a href="Sub00_2025-05-28-12-24.html#cb12-44" tabindex="-1"></a><span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb12-45"><a href="Sub00_2025-05-28-12-24.html#cb12-45" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;No Image File&quot;</span>)</span></code></pre></div>
+<p><strong>3 단계 작업</strong></p>
+<ul>
+<li><p>run_convert.bat 파일을 더블 클릭하면 Python 가상환경의 convert_to_pdf.py가 실행되어 자동으로 PDF 변환을 수행합니다.</p></li>
+<li><p>완료 후 콘솔창이 멈춰 있어 결과 메시지를 확인할 수 있습니다.</p></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="Sub00_2025-05-28-12-24.html#cb13-1" tabindex="-1"></a>D<span class="sc">:</span>\</span>
+<span id="cb13-2"><a href="Sub00_2025-05-28-12-24.html#cb13-2" tabindex="-1"></a>├─vFlat\</span>
+<span id="cb13-3"><a href="Sub00_2025-05-28-12-24.html#cb13-3" tabindex="-1"></a>│   ├─A\          <span class="ot">&lt;-</span> 이미지 폴더</span>
+<span id="cb13-4"><a href="Sub00_2025-05-28-12-24.html#cb13-4" tabindex="-1"></a>│   ├─A_pdf\             <span class="ot">&lt;-</span> PDF 저장 폴더</span>
+<span id="cb13-5"><a href="Sub00_2025-05-28-12-24.html#cb13-5" tabindex="-1"></a>│   ├─convert_to_pdf.py</span>
+<span id="cb13-6"><a href="Sub00_2025-05-28-12-24.html#cb13-6" tabindex="-1"></a>│   └─run_convert.bat  <span class="ot">&lt;-</span> 더블 클릭해서 실행</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="Sub00_2025-05-28-12-24.html#cb14-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb14-2"><a href="Sub00_2025-05-28-12-24.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="Sub00_2025-05-28-12-24.html#cb14-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
+<span id="cb14-4"><a href="Sub00_2025-05-28-12-24.html#cb14-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\myfirstenv\python.exe&quot;</span></span>
+<span id="cb14-5"><a href="Sub00_2025-05-28-12-24.html#cb14-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\jpg_convert_pdf.py&quot;</span></span>
+<span id="cb14-6"><a href="Sub00_2025-05-28-12-24.html#cb14-6" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="Sub00_2025-05-28-12-24.html#cb14-7" tabindex="-1"></a>echo Start.</span>
+<span id="cb14-8"><a href="Sub00_2025-05-28-12-24.html#cb14-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
+<span id="cb14-9"><a href="Sub00_2025-05-28-12-24.html#cb14-9" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="Sub00_2025-05-28-12-24.html#cb14-10" tabindex="-1"></a>echo.</span>
+<span id="cb14-11"><a href="Sub00_2025-05-28-12-24.html#cb14-11" tabindex="-1"></a>echo Done.</span>
+<span id="cb14-12"><a href="Sub00_2025-05-28-12-24.html#cb14-12" tabindex="-1"></a>pause</span></code></pre></div>
+</div>
+<div id="Sub04_2025-05-28-12-24" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> 결어<a href="Sub00_2025-05-28-12-24.html#Sub04_2025-05-28-12-24" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Sub00_2025-05-28-10-58.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Sub00_2025-05-28-15-56.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://datatellme.github.io/2025-05-28-12-24-content.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

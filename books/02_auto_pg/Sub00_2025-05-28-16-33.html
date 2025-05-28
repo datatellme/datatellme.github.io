@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것 | 파이썬 자동화 프로그램 만들기</title>
+  <meta name="description" content="bookdown sample" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것 | 파이썬 자동화 프로그램 만들기" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="bookdown sample" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것 | 파이썬 자동화 프로그램 만들기" />
+  
+  <meta name="twitter:description" content="bookdown sample" />
+  
+
+<meta name="author" content="psnam" />
+
+
+<meta name="date" content="2025-05-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Sub00_2025-05-28-16-22.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">auto_pg</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#%EC%9D%B4-%EC%B1%85%EC%97%90%EA%B2%8C-%EA%B4%80%ED%95%98%EC%97%AC"><i class="fa fa-check"></i>이 책에게 관하여</a></li>
+<li class="chapter" data-level="1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html"><i class="fa fa-check"></i><b>1</b> Mp3 파일들을 하나의 파일로 합치기</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub01_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.1</b> 들어가며</a></li>
+<li class="chapter" data-level="1.2" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub02_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="1.3" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub03_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="1.4" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub04_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html"><i class="fa fa-check"></i><b>2</b> jpg파일들을 전자책(epub)으로 만들기</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub01_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.1</b> 들어가며</a></li>
+<li class="chapter" data-level="2.2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub02_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="2.3" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub03_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="2.4" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub04_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html"><i class="fa fa-check"></i><b>3</b> jpg파일들을 pdf로 만들기</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub01_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.1</b> 들어가며</a></li>
+<li class="chapter" data-level="3.2" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub02_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="3.3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub03_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="3.4" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub04_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html"><i class="fa fa-check"></i><b>4</b> JPG 이미지를 각각 하나의 TXT 파일로 저장하기</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub01_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.1</b> 들어가며</a></li>
+<li class="chapter" data-level="4.2" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub02_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="4.3" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub03_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="4.4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub04_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html"><i class="fa fa-check"></i><b>5</b> 여러 개의 mp4 파일을 읽어서 mp3로 변환하기</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub01_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.1</b> 들어가며</a></li>
+<li class="chapter" data-level="5.2" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub02_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="5.3" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub03_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="5.4" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub04_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html"><i class="fa fa-check"></i><b>6</b> 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub01_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.1</b> 들어가며</a></li>
+<li class="chapter" data-level="6.2" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub02_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="6.3" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub03_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="6.4" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub04_2025-05-28-16-33"><i class="fa fa-check"></i><b>6.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://datatellme.github.io/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">파이썬 자동화 프로그램 만들기</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Sub00_2025-05-28-16-33" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것<a href="Sub00_2025-05-28-16-33.html#Sub00_2025-05-28-16-33" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Sub01_2025-05-28-16-33" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> 들어가며<a href="Sub00_2025-05-28-16-33.html#Sub01_2025-05-28-16-33" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div id="Sub02_2025-05-28-16-33" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 업무자동화 설계하기<a href="Sub00_2025-05-28-16-33.html#Sub02_2025-05-28-16-33" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>목표 정하기</strong></p>
+<ul>
+<li><p>무엇을 위해서 만드는가?</p></li>
+<li><p>왜 만드는가?</p></li>
+<li></li>
+</ul>
+<p><strong>작업 쪼개기</strong></p>
+<ul>
+<li><p>핵심 내용:</p></li>
+<li><p>1단계:</p></li>
+<li><p>2단계:</p></li>
+<li><p>3단계:</p></li>
+</ul>
+<p><strong>필요 라이브러리 설치</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div id="Sub03_2025-05-28-16-33" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 코딩하기<a href="Sub00_2025-05-28-16-33.html#Sub03_2025-05-28-16-33" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1 단계 작업</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><strong>2 단계 작업</strong></p>
+<ul>
+<li><p>VideoFileClip으로 mp4들을 모두 읽어온 뒤</p></li>
+<li><p>concatenate_videoclips로 한 번에 이어붙여서</p></li>
+<li><p>하나의 최종 .mp4 파일로 저장해야 합니다.</p></li>
+<li><p>concatenate_videoclips 사용 여러 개 mp4 파일을 하나로 이어붙임</p></li>
+<li><p>for 반복하면서 파일마다 저장 ❌ 전부 메모리에 읽은 다음 한번에 합쳐서 저장</p></li>
+<li><p>method=“compose” 사용 해상도/코덱이 서로 달라도 합칠 수 있게 함</p></li>
+<li><p>모든 파일 clip.close() 메모리 릴리즈 (안 하면 누수 위험 있음)</p></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="Sub00_2025-05-28-16-33.html#cb22-1" tabindex="-1"></a>from moviepy.editor import VideoFileClip, concatenate_videoclips</span>
+<span id="cb22-2"><a href="Sub00_2025-05-28-16-33.html#cb22-2" tabindex="-1"></a>import os</span>
+<span id="cb22-3"><a href="Sub00_2025-05-28-16-33.html#cb22-3" tabindex="-1"></a>from tqdm import tqdm</span>
+<span id="cb22-4"><a href="Sub00_2025-05-28-16-33.html#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="Sub00_2025-05-28-16-33.html#cb22-5" tabindex="-1"></a><span class="co"># 원본 Mp4 파일이 있는 폴더</span></span>
+<span id="cb22-6"><a href="Sub00_2025-05-28-16-33.html#cb22-6" tabindex="-1"></a>path <span class="ot">=</span> r<span class="st">&quot;D:\data\moviepy\20230501&quot;</span></span>
+<span id="cb22-7"><a href="Sub00_2025-05-28-16-33.html#cb22-7" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="Sub00_2025-05-28-16-33.html#cb22-8" tabindex="-1"></a><span class="co"># 합쳐진 Mp4 파일을 저장할 폴더</span></span>
+<span id="cb22-9"><a href="Sub00_2025-05-28-16-33.html#cb22-9" tabindex="-1"></a>output_path <span class="ot">=</span> r<span class="st">&quot;D:\data\moviepy\20230501_all&quot;</span></span>
+<span id="cb22-10"><a href="Sub00_2025-05-28-16-33.html#cb22-10" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="Sub00_2025-05-28-16-33.html#cb22-11" tabindex="-1"></a><span class="co"># Mp4 저장 폴더가 없다면 생성</span></span>
+<span id="cb22-12"><a href="Sub00_2025-05-28-16-33.html#cb22-12" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_path, <span class="at">exist_ok=</span>True)</span>
+<span id="cb22-13"><a href="Sub00_2025-05-28-16-33.html#cb22-13" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="Sub00_2025-05-28-16-33.html#cb22-14" tabindex="-1"></a><span class="co"># Mp4 파일 목록 불러오기 및 정렬</span></span>
+<span id="cb22-15"><a href="Sub00_2025-05-28-16-33.html#cb22-15" tabindex="-1"></a>file_list <span class="ot">=</span> <span class="fu">sorted</span>([f <span class="cf">for</span> f <span class="cf">in</span> <span class="fu">os.listdir</span>(path) <span class="cf">if</span> <span class="fu">f.lower</span>()<span class="fu">.endswith</span>(<span class="st">&#39;.mp4&#39;</span>)])</span>
+<span id="cb22-16"><a href="Sub00_2025-05-28-16-33.html#cb22-16" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="Sub00_2025-05-28-16-33.html#cb22-17" tabindex="-1"></a><span class="co"># 모든 클립 읽기</span></span>
+<span id="cb22-18"><a href="Sub00_2025-05-28-16-33.html#cb22-18" tabindex="-1"></a>clips <span class="ot">=</span> []</span>
+<span id="cb22-19"><a href="Sub00_2025-05-28-16-33.html#cb22-19" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="Sub00_2025-05-28-16-33.html#cb22-20" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;📥 Mp4 파일 읽는 중...&quot;</span>)</span>
+<span id="cb22-21"><a href="Sub00_2025-05-28-16-33.html#cb22-21" tabindex="-1"></a><span class="cf">for</span> file_name <span class="cf">in</span> <span class="fu">tqdm</span>(file_list, <span class="at">desc=</span><span class="st">&quot;MP4 읽는 중&quot;</span>)<span class="sc">:</span></span>
+<span id="cb22-22"><a href="Sub00_2025-05-28-16-33.html#cb22-22" tabindex="-1"></a>    mp4_file <span class="ot">=</span> <span class="fu">os.path.join</span>(path, file_name)</span>
+<span id="cb22-23"><a href="Sub00_2025-05-28-16-33.html#cb22-23" tabindex="-1"></a>    try<span class="sc">:</span></span>
+<span id="cb22-24"><a href="Sub00_2025-05-28-16-33.html#cb22-24" tabindex="-1"></a>        clip <span class="ot">=</span> <span class="fu">VideoFileClip</span>(mp4_file)</span>
+<span id="cb22-25"><a href="Sub00_2025-05-28-16-33.html#cb22-25" tabindex="-1"></a>        <span class="fu">clips.append</span>(clip)</span>
+<span id="cb22-26"><a href="Sub00_2025-05-28-16-33.html#cb22-26" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
+<span id="cb22-27"><a href="Sub00_2025-05-28-16-33.html#cb22-27" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;오류 발생: {file_name} - {e}&quot;</span>)</span>
+<span id="cb22-28"><a href="Sub00_2025-05-28-16-33.html#cb22-28" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="Sub00_2025-05-28-16-33.html#cb22-29" tabindex="-1"></a><span class="co"># 클립 이어붙이기</span></span>
+<span id="cb22-30"><a href="Sub00_2025-05-28-16-33.html#cb22-30" tabindex="-1"></a><span class="cf">if</span> clips<span class="sc">:</span></span>
+<span id="cb22-31"><a href="Sub00_2025-05-28-16-33.html#cb22-31" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;🛠️ 클립 합치는 중...&quot;</span>)</span>
+<span id="cb22-32"><a href="Sub00_2025-05-28-16-33.html#cb22-32" tabindex="-1"></a>    final_clip <span class="ot">=</span> <span class="fu">concatenate_videoclips</span>(clips, <span class="at">method=</span><span class="st">&quot;compose&quot;</span>)  <span class="co"># method=&quot;compose&quot;로 서로 다른 해상도도 가능</span></span>
+<span id="cb22-33"><a href="Sub00_2025-05-28-16-33.html#cb22-33" tabindex="-1"></a></span>
+<span id="cb22-34"><a href="Sub00_2025-05-28-16-33.html#cb22-34" tabindex="-1"></a>    <span class="co"># 최종 파일 저장</span></span>
+<span id="cb22-35"><a href="Sub00_2025-05-28-16-33.html#cb22-35" tabindex="-1"></a>    output_file <span class="ot">=</span> <span class="fu">os.path.join</span>(output_path, <span class="st">&quot;all.mp4&quot;</span>)</span>
+<span id="cb22-36"><a href="Sub00_2025-05-28-16-33.html#cb22-36" tabindex="-1"></a>    <span class="fu">final_clip.write_videofile</span>(output_file, <span class="at">codec=</span><span class="st">&quot;libx264&quot;</span>, <span class="at">audio_codec=</span><span class="st">&quot;aac&quot;</span>, <span class="at">preset=</span><span class="st">&quot;ultrafast&quot;</span>)</span>
+<span id="cb22-37"><a href="Sub00_2025-05-28-16-33.html#cb22-37" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="Sub00_2025-05-28-16-33.html#cb22-38" tabindex="-1"></a>    <span class="co"># 모든 클립 닫기</span></span>
+<span id="cb22-39"><a href="Sub00_2025-05-28-16-33.html#cb22-39" tabindex="-1"></a>    <span class="cf">for</span> clip <span class="cf">in</span> clips<span class="sc">:</span></span>
+<span id="cb22-40"><a href="Sub00_2025-05-28-16-33.html#cb22-40" tabindex="-1"></a>        <span class="fu">clip.close</span>()</span>
+<span id="cb22-41"><a href="Sub00_2025-05-28-16-33.html#cb22-41" tabindex="-1"></a></span>
+<span id="cb22-42"><a href="Sub00_2025-05-28-16-33.html#cb22-42" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;✅ 모든 Mp4 파일이 all.mp4로 합쳐졌습니다.&quot;</span>)</span>
+<span id="cb22-43"><a href="Sub00_2025-05-28-16-33.html#cb22-43" tabindex="-1"></a><span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb22-44"><a href="Sub00_2025-05-28-16-33.html#cb22-44" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;❌ 합칠 mp4 파일이 없습니다.&quot;</span>)</span></code></pre></div>
+<ul>
+<li><p>파일 크기가 커질 수 있어요. (compose 쓸 때)</p></li>
+<li><p>만약 모든 소스 mp4가 해상도, 코덱이 같으면 method=“chain”으로 더 빠르게 합칠 수 있습니다:</p></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="Sub00_2025-05-28-16-33.html#cb23-1" tabindex="-1"></a>final_clip <span class="ot">=</span> <span class="fu">concatenate_videoclips</span>(clips, <span class="at">method=</span><span class="st">&quot;chain&quot;</span>)</span></code></pre></div>
+<ul>
+<li>preset=“ultrafast”를 주면 저장 속도가 빨라지지만, 파일 용량은 살짝 늘어납니다.</li>
+</ul>
+<p><strong>3 단계 작업</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="Sub00_2025-05-28-16-33.html#cb24-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb24-2"><a href="Sub00_2025-05-28-16-33.html#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="Sub00_2025-05-28-16-33.html#cb24-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
+<span id="cb24-4"><a href="Sub00_2025-05-28-16-33.html#cb24-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\mymovienv\python.exe&quot;</span></span>
+<span id="cb24-5"><a href="Sub00_2025-05-28-16-33.html#cb24-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\Mp4_convert_all.py&quot;</span></span>
+<span id="cb24-6"><a href="Sub00_2025-05-28-16-33.html#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="Sub00_2025-05-28-16-33.html#cb24-7" tabindex="-1"></a>echo Start.</span>
+<span id="cb24-8"><a href="Sub00_2025-05-28-16-33.html#cb24-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
+<span id="cb24-9"><a href="Sub00_2025-05-28-16-33.html#cb24-9" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="Sub00_2025-05-28-16-33.html#cb24-10" tabindex="-1"></a>echo.</span>
+<span id="cb24-11"><a href="Sub00_2025-05-28-16-33.html#cb24-11" tabindex="-1"></a>echo Done.</span>
+<span id="cb24-12"><a href="Sub00_2025-05-28-16-33.html#cb24-12" tabindex="-1"></a>pause</span></code></pre></div>
+</div>
+<div id="Sub04_2025-05-28-16-33" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> 결어<a href="Sub00_2025-05-28-16-33.html#Sub04_2025-05-28-16-33" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Sub00_2025-05-28-16-22.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://datatellme.github.io/2025-05-28-16-33-content.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
