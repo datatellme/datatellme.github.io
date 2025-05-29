@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 유튜브 다운로더 만들기 | 파이썬 자동화 프로그램 만들기</title>
+  <meta name="description" content="bookdown sample" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 유튜브 다운로더 만들기 | 파이썬 자동화 프로그램 만들기" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="bookdown sample" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 유튜브 다운로더 만들기 | 파이썬 자동화 프로그램 만들기" />
+  
+  <meta name="twitter:description" content="bookdown sample" />
+  
+
+<meta name="author" content="psnam" />
+
+
+<meta name="date" content="2025-05-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Sub00_2025-05-28-21-42.html"/>
+<link rel="next" href="Sub00_2025-05-28-21-59.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">auto_pg</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path=""><a href="#%EC%9D%B4-%EC%B1%85%EC%97%90%EA%B2%8C-%EA%B4%80%ED%95%98%EC%97%AC"><i class="fa fa-check"></i>이 책에게 관하여</a></li>
+<li class="chapter" data-level="1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html"><i class="fa fa-check"></i><b>1</b> 오디오 CD를 mp3 파일로 전환하여 하나의 mp3파일로 합치기</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub01_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.1</b> 들어가며</a></li>
+<li class="chapter" data-level="1.2" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub02_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="1.3" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub03_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="1.4" data-path="Sub00_2025-05-26-22-29.html"><a href="Sub00_2025-05-26-22-29.html#Sub04_2025-05-26-22-29"><i class="fa fa-check"></i><b>1.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html"><i class="fa fa-check"></i><b>2</b> jpg파일들을 전자책(epub)으로 만들기</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub01_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.1</b> 들어가며</a></li>
+<li class="chapter" data-level="2.2" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub02_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="2.3" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub03_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="2.4" data-path="Sub00_2025-05-28-10-58.html"><a href="Sub00_2025-05-28-10-58.html#Sub04_2025-05-28-10-58"><i class="fa fa-check"></i><b>2.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html"><i class="fa fa-check"></i><b>3</b> jpg파일들을 pdf로 만들기</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub01_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.1</b> 들어가며</a></li>
+<li class="chapter" data-level="3.2" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub02_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="3.3" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub03_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="3.4" data-path="Sub00_2025-05-28-12-24.html"><a href="Sub00_2025-05-28-12-24.html#Sub04_2025-05-28-12-24"><i class="fa fa-check"></i><b>3.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html"><i class="fa fa-check"></i><b>4</b> JPG 이미지를 각각 하나의 TXT 파일로 저장하기</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub01_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.1</b> 들어가며</a></li>
+<li class="chapter" data-level="4.2" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub02_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="4.3" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub03_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="4.4" data-path="Sub00_2025-05-28-15-56.html"><a href="Sub00_2025-05-28-15-56.html#Sub04_2025-05-28-15-56"><i class="fa fa-check"></i><b>4.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html"><i class="fa fa-check"></i><b>5</b> 여러 개의 mp4 파일을 읽어서 mp3로 변환하기</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub01_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.1</b> 들어가며</a></li>
+<li class="chapter" data-level="5.2" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub02_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="5.3" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub03_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="5.4" data-path="Sub00_2025-05-28-16-22.html"><a href="Sub00_2025-05-28-16-22.html#Sub04_2025-05-28-16-22"><i class="fa fa-check"></i><b>5.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="Sub00_2025-05-28-22-07.html"><a href="Sub00_2025-05-28-22-07.html"><i class="fa fa-check"></i><b>6</b> 모든 MOV 파일이 MP4로 변환하기</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Sub00_2025-05-28-22-07.html"><a href="Sub00_2025-05-28-22-07.html#Sub01_2025-05-28-22-07"><i class="fa fa-check"></i><b>6.1</b> 들어가며</a></li>
+<li class="chapter" data-level="6.2" data-path="Sub00_2025-05-28-22-07.html"><a href="Sub00_2025-05-28-22-07.html#Sub02_2025-05-28-22-07"><i class="fa fa-check"></i><b>6.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="6.3" data-path="Sub00_2025-05-28-22-07.html"><a href="Sub00_2025-05-28-22-07.html#Sub03_2025-05-28-22-07"><i class="fa fa-check"></i><b>6.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="6.4" data-path="Sub00_2025-05-28-22-07.html"><a href="Sub00_2025-05-28-22-07.html#Sub04_2025-05-28-22-07"><i class="fa fa-check"></i><b>6.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html"><i class="fa fa-check"></i><b>7</b> 폴더 안에 있는 모든 .mp4 파일을 순서대로 하나의 파일로 합치는 것</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub01_2025-05-28-16-33"><i class="fa fa-check"></i><b>7.1</b> 들어가며</a></li>
+<li class="chapter" data-level="7.2" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub02_2025-05-28-16-33"><i class="fa fa-check"></i><b>7.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="7.3" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub03_2025-05-28-16-33"><i class="fa fa-check"></i><b>7.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="7.4" data-path="Sub00_2025-05-28-16-33.html"><a href="Sub00_2025-05-28-16-33.html#Sub04_2025-05-28-16-33"><i class="fa fa-check"></i><b>7.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Sub00_2025-05-28-21-13.html"><a href="Sub00_2025-05-28-21-13.html"><i class="fa fa-check"></i><b>8</b> 자막 파일(subtitles.txt)을 읽고, 각 MP4 클립에 대응되는 자막을 삽입한 뒤, 모든 클립을 하나로 합치</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Sub00_2025-05-28-21-13.html"><a href="Sub00_2025-05-28-21-13.html#Sub01_2025-05-28-21-13"><i class="fa fa-check"></i><b>8.1</b> 들어가며</a></li>
+<li class="chapter" data-level="8.2" data-path="Sub00_2025-05-28-21-13.html"><a href="Sub00_2025-05-28-21-13.html#Sub02_2025-05-28-21-13"><i class="fa fa-check"></i><b>8.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="8.3" data-path="Sub00_2025-05-28-21-13.html"><a href="Sub00_2025-05-28-21-13.html#Sub03_2025-05-28-21-13"><i class="fa fa-check"></i><b>8.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="8.4" data-path="Sub00_2025-05-28-21-13.html"><a href="Sub00_2025-05-28-21-13.html#Sub04_2025-05-28-21-13"><i class="fa fa-check"></i><b>8.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="Sub00_2025-05-28-21-42.html"><a href="Sub00_2025-05-28-21-42.html"><i class="fa fa-check"></i><b>9</b> 각 MP4 파일에 자막을 입히고, 각각 따로 자막 포함 개별 영상 저장하기</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Sub00_2025-05-28-21-42.html"><a href="Sub00_2025-05-28-21-42.html#Sub01_2025-05-28-21-42"><i class="fa fa-check"></i><b>9.1</b> 들어가며</a></li>
+<li class="chapter" data-level="9.2" data-path="Sub00_2025-05-28-21-42.html"><a href="Sub00_2025-05-28-21-42.html#Sub02_2025-05-28-21-42"><i class="fa fa-check"></i><b>9.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="9.3" data-path="Sub00_2025-05-28-21-42.html"><a href="Sub00_2025-05-28-21-42.html#Sub03_2025-05-28-21-42"><i class="fa fa-check"></i><b>9.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="9.4" data-path="Sub00_2025-05-28-21-42.html"><a href="Sub00_2025-05-28-21-42.html#Sub04_2025-05-28-21-42"><i class="fa fa-check"></i><b>9.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Sub00_2025-05-28-21-48.html"><a href="Sub00_2025-05-28-21-48.html"><i class="fa fa-check"></i><b>10</b> 유튜브 다운로더 만들기</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Sub00_2025-05-28-21-48.html"><a href="Sub00_2025-05-28-21-48.html#Sub01_2025-05-28-21-48"><i class="fa fa-check"></i><b>10.1</b> 들어가며</a></li>
+<li class="chapter" data-level="10.2" data-path="Sub00_2025-05-28-21-48.html"><a href="Sub00_2025-05-28-21-48.html#Sub02_2025-05-28-21-48"><i class="fa fa-check"></i><b>10.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="10.3" data-path="Sub00_2025-05-28-21-48.html"><a href="Sub00_2025-05-28-21-48.html#Sub03_2025-05-28-21-48"><i class="fa fa-check"></i><b>10.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="10.4" data-path="Sub00_2025-05-28-21-48.html"><a href="Sub00_2025-05-28-21-48.html#Sub04_2025-05-28-21-48"><i class="fa fa-check"></i><b>10.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Sub00_2025-05-28-21-59.html"><a href="Sub00_2025-05-28-21-59.html"><i class="fa fa-check"></i><b>11</b> 전체 재생목록(Playlist)에 있는 동영상들을 자동으로 순서대로 다운로드</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Sub00_2025-05-28-21-59.html"><a href="Sub00_2025-05-28-21-59.html#Sub01_2025-05-28-21-59"><i class="fa fa-check"></i><b>11.1</b> 들어가며</a></li>
+<li class="chapter" data-level="11.2" data-path="Sub00_2025-05-28-21-59.html"><a href="Sub00_2025-05-28-21-59.html#Sub02_2025-05-28-21-59"><i class="fa fa-check"></i><b>11.2</b> 업무자동화 설계하기</a></li>
+<li class="chapter" data-level="11.3" data-path="Sub00_2025-05-28-21-59.html"><a href="Sub00_2025-05-28-21-59.html#Sub03_2025-05-28-21-59"><i class="fa fa-check"></i><b>11.3</b> 코딩하기</a></li>
+<li class="chapter" data-level="11.4" data-path="Sub00_2025-05-28-21-59.html"><a href="Sub00_2025-05-28-21-59.html#Sub04_2025-05-28-21-59"><i class="fa fa-check"></i><b>11.4</b> 결어</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://datatellme.github.io/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">파이썬 자동화 프로그램 만들기</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Sub00_2025-05-28-21-48" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> 유튜브 다운로더 만들기<a href="Sub00_2025-05-28-21-48.html#Sub00_2025-05-28-21-48" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Sub01_2025-05-28-21-48" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> 들어가며<a href="Sub00_2025-05-28-21-48.html#Sub01_2025-05-28-21-48" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div id="Sub02_2025-05-28-21-48" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> 업무자동화 설계하기<a href="Sub00_2025-05-28-21-48.html#Sub02_2025-05-28-21-48" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>목표 정하기</strong></p>
+<ul>
+<li><p>무엇을 위해서 만드는가?</p></li>
+<li><p>왜 만드는가?</p></li>
+<li></li>
+</ul>
+<p><strong>작업 쪼개기</strong></p>
+<ul>
+<li><p>핵심 내용:</p></li>
+<li><p>1단계:</p></li>
+<li><p>2단계:</p></li>
+<li><p>3단계:</p></li>
+</ul>
+<p><strong>필요 라이브러리 설치</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="Sub00_2025-05-28-21-48.html#cb37-1" tabindex="-1"></a>pip install pytubefix</span></code></pre></div>
+</div>
+<div id="Sub03_2025-05-28-21-48" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> 코딩하기<a href="Sub00_2025-05-28-21-48.html#Sub03_2025-05-28-21-48" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1 단계 작업</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><strong>2 단계 작업</strong></p>
+<ul>
+<li><p>YouTube 객체 생성 시 URL을 넣음.</p></li>
+<li><p>가장 높은 화질(get_highest_resolution()) 스트림을 선택.</p></li>
+<li><p>파일 크기를 가져와서 tqdm에 총량으로 설정.</p></li>
+<li><p>on_progress_callback에 직접 등록해서 chunk 단위로 pbar.update() 호출.</p></li>
+<li><p>다운로드 완료 후 파일 경로 출력.</p></li>
+<li><p>예외 발생 시 에러 메시지 출력.</p></li>
+<li><p>사용자가 모드 선택 (1: 영상, 2: mp3 음원).</p></li>
+<li><p>오디오 스트림만 다운로드.</p></li>
+<li><p>moviepy 라이브러리로 mp3로 변환.</p></li>
+<li><p>변환 후 원본 audio 파일 삭제.</p></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="Sub00_2025-05-28-21-48.html#cb38-1" tabindex="-1"></a>from pytubefix import YouTube</span>
+<span id="cb38-2"><a href="Sub00_2025-05-28-21-48.html#cb38-2" tabindex="-1"></a>import os</span>
+<span id="cb38-3"><a href="Sub00_2025-05-28-21-48.html#cb38-3" tabindex="-1"></a>from tqdm import tqdm</span>
+<span id="cb38-4"><a href="Sub00_2025-05-28-21-48.html#cb38-4" tabindex="-1"></a>from moviepy.editor import AudioFileClip</span>
+<span id="cb38-5"><a href="Sub00_2025-05-28-21-48.html#cb38-5" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="Sub00_2025-05-28-21-48.html#cb38-6" tabindex="-1"></a><span class="co"># 다운로드 된 파일을 저장할 폴더</span></span>
+<span id="cb38-7"><a href="Sub00_2025-05-28-21-48.html#cb38-7" tabindex="-1"></a>output_path <span class="ot">=</span> r<span class="st">&quot;D:\movie&quot;</span></span>
+<span id="cb38-8"><a href="Sub00_2025-05-28-21-48.html#cb38-8" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="Sub00_2025-05-28-21-48.html#cb38-9" tabindex="-1"></a><span class="co"># 저장 폴더가 없다면 생성</span></span>
+<span id="cb38-10"><a href="Sub00_2025-05-28-21-48.html#cb38-10" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_path, <span class="at">exist_ok=</span>True)</span>
+<span id="cb38-11"><a href="Sub00_2025-05-28-21-48.html#cb38-11" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="Sub00_2025-05-28-21-48.html#cb38-12" tabindex="-1"></a>def <span class="fu">download_youtube</span>()<span class="sc">:</span></span>
+<span id="cb38-13"><a href="Sub00_2025-05-28-21-48.html#cb38-13" tabindex="-1"></a>    url <span class="ot">=</span> <span class="fu">input</span>(<span class="st">&quot;다운로드할 유튜브 영상 URL을 입력하세요: &quot;</span>)</span>
+<span id="cb38-14"><a href="Sub00_2025-05-28-21-48.html#cb38-14" tabindex="-1"></a>    mode <span class="ot">=</span> <span class="fu">input</span>(<span class="st">&quot;다운로드 모드 선택 (1: 동영상, 2: MP3 음원): &quot;</span>)<span class="fu">.strip</span>()</span>
+<span id="cb38-15"><a href="Sub00_2025-05-28-21-48.html#cb38-15" tabindex="-1"></a></span>
+<span id="cb38-16"><a href="Sub00_2025-05-28-21-48.html#cb38-16" tabindex="-1"></a>    try<span class="sc">:</span></span>
+<span id="cb38-17"><a href="Sub00_2025-05-28-21-48.html#cb38-17" tabindex="-1"></a>        yt <span class="ot">=</span> <span class="fu">YouTube</span>(url)</span>
+<span id="cb38-18"><a href="Sub00_2025-05-28-21-48.html#cb38-18" tabindex="-1"></a>        file_size <span class="ot">=</span> None</span>
+<span id="cb38-19"><a href="Sub00_2025-05-28-21-48.html#cb38-19" tabindex="-1"></a>        pbar <span class="ot">=</span> None</span>
+<span id="cb38-20"><a href="Sub00_2025-05-28-21-48.html#cb38-20" tabindex="-1"></a></span>
+<span id="cb38-21"><a href="Sub00_2025-05-28-21-48.html#cb38-21" tabindex="-1"></a>        def <span class="fu">on_progress</span>(stream, chunk, bytes_remaining)<span class="sc">:</span></span>
+<span id="cb38-22"><a href="Sub00_2025-05-28-21-48.html#cb38-22" tabindex="-1"></a>            nonlocal file_size, pbar</span>
+<span id="cb38-23"><a href="Sub00_2025-05-28-21-48.html#cb38-23" tabindex="-1"></a>            <span class="cf">if</span> file_size and pbar<span class="sc">:</span></span>
+<span id="cb38-24"><a href="Sub00_2025-05-28-21-48.html#cb38-24" tabindex="-1"></a>                current <span class="ot">=</span> file_size <span class="sc">-</span> bytes_remaining</span>
+<span id="cb38-25"><a href="Sub00_2025-05-28-21-48.html#cb38-25" tabindex="-1"></a>                pbar.n <span class="ot">=</span> current</span>
+<span id="cb38-26"><a href="Sub00_2025-05-28-21-48.html#cb38-26" tabindex="-1"></a>                <span class="fu">pbar.refresh</span>()</span>
+<span id="cb38-27"><a href="Sub00_2025-05-28-21-48.html#cb38-27" tabindex="-1"></a></span>
+<span id="cb38-28"><a href="Sub00_2025-05-28-21-48.html#cb38-28" tabindex="-1"></a>        <span class="fu">yt.register_on_progress_callback</span>(on_progress)</span>
+<span id="cb38-29"><a href="Sub00_2025-05-28-21-48.html#cb38-29" tabindex="-1"></a></span>
+<span id="cb38-30"><a href="Sub00_2025-05-28-21-48.html#cb38-30" tabindex="-1"></a>        <span class="cf">if</span> mode <span class="sc">==</span> <span class="st">&quot;1&quot;</span><span class="sc">:</span></span>
+<span id="cb38-31"><a href="Sub00_2025-05-28-21-48.html#cb38-31" tabindex="-1"></a>            stream <span class="ot">=</span> <span class="fu">yt.streams.get_highest_resolution</span>()</span>
+<span id="cb38-32"><a href="Sub00_2025-05-28-21-48.html#cb38-32" tabindex="-1"></a>        elif mode <span class="sc">==</span> <span class="st">&quot;2&quot;</span><span class="sc">:</span></span>
+<span id="cb38-33"><a href="Sub00_2025-05-28-21-48.html#cb38-33" tabindex="-1"></a>            stream <span class="ot">=</span> <span class="fu">yt.streams.filter</span>(<span class="at">only_audio=</span>True)<span class="fu">.order_by</span>(<span class="st">&#39;abr&#39;</span>)<span class="fu">.desc</span>()<span class="fu">.first</span>()</span>
+<span id="cb38-34"><a href="Sub00_2025-05-28-21-48.html#cb38-34" tabindex="-1"></a>        <span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb38-35"><a href="Sub00_2025-05-28-21-48.html#cb38-35" tabindex="-1"></a>            <span class="fu">print</span>(<span class="st">&quot;잘못된 모드 선택입니다.&quot;</span>)</span>
+<span id="cb38-36"><a href="Sub00_2025-05-28-21-48.html#cb38-36" tabindex="-1"></a>            return</span>
+<span id="cb38-37"><a href="Sub00_2025-05-28-21-48.html#cb38-37" tabindex="-1"></a></span>
+<span id="cb38-38"><a href="Sub00_2025-05-28-21-48.html#cb38-38" tabindex="-1"></a>        file_size <span class="ot">=</span> stream.filesize</span>
+<span id="cb38-39"><a href="Sub00_2025-05-28-21-48.html#cb38-39" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;&#39;{yt.title}&#39; 다운로드 시작... (파일 크기: {round(file_size / (1024 * 1024), 2)} MB)&quot;</span>)</span>
+<span id="cb38-40"><a href="Sub00_2025-05-28-21-48.html#cb38-40" tabindex="-1"></a></span>
+<span id="cb38-41"><a href="Sub00_2025-05-28-21-48.html#cb38-41" tabindex="-1"></a>        with <span class="fu">tqdm</span>(<span class="at">total=</span>file_size, <span class="at">unit=</span><span class="st">&#39;B&#39;</span>, <span class="at">unit_scale=</span>True, <span class="at">desc=</span>yt.title) as pbar_instance<span class="sc">:</span></span>
+<span id="cb38-42"><a href="Sub00_2025-05-28-21-48.html#cb38-42" tabindex="-1"></a>            pbar <span class="ot">=</span> pbar_instance</span>
+<span id="cb38-43"><a href="Sub00_2025-05-28-21-48.html#cb38-43" tabindex="-1"></a>            downloaded_path <span class="ot">=</span> <span class="fu">stream.download</span>(<span class="at">output_path=</span>output_path)</span>
+<span id="cb38-44"><a href="Sub00_2025-05-28-21-48.html#cb38-44" tabindex="-1"></a></span>
+<span id="cb38-45"><a href="Sub00_2025-05-28-21-48.html#cb38-45" tabindex="-1"></a>        <span class="cf">if</span> mode <span class="sc">==</span> <span class="st">&quot;2&quot;</span><span class="sc">:</span></span>
+<span id="cb38-46"><a href="Sub00_2025-05-28-21-48.html#cb38-46" tabindex="-1"></a>            mp3_path <span class="ot">=</span> <span class="fu">os.path.splitext</span>(downloaded_path)[<span class="dv">0</span>] <span class="sc">+</span> <span class="st">&quot;.mp3&quot;</span></span>
+<span id="cb38-47"><a href="Sub00_2025-05-28-21-48.html#cb38-47" tabindex="-1"></a>            <span class="fu">print</span>(f<span class="st">&quot;MP3 변환 중: {mp3_path}&quot;</span>)</span>
+<span id="cb38-48"><a href="Sub00_2025-05-28-21-48.html#cb38-48" tabindex="-1"></a>            audio_clip <span class="ot">=</span> <span class="fu">AudioFileClip</span>(downloaded_path)</span>
+<span id="cb38-49"><a href="Sub00_2025-05-28-21-48.html#cb38-49" tabindex="-1"></a>            <span class="fu">audio_clip.write_audiofile</span>(mp3_path)</span>
+<span id="cb38-50"><a href="Sub00_2025-05-28-21-48.html#cb38-50" tabindex="-1"></a>            <span class="fu">audio_clip.close</span>()</span>
+<span id="cb38-51"><a href="Sub00_2025-05-28-21-48.html#cb38-51" tabindex="-1"></a></span>
+<span id="cb38-52"><a href="Sub00_2025-05-28-21-48.html#cb38-52" tabindex="-1"></a>            <span class="fu">os.remove</span>(downloaded_path)</span>
+<span id="cb38-53"><a href="Sub00_2025-05-28-21-48.html#cb38-53" tabindex="-1"></a>            <span class="fu">print</span>(f<span class="st">&quot;완료된 MP3 파일: {mp3_path}&quot;</span>)</span>
+<span id="cb38-54"><a href="Sub00_2025-05-28-21-48.html#cb38-54" tabindex="-1"></a>        <span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb38-55"><a href="Sub00_2025-05-28-21-48.html#cb38-55" tabindex="-1"></a>            <span class="fu">print</span>(f<span class="st">&quot;다운로드 완료: {downloaded_path}&quot;</span>)</span>
+<span id="cb38-56"><a href="Sub00_2025-05-28-21-48.html#cb38-56" tabindex="-1"></a></span>
+<span id="cb38-57"><a href="Sub00_2025-05-28-21-48.html#cb38-57" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
+<span id="cb38-58"><a href="Sub00_2025-05-28-21-48.html#cb38-58" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;다운로드 중 오류가 발생했습니다: {e}&quot;</span>)</span>
+<span id="cb38-59"><a href="Sub00_2025-05-28-21-48.html#cb38-59" tabindex="-1"></a></span>
+<span id="cb38-60"><a href="Sub00_2025-05-28-21-48.html#cb38-60" tabindex="-1"></a><span class="cf">if</span> __name__ <span class="sc">==</span> <span class="st">&quot;__main__&quot;</span><span class="sc">:</span></span>
+<span id="cb38-61"><a href="Sub00_2025-05-28-21-48.html#cb38-61" tabindex="-1"></a>    <span class="fu">download_youtube</span>()</span></code></pre></div>
+<p><strong>3 단계 작업</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="Sub00_2025-05-28-21-48.html#cb39-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb39-2"><a href="Sub00_2025-05-28-21-48.html#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="Sub00_2025-05-28-21-48.html#cb39-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
+<span id="cb39-4"><a href="Sub00_2025-05-28-21-48.html#cb39-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\mymovienv\python.exe&quot;</span></span>
+<span id="cb39-5"><a href="Sub00_2025-05-28-21-48.html#cb39-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\Youtube Download01.py&quot;</span></span>
+<span id="cb39-6"><a href="Sub00_2025-05-28-21-48.html#cb39-6" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="Sub00_2025-05-28-21-48.html#cb39-7" tabindex="-1"></a>echo Start.</span>
+<span id="cb39-8"><a href="Sub00_2025-05-28-21-48.html#cb39-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
+<span id="cb39-9"><a href="Sub00_2025-05-28-21-48.html#cb39-9" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="Sub00_2025-05-28-21-48.html#cb39-10" tabindex="-1"></a>echo.</span>
+<span id="cb39-11"><a href="Sub00_2025-05-28-21-48.html#cb39-11" tabindex="-1"></a>echo Done.</span>
+<span id="cb39-12"><a href="Sub00_2025-05-28-21-48.html#cb39-12" tabindex="-1"></a>pause</span></code></pre></div>
+</div>
+<div id="Sub04_2025-05-28-21-48" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> 결어<a href="Sub00_2025-05-28-21-48.html#Sub04_2025-05-28-21-48" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Sub00_2025-05-28-21-42.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Sub00_2025-05-28-21-59.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://datatellme.github.io/2025-05-28-21-48-content.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
