@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 각 MP4 파일에 자막을 입히고, 각각 따로 자막 포함 개별 영상 저장하기 | 파이썬 자동화 프로그램 만들기</title>
+  <title>Chapter 12 ISBN을 한 번에 입력받아 도서 정보를 조회해 APA 스타일로 bib파일 출력하기_국제 출판 데이터에 특화 | 파이썬 자동화 프로그램 만들기</title>
   <meta name="description" content="bookdown sample" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 각 MP4 파일에 자막을 입히고, 각각 따로 자막 포함 개별 영상 저장하기 | 파이썬 자동화 프로그램 만들기" />
+  <meta property="og:title" content="Chapter 12 ISBN을 한 번에 입력받아 도서 정보를 조회해 APA 스타일로 bib파일 출력하기_국제 출판 데이터에 특화 | 파이썬 자동화 프로그램 만들기" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="bookdown sample" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 각 MP4 파일에 자막을 입히고, 각각 따로 자막 포함 개별 영상 저장하기 | 파이썬 자동화 프로그램 만들기" />
+  <meta name="twitter:title" content="Chapter 12 ISBN을 한 번에 입력받아 도서 정보를 조회해 APA 스타일로 bib파일 출력하기_국제 출판 데이터에 특화 | 파이썬 자동화 프로그램 만들기" />
   
   <meta name="twitter:description" content="bookdown sample" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Sub00_2025-05-28-21-13.html"/>
-<link rel="next" href="Sub00_2025-05-28-21-48.html"/>
+<link rel="prev" href="Sub00_2025-05-28-21-59.html"/>
+<link rel="next" href="Sub00_2025-05-30-12-38.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -253,18 +253,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Sub00_2025-05-28-21-42" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> 각 MP4 파일에 자막을 입히고, 각각 따로 자막 포함 개별 영상 저장하기<a href="Sub00_2025-05-28-21-42.html#Sub00_2025-05-28-21-42" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="Sub01_2025-05-28-21-42" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> 들어가며<a href="Sub00_2025-05-28-21-42.html#Sub01_2025-05-28-21-42" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Sub00_2025-05-30-06-05" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> ISBN을 한 번에 입력받아 도서 정보를 조회해 APA 스타일로 bib파일 출력하기_국제 출판 데이터에 특화<a href="Sub00_2025-05-30-06-05.html#Sub00_2025-05-30-06-05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Sub01_2025-05-30-06-05" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> 들어가며<a href="Sub00_2025-05-30-06-05.html#Sub01_2025-05-30-06-05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
 </div>
-<div id="Sub02_2025-05-28-21-42" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> 업무자동화 설계하기<a href="Sub00_2025-05-28-21-42.html#Sub02_2025-05-28-21-42" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Sub02_2025-05-30-06-05" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> 업무자동화 설계하기<a href="Sub00_2025-05-30-06-05.html#Sub02_2025-05-30-06-05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>목표 정하기</strong></p>
 <ul>
 <li><p>무엇을 위해서 만드는가?</p></li>
@@ -284,9 +284,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li></li>
 <li></li>
 </ul>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="Sub00_2025-05-30-06-05.html#cb42-1" tabindex="-1"></a>pip install requests tqdm</span></code></pre></div>
 </div>
-<div id="Sub03_2025-05-28-21-42" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> 코딩하기<a href="Sub00_2025-05-28-21-42.html#Sub03_2025-05-28-21-42" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Sub03_2025-05-30-06-05" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> 코딩하기<a href="Sub00_2025-05-30-06-05.html#Sub03_2025-05-30-06-05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>1 단계 작업</strong></p>
 <ul>
 <li></li>
@@ -296,112 +297,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>2 단계 작업</strong></p>
 <ul>
 <li></li>
-<li></li>
-<li></li>
+<li><p>아래는 ISBN을 입력하면 온라인에서 도서 정보를 조회한 후, APA 스타일의 참고문헌(bibliography)을 생성해주는 Python 프로그램입니다.</p></li>
+<li><p>아래는 여러 개의 ISBN을 한 번에 입력받아 각각에 대해 도서 정보를 조회하고, APA 스타일로 포맷된 참고문헌 리스트를 D:폴더에 텍스트 파일로 저장하는 파이썬 코드입니다.</p></li>
+<li><p>이 프로그램은 Open Library API를 사용하여 ISBN으로 책 정보를 검색합니다.</p></li>
+<li><p>9791187444886처럼 <strong>국내 ISBN(979-로 시작)</strong>은 Open Library API에서 종종 정보를 제공하지 않아 “도서 정보를 찾을 수 없습니다” 메시지가 뜹니다.</p></li>
+<li><p>이 API는 주로 북미/국제 출판 데이터에 특화되어 있기 때문에 국내 서적 데이터는 빈약합니다.</p></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="Sub00_2025-05-28-21-42.html#cb34-1" tabindex="-1"></a>from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip</span>
-<span id="cb34-2"><a href="Sub00_2025-05-28-21-42.html#cb34-2" tabindex="-1"></a>import os</span>
-<span id="cb34-3"><a href="Sub00_2025-05-28-21-42.html#cb34-3" tabindex="-1"></a>from tqdm import tqdm</span>
-<span id="cb34-4"><a href="Sub00_2025-05-28-21-42.html#cb34-4" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="Sub00_2025-05-28-21-42.html#cb34-5" tabindex="-1"></a><span class="co"># 원본 Mp4 파일이 있는 폴더</span></span>
-<span id="cb34-6"><a href="Sub00_2025-05-28-21-42.html#cb34-6" tabindex="-1"></a>path <span class="ot">=</span> r<span class="st">&quot;D:\data\moviepy\20230501_choice&quot;</span></span>
-<span id="cb34-7"><a href="Sub00_2025-05-28-21-42.html#cb34-7" tabindex="-1"></a></span>
-<span id="cb34-8"><a href="Sub00_2025-05-28-21-42.html#cb34-8" tabindex="-1"></a><span class="co"># 자막 포함 Mp4 파일 저장할 폴더</span></span>
-<span id="cb34-9"><a href="Sub00_2025-05-28-21-42.html#cb34-9" tabindex="-1"></a>output_path <span class="ot">=</span> r<span class="st">&quot;D:\data\moviepy\20230501_subtitled&quot;</span></span>
-<span id="cb34-10"><a href="Sub00_2025-05-28-21-42.html#cb34-10" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_path, <span class="at">exist_ok=</span>True)</span>
-<span id="cb34-11"><a href="Sub00_2025-05-28-21-42.html#cb34-11" tabindex="-1"></a></span>
-<span id="cb34-12"><a href="Sub00_2025-05-28-21-42.html#cb34-12" tabindex="-1"></a><span class="co"># 자막 텍스트 파일 경로</span></span>
-<span id="cb34-13"><a href="Sub00_2025-05-28-21-42.html#cb34-13" tabindex="-1"></a>subtitle_file <span class="ot">=</span> <span class="fu">os.path.join</span>(path, <span class="st">&quot;subtitles.txt&quot;</span>)</span>
-<span id="cb34-14"><a href="Sub00_2025-05-28-21-42.html#cb34-14" tabindex="-1"></a></span>
-<span id="cb34-15"><a href="Sub00_2025-05-28-21-42.html#cb34-15" tabindex="-1"></a><span class="co"># Mp4 파일 목록 불러오기 및 정렬</span></span>
-<span id="cb34-16"><a href="Sub00_2025-05-28-21-42.html#cb34-16" tabindex="-1"></a>file_list <span class="ot">=</span> <span class="fu">sorted</span>([f <span class="cf">for</span> f <span class="cf">in</span> <span class="fu">os.listdir</span>(path) <span class="cf">if</span> <span class="fu">f.lower</span>()<span class="fu">.endswith</span>(<span class="st">&#39;.mp4&#39;</span>)])</span>
-<span id="cb34-17"><a href="Sub00_2025-05-28-21-42.html#cb34-17" tabindex="-1"></a></span>
-<span id="cb34-18"><a href="Sub00_2025-05-28-21-42.html#cb34-18" tabindex="-1"></a><span class="co"># 자막 텍스트 읽기</span></span>
-<span id="cb34-19"><a href="Sub00_2025-05-28-21-42.html#cb34-19" tabindex="-1"></a><span class="cf">if</span> <span class="fu">os.path.exists</span>(subtitle_file)<span class="sc">:</span></span>
-<span id="cb34-20"><a href="Sub00_2025-05-28-21-42.html#cb34-20" tabindex="-1"></a>    with <span class="fu">open</span>(subtitle_file, <span class="st">&#39;r&#39;</span>, <span class="at">encoding=</span><span class="st">&#39;utf-8&#39;</span>) as f<span class="sc">:</span></span>
-<span id="cb34-21"><a href="Sub00_2025-05-28-21-42.html#cb34-21" tabindex="-1"></a>        subtitles <span class="ot">=</span> [<span class="fu">line.strip</span>() <span class="cf">for</span> line <span class="cf">in</span> <span class="fu">f.readlines</span>()]</span>
-<span id="cb34-22"><a href="Sub00_2025-05-28-21-42.html#cb34-22" tabindex="-1"></a><span class="cf">else</span><span class="sc">:</span></span>
-<span id="cb34-23"><a href="Sub00_2025-05-28-21-42.html#cb34-23" tabindex="-1"></a>    subtitles <span class="ot">=</span> []</span>
-<span id="cb34-24"><a href="Sub00_2025-05-28-21-42.html#cb34-24" tabindex="-1"></a></span>
-<span id="cb34-25"><a href="Sub00_2025-05-28-21-42.html#cb34-25" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;🎬 각 클립에 자막 추가 및 개별 저장 중...&quot;</span>)</span>
-<span id="cb34-26"><a href="Sub00_2025-05-28-21-42.html#cb34-26" tabindex="-1"></a><span class="cf">for</span> idx, file_name <span class="cf">in</span> <span class="fu">enumerate</span>(<span class="fu">tqdm</span>(file_list, <span class="at">desc=</span><span class="st">&quot;자막 처리 중&quot;</span>))<span class="sc">:</span></span>
-<span id="cb34-27"><a href="Sub00_2025-05-28-21-42.html#cb34-27" tabindex="-1"></a>    mp4_file <span class="ot">=</span> <span class="fu">os.path.join</span>(path, file_name)</span>
-<span id="cb34-28"><a href="Sub00_2025-05-28-21-42.html#cb34-28" tabindex="-1"></a>    try<span class="sc">:</span></span>
-<span id="cb34-29"><a href="Sub00_2025-05-28-21-42.html#cb34-29" tabindex="-1"></a>        clip <span class="ot">=</span> <span class="fu">VideoFileClip</span>(mp4_file)</span>
-<span id="cb34-30"><a href="Sub00_2025-05-28-21-42.html#cb34-30" tabindex="-1"></a></span>
-<span id="cb34-31"><a href="Sub00_2025-05-28-21-42.html#cb34-31" tabindex="-1"></a>        <span class="co"># 자막 텍스트</span></span>
-<span id="cb34-32"><a href="Sub00_2025-05-28-21-42.html#cb34-32" tabindex="-1"></a>        <span class="cf">if</span> idx <span class="sc">&lt;</span> <span class="fu">len</span>(subtitles)<span class="sc">:</span></span>
-<span id="cb34-33"><a href="Sub00_2025-05-28-21-42.html#cb34-33" tabindex="-1"></a>            subtitle_text <span class="ot">=</span> subtitles[idx]</span>
-<span id="cb34-34"><a href="Sub00_2025-05-28-21-42.html#cb34-34" tabindex="-1"></a>        <span class="cf">else</span><span class="sc">:</span></span>
-<span id="cb34-35"><a href="Sub00_2025-05-28-21-42.html#cb34-35" tabindex="-1"></a>            subtitle_text <span class="ot">=</span> f<span class="st">&quot;Clip {idx+1}: {file_name}&quot;</span></span>
-<span id="cb34-36"><a href="Sub00_2025-05-28-21-42.html#cb34-36" tabindex="-1"></a></span>
-<span id="cb34-37"><a href="Sub00_2025-05-28-21-42.html#cb34-37" tabindex="-1"></a>        <span class="co"># 기본 자막 클립 (흰색)</span></span>
-<span id="cb34-38"><a href="Sub00_2025-05-28-21-42.html#cb34-38" tabindex="-1"></a>        main_txt <span class="ot">=</span> <span class="fu">TextClip</span>(subtitle_text, <span class="at">fontsize=</span><span class="dv">150</span>, <span class="at">color=</span><span class="st">&#39;white&#39;</span>,</span>
-<span id="cb34-39"><a href="Sub00_2025-05-28-21-42.html#cb34-39" tabindex="-1"></a>                            <span class="at">font=</span><span class="st">&quot;C:/Windows/Fonts/NanumGothicBold.ttf&quot;</span>,   <span class="co"># ← 한글 폰트   </span></span>
-<span id="cb34-40"><a href="Sub00_2025-05-28-21-42.html#cb34-40" tabindex="-1"></a>                                    <span class="at">method=</span><span class="st">&#39;caption&#39;</span>,               <span class="co"># ← 줄바꿈 가능</span></span>
-<span id="cb34-41"><a href="Sub00_2025-05-28-21-42.html#cb34-41" tabindex="-1"></a>                                    <span class="at">size=</span>(clip.w <span class="sc">-</span> <span class="dv">100</span>, None) <span class="co"># ← 텍스트 최대 너비 지정 (영상 너비보다 작게)</span></span>
-<span id="cb34-42"><a href="Sub00_2025-05-28-21-42.html#cb34-42" tabindex="-1"></a>         </span>
-<span id="cb34-43"><a href="Sub00_2025-05-28-21-42.html#cb34-43" tabindex="-1"></a>        )<span class="fu">.set_duration</span>(clip.duration)<span class="fu">.set_position</span>((<span class="st">&#39;left&#39;</span>, <span class="st">&#39;bottom&#39;</span>))</span>
-<span id="cb34-44"><a href="Sub00_2025-05-28-21-42.html#cb34-44" tabindex="-1"></a></span>
-<span id="cb34-45"><a href="Sub00_2025-05-28-21-42.html#cb34-45" tabindex="-1"></a>        <span class="co"># 그림자 자막 클립 (검정, 약간 아래/오른쪽)</span></span>
-<span id="cb34-46"><a href="Sub00_2025-05-28-21-42.html#cb34-46" tabindex="-1"></a><span class="co">#        shadow_txt = TextClip(subtitle_text, fontsize=150, color=&#39;black&#39;,</span></span>
-<span id="cb34-47"><a href="Sub00_2025-05-28-21-42.html#cb34-47" tabindex="-1"></a><span class="co">#                            font=&quot;C:/Windows/Fonts/NanumGothicBold.ttf&quot;,   # ← 한글 폰트   </span></span>
-<span id="cb34-48"><a href="Sub00_2025-05-28-21-42.html#cb34-48" tabindex="-1"></a><span class="co">#                                    method=&#39;caption&#39;,               # ← 줄바꿈 가능</span></span>
-<span id="cb34-49"><a href="Sub00_2025-05-28-21-42.html#cb34-49" tabindex="-1"></a><span class="co">#                                    size=(clip.w - 100, None) # ← 텍스트 최대 너비 지정 (영상 너비보다 작게)</span></span>
-<span id="cb34-50"><a href="Sub00_2025-05-28-21-42.html#cb34-50" tabindex="-1"></a><span class="co">#         ).set_duration(clip.duration).set_position((&#39;left&#39;, clip.h - 100.05))  # 약간 아래 위치</span></span>
-<span id="cb34-51"><a href="Sub00_2025-05-28-21-42.html#cb34-51" tabindex="-1"></a></span>
-<span id="cb34-52"><a href="Sub00_2025-05-28-21-42.html#cb34-52" tabindex="-1"></a>        <span class="co"># 페이드 인/아웃 효과</span></span>
-<span id="cb34-53"><a href="Sub00_2025-05-28-21-42.html#cb34-53" tabindex="-1"></a>        main_txt <span class="ot">=</span> <span class="fu">main_txt.fadein</span>(<span class="dv">1</span>)<span class="fu">.fadeout</span>(<span class="dv">1</span>)</span>
-<span id="cb34-54"><a href="Sub00_2025-05-28-21-42.html#cb34-54" tabindex="-1"></a><span class="co">#        shadow_txt = shadow_txt.fadein(0.5).fadeout(0.5)</span></span>
-<span id="cb34-55"><a href="Sub00_2025-05-28-21-42.html#cb34-55" tabindex="-1"></a></span>
-<span id="cb34-56"><a href="Sub00_2025-05-28-21-42.html#cb34-56" tabindex="-1"></a>        <span class="co"># 자막 합성 (#그림자 → 텍스트 → 영상)</span></span>
-<span id="cb34-57"><a href="Sub00_2025-05-28-21-42.html#cb34-57" tabindex="-1"></a>        composite <span class="ot">=</span> <span class="fu">CompositeVideoClip</span>([clip, main_txt]) <span class="co"># 약간 아래 위치: shadow_txt, </span></span>
-<span id="cb34-58"><a href="Sub00_2025-05-28-21-42.html#cb34-58" tabindex="-1"></a></span>
-<span id="cb34-59"><a href="Sub00_2025-05-28-21-42.html#cb34-59" tabindex="-1"></a>        <span class="co"># 저장 파일명</span></span>
-<span id="cb34-60"><a href="Sub00_2025-05-28-21-42.html#cb34-60" tabindex="-1"></a>        output_filename <span class="ot">=</span> <span class="fu">os.path.splitext</span>(file_name)[<span class="dv">0</span>] <span class="sc">+</span> <span class="st">&quot;_subtitled.mp4&quot;</span></span>
-<span id="cb34-61"><a href="Sub00_2025-05-28-21-42.html#cb34-61" tabindex="-1"></a>        output_file <span class="ot">=</span> <span class="fu">os.path.join</span>(output_path, output_filename)</span>
-<span id="cb34-62"><a href="Sub00_2025-05-28-21-42.html#cb34-62" tabindex="-1"></a></span>
-<span id="cb34-63"><a href="Sub00_2025-05-28-21-42.html#cb34-63" tabindex="-1"></a>        <span class="co"># 저장</span></span>
-<span id="cb34-64"><a href="Sub00_2025-05-28-21-42.html#cb34-64" tabindex="-1"></a>        <span class="fu">composite.write_videofile</span>(output_file, <span class="at">codec=</span><span class="st">&quot;libx264&quot;</span>, <span class="at">audio_codec=</span><span class="st">&quot;aac&quot;</span>, <span class="at">preset=</span><span class="st">&quot;ultrafast&quot;</span>)</span>
-<span id="cb34-65"><a href="Sub00_2025-05-28-21-42.html#cb34-65" tabindex="-1"></a>        <span class="fu">composite.close</span>()</span>
-<span id="cb34-66"><a href="Sub00_2025-05-28-21-42.html#cb34-66" tabindex="-1"></a>        <span class="fu">clip.close</span>()</span>
-<span id="cb34-67"><a href="Sub00_2025-05-28-21-42.html#cb34-67" tabindex="-1"></a></span>
-<span id="cb34-68"><a href="Sub00_2025-05-28-21-42.html#cb34-68" tabindex="-1"></a>    except Exception as e<span class="sc">:</span></span>
-<span id="cb34-69"><a href="Sub00_2025-05-28-21-42.html#cb34-69" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;❌ 오류 발생: {file_name} - {e}&quot;</span>)</span>
-<span id="cb34-70"><a href="Sub00_2025-05-28-21-42.html#cb34-70" tabindex="-1"></a></span>
-<span id="cb34-71"><a href="Sub00_2025-05-28-21-42.html#cb34-71" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;✅ 모든 파일이 자막 포함 개별 영상으로 저장되었습니다.&quot;</span>)</span></code></pre></div>
-<p>저장 결과 예시</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="Sub00_2025-05-28-21-42.html#cb35-1" tabindex="-1"></a>D<span class="sc">:</span>\data\moviepy\<span class="dv">20230501</span>_subtitled\</span>
-<span id="cb35-2"><a href="Sub00_2025-05-28-21-42.html#cb35-2" tabindex="-1"></a>├── clip01_subtitled.mp4</span>
-<span id="cb35-3"><a href="Sub00_2025-05-28-21-42.html#cb35-3" tabindex="-1"></a>├── clip02_subtitled.mp4</span>
-<span id="cb35-4"><a href="Sub00_2025-05-28-21-42.html#cb35-4" tabindex="-1"></a>├── clip03_subtitled.mp4</span></code></pre></div>
-<p>✏️ 자막이 보이지 않을 경우 확인할 것</p>
-<ul>
-<li><p>subtitles.txt의 줄 수와 mp4 개수가 일치하는지</p></li>
-<li><p>자막 문장이 빈 줄이 아닌지</p></li>
-<li><p>폰트가 시스템에 설치되어 있는지 (예: Arial)</p></li>
-</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="Sub00_2025-05-30-06-05.html#cb43-1" tabindex="-1"></a>import requests</span>
+<span id="cb43-2"><a href="Sub00_2025-05-30-06-05.html#cb43-2" tabindex="-1"></a>import os</span>
+<span id="cb43-3"><a href="Sub00_2025-05-30-06-05.html#cb43-3" tabindex="-1"></a>from datetime import datetime</span>
+<span id="cb43-4"><a href="Sub00_2025-05-30-06-05.html#cb43-4" tabindex="-1"></a>from tqdm import tqdm</span>
+<span id="cb43-5"><a href="Sub00_2025-05-30-06-05.html#cb43-5" tabindex="-1"></a>import re</span>
+<span id="cb43-6"><a href="Sub00_2025-05-30-06-05.html#cb43-6" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="Sub00_2025-05-30-06-05.html#cb43-7" tabindex="-1"></a><span class="co"># BibTeX 파일 저장 경로</span></span>
+<span id="cb43-8"><a href="Sub00_2025-05-30-06-05.html#cb43-8" tabindex="-1"></a>output_dir <span class="ot">=</span> r<span class="st">&quot;D:\APA&quot;</span></span>
+<span id="cb43-9"><a href="Sub00_2025-05-30-06-05.html#cb43-9" tabindex="-1"></a><span class="fu">os.makedirs</span>(output_dir, <span class="at">exist_ok=</span>True)</span>
+<span id="cb43-10"><a href="Sub00_2025-05-30-06-05.html#cb43-10" tabindex="-1"></a>bibtex_file <span class="ot">=</span> <span class="fu">os.path.join</span>(output_dir, <span class="st">&quot;book.bib&quot;</span>)</span>
+<span id="cb43-11"><a href="Sub00_2025-05-30-06-05.html#cb43-11" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="Sub00_2025-05-30-06-05.html#cb43-12" tabindex="-1"></a><span class="co"># BibTeX key 정리용</span></span>
+<span id="cb43-13"><a href="Sub00_2025-05-30-06-05.html#cb43-13" tabindex="-1"></a>def <span class="fu">sanitize_bibtex_key</span>(text)<span class="sc">:</span></span>
+<span id="cb43-14"><a href="Sub00_2025-05-30-06-05.html#cb43-14" tabindex="-1"></a>    return <span class="fu">re.sub</span>(r<span class="st">&#39;\W+&#39;</span>, <span class="st">&#39;&#39;</span>, text)<span class="fu">.lower</span>()</span>
+<span id="cb43-15"><a href="Sub00_2025-05-30-06-05.html#cb43-15" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="Sub00_2025-05-30-06-05.html#cb43-16" tabindex="-1"></a><span class="co"># Open Library API에서 책 정보 조회</span></span>
+<span id="cb43-17"><a href="Sub00_2025-05-30-06-05.html#cb43-17" tabindex="-1"></a>def <span class="fu">get_book_info_openlibrary</span>(isbn)<span class="sc">:</span></span>
+<span id="cb43-18"><a href="Sub00_2025-05-30-06-05.html#cb43-18" tabindex="-1"></a>    url <span class="ot">=</span> f<span class="st">&quot;https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&amp;format=json&amp;jscmd=data&quot;</span></span>
+<span id="cb43-19"><a href="Sub00_2025-05-30-06-05.html#cb43-19" tabindex="-1"></a>    response <span class="ot">=</span> <span class="fu">requests.get</span>(url)</span>
+<span id="cb43-20"><a href="Sub00_2025-05-30-06-05.html#cb43-20" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="sc">!=</span> <span class="dv">200</span><span class="sc">:</span></span>
+<span id="cb43-21"><a href="Sub00_2025-05-30-06-05.html#cb43-21" tabindex="-1"></a>        return None</span>
+<span id="cb43-22"><a href="Sub00_2025-05-30-06-05.html#cb43-22" tabindex="-1"></a></span>
+<span id="cb43-23"><a href="Sub00_2025-05-30-06-05.html#cb43-23" tabindex="-1"></a>    data <span class="ot">=</span> <span class="fu">response.json</span>()</span>
+<span id="cb43-24"><a href="Sub00_2025-05-30-06-05.html#cb43-24" tabindex="-1"></a>    book_data <span class="ot">=</span> <span class="fu">data.get</span>(f<span class="st">&quot;ISBN:{isbn}&quot;</span>)</span>
+<span id="cb43-25"><a href="Sub00_2025-05-30-06-05.html#cb43-25" tabindex="-1"></a>    <span class="cf">if</span> not book_data<span class="sc">:</span></span>
+<span id="cb43-26"><a href="Sub00_2025-05-30-06-05.html#cb43-26" tabindex="-1"></a>        return None</span>
+<span id="cb43-27"><a href="Sub00_2025-05-30-06-05.html#cb43-27" tabindex="-1"></a></span>
+<span id="cb43-28"><a href="Sub00_2025-05-30-06-05.html#cb43-28" tabindex="-1"></a>    title <span class="ot">=</span> <span class="fu">book_data.get</span>(<span class="st">&quot;title&quot;</span>, <span class="st">&quot;Unknown Title&quot;</span>)</span>
+<span id="cb43-29"><a href="Sub00_2025-05-30-06-05.html#cb43-29" tabindex="-1"></a>    authors <span class="ot">=</span> [author[<span class="st">&quot;name&quot;</span>] <span class="cf">for</span> author <span class="cf">in</span> <span class="fu">book_data.get</span>(<span class="st">&quot;authors&quot;</span>, [])]</span>
+<span id="cb43-30"><a href="Sub00_2025-05-30-06-05.html#cb43-30" tabindex="-1"></a>    author <span class="ot">=</span> <span class="st">&quot; and &quot;</span><span class="fu">.join</span>(authors) <span class="cf">if</span> authors <span class="cf">else</span> <span class="st">&quot;Unknown Author&quot;</span></span>
+<span id="cb43-31"><a href="Sub00_2025-05-30-06-05.html#cb43-31" tabindex="-1"></a>    publishers <span class="ot">=</span> [pub[<span class="st">&quot;name&quot;</span>] <span class="cf">for</span> pub <span class="cf">in</span> <span class="fu">book_data.get</span>(<span class="st">&quot;publishers&quot;</span>, [])]</span>
+<span id="cb43-32"><a href="Sub00_2025-05-30-06-05.html#cb43-32" tabindex="-1"></a>    publisher <span class="ot">=</span> publishers[<span class="dv">0</span>] <span class="cf">if</span> publishers <span class="cf">else</span> <span class="st">&quot;Unknown Publisher&quot;</span></span>
+<span id="cb43-33"><a href="Sub00_2025-05-30-06-05.html#cb43-33" tabindex="-1"></a>    year <span class="ot">=</span> <span class="fu">book_data.get</span>(<span class="st">&quot;publish_date&quot;</span>, <span class="st">&quot;n.d.&quot;</span>)</span>
+<span id="cb43-34"><a href="Sub00_2025-05-30-06-05.html#cb43-34" tabindex="-1"></a>    year <span class="ot">=</span> <span class="fu">re.findall</span>(r<span class="st">&#39;\d{4}&#39;</span>, year)</span>
+<span id="cb43-35"><a href="Sub00_2025-05-30-06-05.html#cb43-35" tabindex="-1"></a>    year <span class="ot">=</span> year[<span class="dv">0</span>] <span class="cf">if</span> year <span class="cf">else</span> <span class="st">&quot;n.d.&quot;</span></span>
+<span id="cb43-36"><a href="Sub00_2025-05-30-06-05.html#cb43-36" tabindex="-1"></a></span>
+<span id="cb43-37"><a href="Sub00_2025-05-30-06-05.html#cb43-37" tabindex="-1"></a>    return {</span>
+<span id="cb43-38"><a href="Sub00_2025-05-30-06-05.html#cb43-38" tabindex="-1"></a>        <span class="st">&quot;title&quot;</span><span class="sc">:</span> title,</span>
+<span id="cb43-39"><a href="Sub00_2025-05-30-06-05.html#cb43-39" tabindex="-1"></a>        <span class="st">&quot;author&quot;</span><span class="sc">:</span> author,</span>
+<span id="cb43-40"><a href="Sub00_2025-05-30-06-05.html#cb43-40" tabindex="-1"></a>        <span class="st">&quot;publisher&quot;</span><span class="sc">:</span> publisher,</span>
+<span id="cb43-41"><a href="Sub00_2025-05-30-06-05.html#cb43-41" tabindex="-1"></a>        <span class="st">&quot;year&quot;</span><span class="sc">:</span> year,</span>
+<span id="cb43-42"><a href="Sub00_2025-05-30-06-05.html#cb43-42" tabindex="-1"></a>        <span class="st">&quot;isbn&quot;</span><span class="sc">:</span> isbn,</span>
+<span id="cb43-43"><a href="Sub00_2025-05-30-06-05.html#cb43-43" tabindex="-1"></a>        <span class="st">&quot;address&quot;</span><span class="sc">:</span> <span class="st">&quot;unknown&quot;</span></span>
+<span id="cb43-44"><a href="Sub00_2025-05-30-06-05.html#cb43-44" tabindex="-1"></a>    }</span>
+<span id="cb43-45"><a href="Sub00_2025-05-30-06-05.html#cb43-45" tabindex="-1"></a></span>
+<span id="cb43-46"><a href="Sub00_2025-05-30-06-05.html#cb43-46" tabindex="-1"></a><span class="co"># BibTeX 항목 만들기</span></span>
+<span id="cb43-47"><a href="Sub00_2025-05-30-06-05.html#cb43-47" tabindex="-1"></a>def <span class="fu">make_bibtex_entry</span>(book)<span class="sc">:</span></span>
+<span id="cb43-48"><a href="Sub00_2025-05-30-06-05.html#cb43-48" tabindex="-1"></a>    first_author_lastname <span class="ot">=</span> book[<span class="st">&quot;author&quot;</span>]<span class="fu">.split</span>()[<span class="dv">0</span>]<span class="fu">.lower</span>()</span>
+<span id="cb43-49"><a href="Sub00_2025-05-30-06-05.html#cb43-49" tabindex="-1"></a>    key <span class="ot">=</span> <span class="fu">sanitize_bibtex_key</span>(first_author_lastname <span class="sc">+</span> book[<span class="st">&quot;year&quot;</span>])</span>
+<span id="cb43-50"><a href="Sub00_2025-05-30-06-05.html#cb43-50" tabindex="-1"></a></span>
+<span id="cb43-51"><a href="Sub00_2025-05-30-06-05.html#cb43-51" tabindex="-1"></a>    return f<span class="st">&quot;&quot;&quot;@Book{{{key},</span></span>
+<span id="cb43-52"><a href="Sub00_2025-05-30-06-05.html#cb43-52" tabindex="-1"></a><span class="st">  title     = {{{book[&#39;title&#39;]}}},</span></span>
+<span id="cb43-53"><a href="Sub00_2025-05-30-06-05.html#cb43-53" tabindex="-1"></a><span class="st">  author    = {{{book[&#39;author&#39;]}}},</span></span>
+<span id="cb43-54"><a href="Sub00_2025-05-30-06-05.html#cb43-54" tabindex="-1"></a><span class="st">  publisher = {{{book[&#39;publisher&#39;]}}},</span></span>
+<span id="cb43-55"><a href="Sub00_2025-05-30-06-05.html#cb43-55" tabindex="-1"></a><span class="st">  address   = {{{book[&#39;address&#39;]}}},</span></span>
+<span id="cb43-56"><a href="Sub00_2025-05-30-06-05.html#cb43-56" tabindex="-1"></a><span class="st">  year      = {{{book[&#39;year&#39;]}}},</span></span>
+<span id="cb43-57"><a href="Sub00_2025-05-30-06-05.html#cb43-57" tabindex="-1"></a><span class="st">  note      = {{ISBN {book[&#39;isbn&#39;]}}}</span></span>
+<span id="cb43-58"><a href="Sub00_2025-05-30-06-05.html#cb43-58" tabindex="-1"></a><span class="st">}}&quot;&quot;&quot;</span></span>
+<span id="cb43-59"><a href="Sub00_2025-05-30-06-05.html#cb43-59" tabindex="-1"></a></span>
+<span id="cb43-60"><a href="Sub00_2025-05-30-06-05.html#cb43-60" tabindex="-1"></a><span class="co"># 메인 실행</span></span>
+<span id="cb43-61"><a href="Sub00_2025-05-30-06-05.html#cb43-61" tabindex="-1"></a>def <span class="fu">main</span>()<span class="sc">:</span></span>
+<span id="cb43-62"><a href="Sub00_2025-05-30-06-05.html#cb43-62" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;🔍 ISBN을 쉼표(,) 또는 줄바꿈으로 입력하세요:&quot;</span>)</span>
+<span id="cb43-63"><a href="Sub00_2025-05-30-06-05.html#cb43-63" tabindex="-1"></a>    raw_input <span class="ot">=</span> <span class="fu">input</span>(<span class="st">&quot;ISBN 목록 입력: &quot;</span>)</span>
+<span id="cb43-64"><a href="Sub00_2025-05-30-06-05.html#cb43-64" tabindex="-1"></a>    isbn_list <span class="ot">=</span> [<span class="fu">isbn.strip</span>()<span class="fu">.replace</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;&quot;</span>) <span class="cf">for</span> isbn <span class="cf">in</span> <span class="fu">raw_input.replace</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="st">&quot;,&quot;</span>)<span class="fu">.split</span>(<span class="st">&quot;,&quot;</span>) <span class="cf">if</span> <span class="fu">isbn.strip</span>()]</span>
+<span id="cb43-65"><a href="Sub00_2025-05-30-06-05.html#cb43-65" tabindex="-1"></a></span>
+<span id="cb43-66"><a href="Sub00_2025-05-30-06-05.html#cb43-66" tabindex="-1"></a>    bib_entries <span class="ot">=</span> []</span>
+<span id="cb43-67"><a href="Sub00_2025-05-30-06-05.html#cb43-67" tabindex="-1"></a></span>
+<span id="cb43-68"><a href="Sub00_2025-05-30-06-05.html#cb43-68" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">📚 도서 정보 조회 중...&quot;</span>)</span>
+<span id="cb43-69"><a href="Sub00_2025-05-30-06-05.html#cb43-69" tabindex="-1"></a>    <span class="cf">for</span> isbn <span class="cf">in</span> <span class="fu">tqdm</span>(isbn_list, <span class="at">desc=</span><span class="st">&quot;진행 상황&quot;</span>, <span class="at">unit=</span><span class="st">&quot;권&quot;</span>)<span class="sc">:</span></span>
+<span id="cb43-70"><a href="Sub00_2025-05-30-06-05.html#cb43-70" tabindex="-1"></a>        try<span class="sc">:</span></span>
+<span id="cb43-71"><a href="Sub00_2025-05-30-06-05.html#cb43-71" tabindex="-1"></a>            book <span class="ot">=</span> <span class="fu">get_book_info_openlibrary</span>(isbn)</span>
+<span id="cb43-72"><a href="Sub00_2025-05-30-06-05.html#cb43-72" tabindex="-1"></a>            <span class="cf">if</span> book<span class="sc">:</span></span>
+<span id="cb43-73"><a href="Sub00_2025-05-30-06-05.html#cb43-73" tabindex="-1"></a>                bib <span class="ot">=</span> <span class="fu">make_bibtex_entry</span>(book)</span>
+<span id="cb43-74"><a href="Sub00_2025-05-30-06-05.html#cb43-74" tabindex="-1"></a>                <span class="fu">bib_entries.append</span>(bib)</span>
+<span id="cb43-75"><a href="Sub00_2025-05-30-06-05.html#cb43-75" tabindex="-1"></a>            <span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb43-76"><a href="Sub00_2025-05-30-06-05.html#cb43-76" tabindex="-1"></a>                <span class="fu">print</span>(f<span class="st">&quot;{isbn}: ❌ 도서 정보를 찾을 수 없습니다.&quot;</span>)</span>
+<span id="cb43-77"><a href="Sub00_2025-05-30-06-05.html#cb43-77" tabindex="-1"></a>        except Exception as e<span class="sc">:</span></span>
+<span id="cb43-78"><a href="Sub00_2025-05-30-06-05.html#cb43-78" tabindex="-1"></a>            <span class="fu">print</span>(f<span class="st">&quot;{isbn}: ⚠️ 오류 발생 - {e}&quot;</span>)</span>
+<span id="cb43-79"><a href="Sub00_2025-05-30-06-05.html#cb43-79" tabindex="-1"></a></span>
+<span id="cb43-80"><a href="Sub00_2025-05-30-06-05.html#cb43-80" tabindex="-1"></a>    <span class="cf">if</span> bib_entries<span class="sc">:</span></span>
+<span id="cb43-81"><a href="Sub00_2025-05-30-06-05.html#cb43-81" tabindex="-1"></a>        with <span class="fu">open</span>(bibtex_file, <span class="st">&quot;a&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;utf-8&quot;</span>) as f<span class="sc">:</span></span>
+<span id="cb43-82"><a href="Sub00_2025-05-30-06-05.html#cb43-82" tabindex="-1"></a>            <span class="fu">f.write</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span> <span class="sc">+</span> <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span><span class="fu">.join</span>(bib_entries))</span>
+<span id="cb43-83"><a href="Sub00_2025-05-30-06-05.html#cb43-83" tabindex="-1"></a>        <span class="fu">print</span>(f<span class="st">&quot;</span><span class="sc">\n</span><span class="st">✅ BibTeX 항목이 누적 저장되었습니다:</span><span class="sc">\n</span><span class="st">{bibtex_file}&quot;</span>)</span>
+<span id="cb43-84"><a href="Sub00_2025-05-30-06-05.html#cb43-84" tabindex="-1"></a>    <span class="cf">else</span><span class="sc">:</span></span>
+<span id="cb43-85"><a href="Sub00_2025-05-30-06-05.html#cb43-85" tabindex="-1"></a>        <span class="fu">print</span>(<span class="st">&quot;❌ 저장할 항목이 없습니다.&quot;</span>)</span>
+<span id="cb43-86"><a href="Sub00_2025-05-30-06-05.html#cb43-86" tabindex="-1"></a></span>
+<span id="cb43-87"><a href="Sub00_2025-05-30-06-05.html#cb43-87" tabindex="-1"></a><span class="cf">if</span> __name__ <span class="sc">==</span> <span class="st">&quot;__main__&quot;</span><span class="sc">:</span></span>
+<span id="cb43-88"><a href="Sub00_2025-05-30-06-05.html#cb43-88" tabindex="-1"></a>    <span class="fu">main</span>()</span></code></pre></div>
 <p><strong>3 단계 작업</strong></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="Sub00_2025-05-28-21-42.html#cb36-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
-<span id="cb36-2"><a href="Sub00_2025-05-28-21-42.html#cb36-2" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="Sub00_2025-05-28-21-42.html#cb36-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
-<span id="cb36-4"><a href="Sub00_2025-05-28-21-42.html#cb36-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\mymovienv\python.exe&quot;</span></span>
-<span id="cb36-5"><a href="Sub00_2025-05-28-21-42.html#cb36-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\Mp4_convert_sub.py&quot;</span></span>
-<span id="cb36-6"><a href="Sub00_2025-05-28-21-42.html#cb36-6" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="Sub00_2025-05-28-21-42.html#cb36-7" tabindex="-1"></a>echo Start.</span>
-<span id="cb36-8"><a href="Sub00_2025-05-28-21-42.html#cb36-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
-<span id="cb36-9"><a href="Sub00_2025-05-28-21-42.html#cb36-9" tabindex="-1"></a></span>
-<span id="cb36-10"><a href="Sub00_2025-05-28-21-42.html#cb36-10" tabindex="-1"></a>echo.</span>
-<span id="cb36-11"><a href="Sub00_2025-05-28-21-42.html#cb36-11" tabindex="-1"></a>echo Done.</span>
-<span id="cb36-12"><a href="Sub00_2025-05-28-21-42.html#cb36-12" tabindex="-1"></a>pause</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="Sub00_2025-05-30-06-05.html#cb44-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
+<span id="cb44-2"><a href="Sub00_2025-05-30-06-05.html#cb44-2" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="Sub00_2025-05-30-06-05.html#cb44-3" tabindex="-1"></a><span class="sc">::</span>REM 사용자 정의 환경 <span class="sc">-</span> 파이썬 실행 경로 및 스크립트 위치 설정</span>
+<span id="cb44-4"><a href="Sub00_2025-05-30-06-05.html#cb44-4" tabindex="-1"></a>set PYTHON_PATH<span class="ot">=</span><span class="st">&quot;C:\Users\oem\miniconda3</span><span class="sc">\e</span><span class="st">nvs\myfirstenv\python.exe&quot;</span></span>
+<span id="cb44-5"><a href="Sub00_2025-05-30-06-05.html#cb44-5" tabindex="-1"></a>set SCRIPT_PATH<span class="ot">=</span><span class="st">&quot;C:\gppj</span><span class="sc">\a</span><span class="st">uto_ver06\APA_generater_e_bib.py&quot;</span></span>
+<span id="cb44-6"><a href="Sub00_2025-05-30-06-05.html#cb44-6" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="Sub00_2025-05-30-06-05.html#cb44-7" tabindex="-1"></a>echo Start.</span>
+<span id="cb44-8"><a href="Sub00_2025-05-30-06-05.html#cb44-8" tabindex="-1"></a><span class="sc">%PYTHON_PATH%</span> <span class="sc">%SCRIPT_PATH%</span></span>
+<span id="cb44-9"><a href="Sub00_2025-05-30-06-05.html#cb44-9" tabindex="-1"></a></span>
+<span id="cb44-10"><a href="Sub00_2025-05-30-06-05.html#cb44-10" tabindex="-1"></a>echo.</span>
+<span id="cb44-11"><a href="Sub00_2025-05-30-06-05.html#cb44-11" tabindex="-1"></a>echo Done.</span>
+<span id="cb44-12"><a href="Sub00_2025-05-30-06-05.html#cb44-12" tabindex="-1"></a>pause</span></code></pre></div>
 </div>
-<div id="Sub04_2025-05-28-21-42" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> 결어<a href="Sub00_2025-05-28-21-42.html#Sub04_2025-05-28-21-42" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Sub04_2025-05-30-06-05" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> 결어<a href="Sub00_2025-05-30-06-05.html#Sub04_2025-05-30-06-05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li></li>
 <li></li>
@@ -415,8 +425,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="Sub00_2025-05-28-21-13.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Sub00_2025-05-28-21-48.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Sub00_2025-05-28-21-59.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Sub00_2025-05-30-12-38.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -447,7 +457,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://datatellme.github.io/2025-05-28-21-42-content.Rmd",
+"link": "https://datatellme.github.io/2025-05-30-06-05-content.Rmd",
 "text": "Edit"
 },
 "history": {
