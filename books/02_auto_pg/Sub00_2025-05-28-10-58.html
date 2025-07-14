@@ -23,7 +23,7 @@
 <meta name="author" content="psnam" />
 
 
-<meta name="date" content="2025-06-08" />
+<meta name="date" content="2025-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,10 +235,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>3단계:</p></li>
 </ul>
 <p><strong>필요 라이브러리 설치</strong></p>
+<p><strong>1. ebooklib:</strong></p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><strong>역할:</strong> 전자책(ebook) 파일 처리 및 관리 기능을 제공합니다.</li>
+<li><strong>특징:</strong>
+<ul>
+<li>ebook 파일 다운로드, 변환, 복원 등을 위한 핵심 라이브러리입니다.</li>
+<li>다양한 ebook 형식 (EPUB, MOBI 등)을 지원하며, 파일을 효율적으로 관리하고 읽기/쓰기 작업을 수행할 수 있습니다.</li>
+<li>eBook의 구조를 분석하여 텍스트 내용, 이미지, 서명 등을 추출하고 조작하는 데 사용됩니다.</li>
+</ul></li>
+</ul>
+<p><strong>2. Pillow:</strong></p>
+<ul>
+<li><strong>역할:</strong> 이미지 처리 및 편집 기능을 제공합니다. (특히 간단한 이미지 수정에 유용합니다.)</li>
+<li><strong>특징:</strong>
+<ul>
+<li>이미지 크기 조정, 회전, 변환, 필터링 등 다양한 이미지 편집 작업을 수행할 수 있습니다.</li>
+<li>이미지를 읽고 쓰는 데 사용됩니다.</li>
+<li>다양한 이미지 포맷 (JPEG, PNG, GIF 등)을 지원합니다.</li>
+</ul></li>
+</ul>
+<p><strong>3. tqdm (Tortoise Plot):</strong></p>
+<ul>
+<li><strong>역할:</strong> 데이터 시각화 (특히 반복적인 작업을 보여주는 그래프)를 위한 도구입니다.</li>
+<li><strong>특징:</strong>
+<ul>
+<li>데이터의 크기가 커질수록 자동으로 그래프가 그려지도록 도와줍니다.</li>
+<li>주석을 통해 각 단계별로 데이터를 보여주고, 진행 상황을 쉽게 파악할 수 있습니다.</li>
+<li>다양한 종류의 그래프 (선, 막대, 원 등)를 지원합니다.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="Sub00_2025-05-28-10-58.html#cb1-1" tabindex="-1"></a>pip install ebooklib pillow tqdm</span></code></pre></div>
 <ul>
@@ -334,9 +359,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-60"><a href="Sub00_2025-05-28-10-58.html#cb3-60" tabindex="-1"></a><span class="fu">print</span>(f<span class="st">&quot;✅ ReadEra 호환 EPUB 저장 완료: {output_path}&quot;</span>)</span></code></pre></div>
 <p><strong>3 단계 작업</strong></p>
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li><p><code>@echo off</code>: 명령을 출력하지 않음(이전 명령을 숨기기 위한 것)</p></li>
+<li><p><code>set PYTHON_PATH="C:\Users\oem\miniconda3\envs\myfirstenv\python.exe"</code>와 <code>set SCRIPT_PATH="C:\gppj\auto_ver06\jpg_convert_epub.py"</code>: 이 두 줄은 파이썬 실행 경로 및 텍스트 파일의 경로를 설정</p></li>
+<li><p><code>oem</code>이라는 사용자 이름에서 <code>myfirstenv</code>라는 환경 변수를 사용하는 것으로 보아, Python을 설치된 환경에서 실행될 수 있도록 함</p></li>
+<li><p><code>myfirstenv</code>는 특정 Python 버전의 환경입니다. 이 환경 변수를 사용하여 명령어가 실행될 때 파이썬의 Python 인터프리터가 사용되도록 설정</p></li>
+<li><p><code>echo Start.</code> and <code>echo Done.</code>: 명령어를 출력</p></li>
+<li><p><code>pause</code>: 스크립트를 종료하지 않고 사용자에게 결과를 확인하도록 함</p></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="Sub00_2025-05-28-10-58.html#cb4-1" tabindex="-1"></a><span class="sc">@</span>echo off</span>
 <span id="cb4-2"><a href="Sub00_2025-05-28-10-58.html#cb4-2" tabindex="-1"></a></span>
@@ -398,7 +426,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://datatellme.github.io/2025-05-28-10-58-content.Rmd",
+"link": "https://datatellme.github.io/2025-05-28-10-58-Jpg_To_ePub.Rmd",
 "text": "Edit"
 },
 "history": {
